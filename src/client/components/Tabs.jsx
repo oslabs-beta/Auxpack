@@ -57,7 +57,7 @@ export default function NavTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="tabs">
-          <Tab label="AuxPack" disabled />
+          <h2>AuxPack</h2>
           <Tab label="Overview" {...a11yProps(1)} component={Link} to="/"/>
           <Tab label="Build Data" {...a11yProps(2)} component={Link} to="/builds"/>
           <Tab label="Recommendations" {...a11yProps(3)} component={Link} to="/recommendations"/>
