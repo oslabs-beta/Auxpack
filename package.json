@@ -4,6 +4,7 @@
   "description": "auxillary webpack client",
   "main": "index.jsx",
   "dependencies": {
+    "d3": "^5.14.2",
     "express": "^4.17.1",
     "path": "^0.12.7",
     "react": "^16.12.0",

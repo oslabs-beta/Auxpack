@@ -3,12 +3,12 @@ import NavbarContainer from './NavbarContainer';
 import ContentContainer from './ContentContainer'
 
 const MainContainer = (props) => {
-    return ( 
+    return (
         <React.Fragment>
-            <NavbarContainer/>
-            <ContentContainer/>
+            <NavbarContainer />
+            <ContentContainer />
         </React.Fragment>
-     );
+    );
 }
- 
+
 export default MainContainer;
