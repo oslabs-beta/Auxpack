@@ -1,8 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import App from './App'
-import stats from '../monitor/stats.json';
+import { BrowserRouter } from "react-router-dom";
+
 render(
-    <App stats={stats} />,
+    (
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    ),
     document.getElementById('app')
 )
