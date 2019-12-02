@@ -4,13 +4,13 @@ import ContentContainer from './ContentContainer'
 
 const MainContainer = (props) => {
 
-        return ( 
-            <React.Fragment>
-                <NavbarContainer/>
-                <ContentContainer/>
-            </React.Fragment>
-         );  
-         
+    return (
+        <React.Fragment>
+            <NavbarContainer />
+            <ContentContainer />
+        </React.Fragment>
+    );
+
 }
- 
+
 export default MainContainer;
