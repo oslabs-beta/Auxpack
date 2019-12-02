@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 render(
     (
         <BrowserRouter>
-        <App />
+            <App />
         </BrowserRouter>
     ),
     document.getElementById('app')
