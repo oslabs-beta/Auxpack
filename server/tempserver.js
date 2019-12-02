@@ -4,9 +4,14 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.static(path.join(__dirname, '../src/assets')))
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../src/index.html'))
+})
+
+app.get('/service-worker.js', (req, res) => {
+    res.sendFile(path.join(__dirname,'../src/service-worker.js'))
 })
 
 app.use((err, req, res, next) => {

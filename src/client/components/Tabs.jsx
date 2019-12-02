@@ -41,7 +41,7 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    backgroundColor: theme.palette.background.paper,
   },
 }));
 
@@ -57,7 +57,7 @@ export default function NavTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="tabs">
-          <h2>AuxPack</h2>
+          {/* <h2>AuxPack</h2> */}
           <Tab label="Overview" {...a11yProps(1)} component={Link} to="/"/>
           <Tab label="Build Data" {...a11yProps(2)} component={Link} to="/builds"/>
           <Tab label="Recommendations" {...a11yProps(3)} component={Link} to="/recommendations"/>
