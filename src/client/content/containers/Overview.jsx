@@ -1,9 +1,12 @@
 import React from 'react'
-
+import SunburstContainer from './SunburstContainer.jsx'
 const Overview = (props) => {
-    return ( 
-        <p>overview</p>
-     );
+    return (
+        <div>
+            <p>overview</p>
+            <SunburstContainer />
+        </div>
+    );
 }
- 
+
 export default Overview;
