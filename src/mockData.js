@@ -1,4 +1,4 @@
-[
+const data = [
     {
         "timeStamp": 1574453035464,
         "time": 13272,
@@ -1258,3 +1258,5 @@
         ]
     }
 ]
+
+module.exports = data;
