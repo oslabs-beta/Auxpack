@@ -4,10 +4,12 @@
   "description": "auxillary webpack client",
   "main": "index.jsx",
   "dependencies": {
+    "@material-ui/core": "^4.7.1",
     "express": "^4.17.1",
     "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "webpack": "^4.41.2"
   },
   "devDependencies": {
