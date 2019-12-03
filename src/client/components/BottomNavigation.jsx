@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import { MemoryRouter as Router } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -24,17 +23,9 @@ export default function SimpleBottomNavigation() {
       }}
       className={classes.root}
     >
-      <Router>
-        <Link to="/">
-          <BottomNavigationAction label="Overview"/>
-        </Link>
-        <Link to="/builds">
-          <BottomNavigationAction label="Build Data"/>
-        </Link>
-        <Link to="recommendations">
-          <BottomNavigationAction label="Recommendations"/>
-        </Link>
-      </Router>
+          <BottomNavigationAction label="Overview" component={Link} to="/"/>
+          <BottomNavigationAction label="Build Data" component={Link} to ="/build"/>
+          <BottomNavigationAction label="Recommendations" component={Link} to="/recommendations"/>
     </BottomNavigation>
   );
 }

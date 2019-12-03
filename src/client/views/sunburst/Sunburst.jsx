@@ -9,7 +9,6 @@ export default class Sunburst extends Component {
         this.state = {};
     }
     componentDidMount() {
-        console.log(`this.props.data in COMPONENT DID MOUNT`, this.props.burstData)
         this.drawChart();
     }
     shouldComponentUpdate(nextProps, nextState) {
