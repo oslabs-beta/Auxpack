@@ -12,8 +12,6 @@ const MainContainer = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(`build in MainContainer: `, build)
-
     const [activeBuild, setActiveBuild] = useState(0);
 
     const clickHandler = e => {
