@@ -1,0 +1,64 @@
+[
+    {
+        "timeStamp": 1575313565925,
+        "time": 130,
+        "hash": "9daa25a323319078cb4a",
+        "errors": [],
+        "size": 3855,
+        "assets": [
+            {
+                "name": "bundle.js",
+                "chunks": [
+                    "main"
+                ],
+                "size": 3855
+            }
+        ],
+        "chunks": [
+            {
+                "size": 25,
+                "files": [
+                    "bundle.js"
+                ],
+                "modules": [
+                    {
+                        "name": "./test.js",
+                        "size": 25,
+                        "id": "./test.js"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "timeStamp": 1575313566000,
+        "time": 145,
+        "hash": "9daa25a323319078cb4a",
+        "errors": [],
+        "size": 3855,
+        "assets": [
+            {
+                "name": "bundle.js",
+                "chunks": [
+                    "main"
+                ],
+                "size": 3855
+            }
+        ],
+        "chunks": [
+            {
+                "size": 25,
+                "files": [
+                    "bundle.js"
+                ],
+                "modules": [
+                    {
+                        "name": "./test.js",
+                        "size": 25,
+                        "id": "./test.js"
+                    }
+                ]
+            }
+        ]
+    }
+]
