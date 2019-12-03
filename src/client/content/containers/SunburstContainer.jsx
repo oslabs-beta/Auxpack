@@ -26,7 +26,6 @@ const SunburstContainer = props => {
         // check if data is empty
 
         if (data.length !== 0) {
-
             for (let k = 0; k < data[i].chunks.length; k++) {
                 for (let l = 0; l < data[i].chunks[k].modules.length; l++) {
                     sizeStr = data[i].chunks[k].modules[l].size.toString();

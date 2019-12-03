@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+$raleway: 'Raleway', sans-serif;
+$black: #000;
+$blue1: rgb(44, 99, 157);
+/* common classes */ 
+.flex {
+    display: flex;
+}
+.fd-row {
+    flex-direction: row;
+}
+.fd-col {
+    flex-direction: column;
+}
+.j-center {
+    justify-content: center;
+}
+
+div.chart {
+    display: flex;
+    justify-content: center;
+}
+
+div.explanation {
+    // position: relative;
+    // left: 200px;
+    background-color: #ccc;
+    font-size: 18px;
+    font-family: $raleway;
+    color: $blue1;
+}
+
+
+g#details {
+    font-family: $raleway;
+    font-size: 14px;
+}
