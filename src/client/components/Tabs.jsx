@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function NavTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -58,18 +58,18 @@ export default function NavTabs() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="tabs">
           {/* <h2>AuxPack</h2> */}
-          <Tab label="Overview" {...a11yProps(1)} component={Link} to="/"/>
-          <Tab label="Build Data" {...a11yProps(2)} component={Link} to="/builds"/>
-          <Tab label="Recommendations" {...a11yProps(3)} component={Link} to="/recommendations"/>
+          <Tab label="Overview" {...a11yProps(0)} component={Link} to="/"/>
+          <Tab label="Build Data" {...a11yProps(1)} component={Link} to="/builds"/>
+          <Tab label="Recommendations" {...a11yProps(2)} component={Link} to="/recommendations"/>
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={0}>
         Overview
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={1}>
         Build Data
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={2}>
         Recommendations
       </TabPanel>
       
