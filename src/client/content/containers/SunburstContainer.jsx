@@ -14,7 +14,7 @@ const SunburstContainer = props => {
 
     // parse data, return array of arrays, each subarray contains [path, sizeString]
     const dataParser = () => {
-        console.log(`build in dataParser`, build)
+        //console.log(`build in dataParser`, build)
         const data = build;
 
         //loops through assets
@@ -27,7 +27,7 @@ const SunburstContainer = props => {
         // check if data is empty
 
         if (data.length !== 0) {
-            console.log(`data in conditional: `, data)
+            //console.log(`data in conditional: `, data)
             for (let k = 0; k < data[i].chunks.length; k++) {
                 for (let l = 0; l < data[i].chunks[k].modules.length; l++) {
                     sizeStr = data[i].chunks[k].modules[l].size.toString();
@@ -41,7 +41,7 @@ const SunburstContainer = props => {
 
     useEffect(() => {
         const parsedData = dataParser();
-        console.log(`useEffect parsedData`, parsedData)
+        //console.log(`useEffect parsedData`, parsedData)
         setData(parsedData);
 
     }, [build]) // second arg: dependency that change
@@ -50,7 +50,7 @@ const SunburstContainer = props => {
         setBurst(path)
     }
 
-    console.log(`burstData =====>`, burstData)
+    //console.log(`burstData =====>`, burstData)
 
 
     return <div>

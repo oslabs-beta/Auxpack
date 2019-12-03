@@ -12,7 +12,7 @@ const MainContainer = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(`build in MainContainer: `, build)
+    //console.log(`build in MainContainer: `, build)
 
     const [activeBuild, setActiveBuild] = useState(0);
 
