@@ -8,7 +8,18 @@
     <title>AuxPack</title>
 </head>
 <body>
+  <h1>AuxPack</h1>
    <div id="app"></div> 
-   <script src="../build/bundle.js"></script>
+   <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+        </script>
+        
+   <script type="text/javascript" src="../build/bundle.js"></script>
 </body>
 </html>

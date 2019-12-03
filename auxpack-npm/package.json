@@ -1,0 +1,16 @@
+{
+  "name": "auxpack",
+  "version": "1.0.3",
+  "description": "A dashboard for monitoring Webpack build stats.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "opener": "^1.5.1"
+  }
+}

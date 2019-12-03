@@ -1,10 +1,11 @@
 import React from 'react'
 import SunburstContainer from './SunburstContainer.jsx'
+
 const Overview = (props) => {
+    const { build, activeBuild } = props;
     return (
-        <div>
-            <p>overview</p>
-            <SunburstContainer />
+        <div id="container">
+            <SunburstContainer build={build} activeBuild={activeBuild} />
         </div>
     );
 }
