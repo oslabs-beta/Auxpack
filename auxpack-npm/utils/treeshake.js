@@ -1,6 +1,3 @@
-// To grab reason types from stats.modules to determine whether Tree-shakeable
-// Need to import into plugin and pass in stats into treeshake function
-
 const moduleTypes = {
   'harmony side effect evaluation': 'esm',
   'harmony import specifier': 'esm',
@@ -14,6 +11,7 @@ const treeshake = (modules = []) => {
     esm: [],
     both: []
   }
+  
   modules.forEach(module => {
     const { name, size, reasons} = module;
     const isEsm = reasons.some(reason => moduleTypes[reason.type] === 'esm');
