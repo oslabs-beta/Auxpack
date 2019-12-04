@@ -1,7 +1,7 @@
 import React from 'react'
 import ChangesTable from '../../components/ChangesTable.jsx';
 import AssetsTable from '../../components/AssetsTable.jsx';
-import Errors from '../../components/Errors.jsx';
+import ErrorsTable from '../../components/Errors.jsx';
 import Modules from '../../components/Modules.jsx';
 
 const BuildData = (props) => {
@@ -16,7 +16,8 @@ const BuildData = (props) => {
         const build = data[i];
         const findUniquePaths = [];
         const filePaths = [];
-        const totalSizes = build.size
+        const totalSizes = props.build.size;
+        console.log(`totalSizes: `, totalSizes)
 
         for (let j = 0; j < build.chunks.length; j++) {
             for (let k = 0; k < build.chunks[j].modules.length; k++) {
@@ -64,6 +65,7 @@ const BuildData = (props) => {
 
     return (
         <div className="build-data">
+            {/* Put cards component here to display: total size, chunks, modules, assets, errors, current build? */}
             <ChangesTable
                 build={props.build}
                 activeBuild={props.activeBuild}
@@ -76,7 +78,7 @@ const BuildData = (props) => {
                 activeBuild={props.activeBuild}
                 getBytes={getBytes}
             />
-            <Errors
+            <ErrorsTable
                 build={props.build}
                 activeBuild={props.activeBuild}
             />
@@ -87,7 +89,6 @@ const BuildData = (props) => {
                 dirFinalArray={dirFinalArray}
             />
         </div>
-
     );
 }
 
