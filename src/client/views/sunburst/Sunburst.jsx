@@ -139,23 +139,6 @@ export default class Sunburst extends Component {
             if (percentage < 0.1) {
                 percentageString = "< 0.1%";
             }
-            // **************** adding explanation into div#id *********************
-
-            // CENTER CONTENT
-            // vis.append('g')
-            //     .style("text-anchor", "middle").attr('id', 'details');
-
-            // d3.select('#details').append('text')
-            //     .text(`Percentage: ${percentageString}.`)
-
-            // d3.select('#details').append('text')
-            //     .attr('dy', '1.5em')
-            //     .text(`Size: ${d.value / 1000} kB.`)
-
-            // d3.select('#details').append('text')
-            //     .attr('dy', '3em')
-            //     .text(`File Name: ${d.data.name}`)
-
 
             d3.select("#percentage")
                 .text(percentageString);
