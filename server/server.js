@@ -5,6 +5,10 @@ const app = express();
 
 const PORT = 3000;
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../src/index.html'))
+})
+
 app.get('/getStats', (req, res) => {
   fs.readFile('aux-stats.json', (err, data) => {
     if (err) throw err;
@@ -13,8 +17,12 @@ app.get('/getStats', (req, res) => {
   })
 })
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../src/index.html'))
+app.get('/getTree', (req, res) => {
+  fs.readFile('tree-stats.json', (err, data) => {
+    if (err) throw err;
+    res.header("Content-Type",'application/json');
+    res.send(data);
+  })
 })
 
 app.get('/service-worker.js', (req, res) => {
