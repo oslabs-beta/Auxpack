@@ -1,7 +1,7 @@
 {
   "name": "auxpack",
   "version": "1.0.0",
-  "description": "auxillary webpack client",
+  "description": "A dashboard for monitoring Webpack build stats.",
   "main": "index.js",
   "dependencies": {
     "@material-ui/core": "^4.7.1",
@@ -38,6 +38,6 @@
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open\" \"cross-env nodemon server/server.js || true\""
   },
   "keywords": [],
-  "author": "CoNST",
+  "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",
   "license": "ISC"
 }
