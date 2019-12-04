@@ -141,33 +141,30 @@ export default class Sunburst extends Component {
             if (percentage < 0.1) {
                 percentageString = "< 0.1%";
             }
-            // **************** adding explanation into div#id *********************
-
-            // CENTER CONTENT 
-            // vis.append('g')
-            //     .style("text-anchor", "middle").attr('id', 'details');
-
-            // d3.select('#details').append('text')
-            //     .text(`Percentage: ${percentageString}.`)
-
-            // d3.select('#details').append('text')
-            //     .attr('dy', '1.5em')
-            //     .text(`Size: ${d.value / 1000} kB.`)
-
-            // d3.select('#details').append('text')
-            //     .attr('dy', '3em')
-            //     .text(`File Name: ${d.data.name}`)
-
+            let size = ""
+            const filesize = [1000, 1000000, 1000000000]
+            let filesizeIndex = 0
+            if (d.value > filesize[0]) {
+                size = "KiB";
+            }
+            if (d.value > filesize[1]) {
+                size = "MiB"
+                filesizeIndex = 1
+            }
+            if (d.value > filesize[2]) {
+                size = "GiB"
+                filesizeIndex = 2
+            }
 
             d3.select("#percentage")
-                .text(percentageString);
+                .text(`${percentageString} of your bundle`);
             //ADDED FILE NAME
             d3.select("#filename")
                 .text(d.data.name)
 
             //ADDED FILE SIZE
             d3.select("#filesize")
-                .text(d.value / 1000)
+                .text(`Size: ${(d.value / filesize[filesizeIndex]).toFixed(2)} ${size}`)
 
             d3.select("#explanation")
                 .style("visibility", "");
@@ -267,7 +264,7 @@ export default class Sunburst extends Component {
 
             entering.append("svg:polygon")
                 .attr("points", breadcrumbPoints)
-                .style("fill", function (d) { return '#53c79f'; });
+                .style("fill", function (d) { return '#8BDBE9'; });
 
             entering.append("svg:text")
                 .attr("x", (b.w + b.t) / 2)
@@ -362,7 +359,7 @@ export default class Sunburst extends Component {
         // console.log(`this.props.burstData: `, this.props.burstData)
         return <div>
             <div id="main">
-                <div id="sequence"></div>
+
                 <div id="chart" className="chart">
 
                     <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst">
@@ -373,13 +370,14 @@ export default class Sunburst extends Component {
                         <br />
                         <span id="percentage"></span>
                         <br />
-                        of your bundle
+
                         <div>
-                            Size: <span id="filesize"></span> kb <br />
+                            <span id="filesize"></span><br />
                         </div>
                     </div>
 
                 </div>{/* end div.chart */}
+                <div id="sequence"></div>
 
             </div>
 

@@ -17,15 +17,30 @@ $blue1: rgb(44, 99, 157);
     justify-content: center;
 }
 
-div.chart {
-    display: flex;
-    justify-content: center;
+#trail {
+    font-family: $raleway;
 }
 
+#nav {
+    position: absolute;
+    z-index: 1;
+    top: 1vh;
+    right: 1vw;
+    background-color: whitesmoke;
+}
+
+div.chart {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+
 div.explanation {
-    // position: relative;
-    // left: 200px;
-    background-color: #ccc;
+    position: absolute;
+    z-index: 1;
     font-size: 18px;
     font-family: $raleway;
     color: $blue1;

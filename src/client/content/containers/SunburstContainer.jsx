@@ -48,14 +48,12 @@ const SunburstContainer = props => {
     }
 
 
-    return <div>
-        <p>Stats</p>
-
+    return <React.Fragment>
         {(burstData !== undefined) ? <Sunburst
             burstData={burstData}
             onHover={handleBurstHover}
         /> : <h1>Loading...</h1>}
-    </div>
+    </React.Fragment>
 }
 
 export default SunburstContainer;
