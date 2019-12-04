@@ -17,14 +17,6 @@ app.get('/getStats', (req, res) => {
   })
 })
 
-app.get('/getTree', (req, res) => {
-  fs.readFile('tree-stats.json', (err, data) => {
-    if (err) throw err;
-    res.header("Content-Type",'application/json');
-    res.send(data);
-  })
-})
-
 app.get('/service-worker.js', (req, res) => {
     res.sendFile(path.join(__dirname,'../src/service-worker.js'))
 })

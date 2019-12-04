@@ -4,9 +4,9 @@ const Recommendations = (props) => {
   const [modules, setModules] = useState({cjs:[], esm:[], both:[]});
 
   useEffect(() => {
-    fetch('/getTree')
+    fetch('/getStats')
     .then(res => res.json())
-    .then(data => setModules(data))
+    .then(data => setModules(data[0].treeStats))
     .catch(err => console.log(err))
   }, [])
 
