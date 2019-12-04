@@ -6,11 +6,18 @@ const app = express();
 const PORT = 3000;
 
 app.get('/getStats', (req, res) => {
-  fs.readFile('aux-stats.json', (err, data) => {
-    if (err) throw err;
-    res.header("Content-Type",'application/json');
-    res.send(data);
+  fs.existsSync('aux-stats.json', (exists) => {
+    if (exists) {
+      fs.readFile('aux-stats.json', (err, data) => {
+        if (err) throw err;
+        res.header("Content-Type",'application/json');
+        res.send(data);
+      })
+    } else {
+      res.json([])
+    }
   })
+  
 })
 
 app.get('/', (req, res) => {
