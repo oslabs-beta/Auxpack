@@ -139,23 +139,6 @@ export default class Sunburst extends Component {
             if (percentage < 0.1) {
                 percentageString = "< 0.1%";
             }
-            // **************** adding explanation into div#id *********************
-
-            // CENTER CONTENT
-            vis.append('g')
-                .style("text-anchor", "middle").attr('id', 'details');
-
-            d3.select('#details').append('text')
-                .text(`Percentage: ${percentageString}.`)
-
-            d3.select('#details').append('text')
-                .attr('dy', '1.5em')
-                .text(`Size: ${d.value / 1000} kB.`)
-
-            d3.select('#details').append('text')
-                .attr('dy', '3em')
-                .text(`File Name: ${d.data.name}`)
-
 
             d3.select("#percentage")
                 .text(percentageString);
@@ -265,7 +248,7 @@ export default class Sunburst extends Component {
 
             entering.append("svg:polygon")
                 .attr("points", breadcrumbPoints)
-                .style("fill", function (d) { return '#53c79f'; });
+                .style("fill", function (d) { return '#8BDBE9'; });
 
             entering.append("svg:text")
                 .attr("x", (b.w + b.t) / 2)
@@ -360,7 +343,7 @@ export default class Sunburst extends Component {
         // console.log(`this.props.burstData: `, this.props.burstData)
         return <div>
             <div id="main">
-                <div id="sequence"></div>
+                
                 <div id="chart" className="chart">
 
                     <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst">
@@ -378,7 +361,8 @@ export default class Sunburst extends Component {
                     </div>
 
                 </div>{/* end div.chart */}
-
+                <div id="sequence"></div>
+                
             </div>
 
         </div>

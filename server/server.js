@@ -10,11 +10,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/getStats', (req, res) => {
-  fs.readFile('aux-stats.json', (err, data) => {
-    if (err) throw err;
-    res.header("Content-Type",'application/json');
-    res.send(data);
-  })
+      fs.readFile('aux-stats.json', (err, data) => {
+        if (err) throw err;
+        res.header("Content-Type",'application/json');
+        res.send(data);
+      })
 })
 
 app.get('/service-worker.js', (req, res) => {
