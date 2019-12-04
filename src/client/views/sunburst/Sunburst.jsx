@@ -139,16 +139,30 @@ export default class Sunburst extends Component {
             if (percentage < 0.1) {
                 percentageString = "< 0.1%";
             }
+            let size =""
+            const filesize = [1000, 1000000, 1000000000]
+            let filesizeIndex = 0
+            if (d.value > filesize[0]) {
+                size ="KiB";
+            } 
+            if(d.value > filesize[1]) {
+                size ="MiB"
+                filesizeIndex = 1
+            }
+            if (d.value > filesize[2]) {
+                size = "GiB"
+                filesizeIndex = 2
+            }
 
             d3.select("#percentage")
-                .text(percentageString);
+                .text(`${percentageString} of your bundle`);
             //ADDED FILE NAME
             d3.select("#filename")
                 .text(d.data.name)
 
             //ADDED FILE SIZE
             d3.select("#filesize")
-                .text(d.value / 1000)
+                .text(  `Size: ${(d.value / filesize[filesizeIndex]).toFixed(2)} ${size}`)
 
             d3.select("#explanation")
                 .style("visibility", "");
@@ -354,9 +368,9 @@ export default class Sunburst extends Component {
                         <br />
                         <span id="percentage"></span>
                         <br />
-                        of your bundle
+                        
                         <div>
-                            Size: <span id="filesize"></span> kb <br />
+                            <span id="filesize"></span><br />
                         </div>
                     </div>
 
