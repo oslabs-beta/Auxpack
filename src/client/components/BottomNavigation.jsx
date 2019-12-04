@@ -22,6 +22,7 @@ export default function SimpleBottomNavigation() {
         setValue(newValue);
       }}
       className={classes.root}
+      id="nav"
     >
           <BottomNavigationAction label="Overview" component={Link} to="/"/>
           <BottomNavigationAction label="Build Data" component={Link} to ="/build"/>

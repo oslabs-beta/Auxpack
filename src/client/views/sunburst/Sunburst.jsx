@@ -142,19 +142,19 @@ export default class Sunburst extends Component {
             // **************** adding explanation into div#id *********************
 
             // CENTER CONTENT
-            vis.append('g')
-                .style("text-anchor", "middle").attr('id', 'details');
+            // vis.append('g')
+            //     .style("text-anchor", "middle").attr('id', 'details');
 
-            d3.select('#details').append('text')
-                .text(`Percentage: ${percentageString}.`)
+            // d3.select('#details').append('text')
+            //     .text(`Percentage: ${percentageString}.`)
 
-            d3.select('#details').append('text')
-                .attr('dy', '1.5em')
-                .text(`Size: ${d.value / 1000} kB.`)
+            // d3.select('#details').append('text')
+            //     .attr('dy', '1.5em')
+            //     .text(`Size: ${d.value / 1000} kB.`)
 
-            d3.select('#details').append('text')
-                .attr('dy', '3em')
-                .text(`File Name: ${d.data.name}`)
+            // d3.select('#details').append('text')
+            //     .attr('dy', '3em')
+            //     .text(`File Name: ${d.data.name}`)
 
 
             d3.select("#percentage")
@@ -360,7 +360,7 @@ export default class Sunburst extends Component {
         // console.log(`this.props.burstData: `, this.props.burstData)
         return <div>
             <div id="main">
-                <div id="sequence"></div>
+                
                 <div id="chart" className="chart">
 
                     <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst">
@@ -378,7 +378,8 @@ export default class Sunburst extends Component {
                     </div>
 
                 </div>{/* end div.chart */}
-
+                <div id="sequence"></div>
+                
             </div>
 
         </div>
