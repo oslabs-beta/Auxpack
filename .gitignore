@@ -63,5 +63,3 @@ typings/
 build/
 
 aux-stats.json
-
-tree-stats.json
