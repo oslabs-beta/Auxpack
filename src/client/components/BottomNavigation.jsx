@@ -23,9 +23,9 @@ export default function SimpleBottomNavigation() {
       }}
       className={classes.root}
     >
-          <BottomNavigationAction label="Overview" component={Link} to="/"/>
-          <BottomNavigationAction label="Build Data" component={Link} to ="/build"/>
-          <BottomNavigationAction label="Recommendations" component={Link} to="/recommendations"/>
+      <BottomNavigationAction label="Overview" component={Link} to="/" />
+      <BottomNavigationAction label="Build Data" component={Link} to="/builds" />
+      <BottomNavigationAction label="Recommendations" component={Link} to="/recommendations" />
     </BottomNavigation>
   );
 }

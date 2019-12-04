@@ -1,9 +1,11 @@
 import React from 'react'
 
-const BuildData = (props) => {
-    return ( 
-        <p>BuildData</p>
-     );
+const BuildData = ({ build }) => {
+
+    console.log(`build: `, build)
+    return (
+        <h2>Build Data</h2>
+    );
 }
- 
+
 export default BuildData;
