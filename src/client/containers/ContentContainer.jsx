@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Overview from '../content/containers/Overview.jsx'
 import BuildData from '../content/containers/BuildData.jsx'
-import Recommendations from '../content/containers/Recommendations.jsx'
+import TreeShaking from '../content/containers/TreeShaking.jsx'
 
 const ContentContainer = (props) => {
 
@@ -23,9 +23,9 @@ const ContentContainer = (props) => {
                     )}
                 />
                 <Route
-                    exact path="/recommendations"
+                    exact path="/treeshaking"
                     render={() => (
-                        <Recommendations />
+                        <TreeShaking />
                     )}
                 />
             </Switch>

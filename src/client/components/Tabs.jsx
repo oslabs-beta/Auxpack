@@ -60,7 +60,7 @@ export default function NavTabs() {
           {/* <h2>AuxPack</h2> */}
           <Tab label="Overview" {...a11yProps(0)} component={Link} to="/"/>
           <Tab label="Build Data" {...a11yProps(1)} component={Link} to="/builds"/>
-          <Tab label="Recommendations" {...a11yProps(2)} component={Link} to="/recommendations"/>
+          <Tab label="Tree Shaking" {...a11yProps(2)} component={Link} to="/treeshaking"/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -70,7 +70,7 @@ export default function NavTabs() {
         Build Data
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Recommendations
+        Tree Shaking
       </TabPanel>
       
     </div>
