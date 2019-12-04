@@ -18,6 +18,7 @@ export default class Sunburst extends Component {
 
     componentDidUpdate() {
         d3.select(this.svg).selectAll("g").remove();
+        d3.select(this.svg).select('#details').remove()
         this.drawChart();
     }
 
@@ -114,7 +115,7 @@ export default class Sunburst extends Component {
                     return (d.x1 - d.x0 > 0.005); // 0.005 radians = 0.29 degrees
                 });
 
-            //let i = 0;
+
             const path = vis.data([json]).selectAll("path")
                 .data(nodes)
                 .enter().append("svg:path")
@@ -134,6 +135,7 @@ export default class Sunburst extends Component {
 
         // Fade all but the current sequence, and show it in the breadcrumb trail.
         function mouseover(d) {
+            console.log
             let percentage = (100 * d.value / totalSize).toPrecision(3);
             let percentageString = percentage + "%";
             if (percentage < 0.1) {
@@ -141,20 +143,20 @@ export default class Sunburst extends Component {
             }
             // **************** adding explanation into div#id *********************
 
-            // CENTER CONTENT
-            vis.append('g')
-                .style("text-anchor", "middle").attr('id', 'details');
+            // CENTER CONTENT 
+            // vis.append('g')
+            //     .style("text-anchor", "middle").attr('id', 'details');
 
-            d3.select('#details').append('text')
-                .text(`Percentage: ${percentageString}.`)
+            // d3.select('#details').append('text')
+            //     .text(`Percentage: ${percentageString}.`)
 
-            d3.select('#details').append('text')
-                .attr('dy', '1.5em')
-                .text(`Size: ${d.value / 1000} kB.`)
+            // d3.select('#details').append('text')
+            //     .attr('dy', '1.5em')
+            //     .text(`Size: ${d.value / 1000} kB.`)
 
-            d3.select('#details').append('text')
-                .attr('dy', '3em')
-                .text(`File Name: ${d.data.name}`)
+            // d3.select('#details').append('text')
+            //     .attr('dy', '3em')
+            //     .text(`File Name: ${d.data.name}`)
 
 
             d3.select("#percentage")
