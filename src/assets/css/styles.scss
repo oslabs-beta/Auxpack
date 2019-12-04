@@ -17,6 +17,15 @@ $blue1: rgb(44, 99, 157);
     justify-content: center;
 }
 
+#trail {
+    font-family: $raleway;
+    g {
+        text {
+            color: white;
+        }       
+    }
+}
+
 #nav {
     position: absolute;
     z-index: 1;

@@ -265,7 +265,7 @@ export default class Sunburst extends Component {
 
             entering.append("svg:polygon")
                 .attr("points", breadcrumbPoints)
-                .style("fill", function (d) { return '#53c79f'; });
+                .style("fill", function (d) { return '#8BDBE9'; });
 
             entering.append("svg:text")
                 .attr("x", (b.w + b.t) / 2)
