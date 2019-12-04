@@ -26,9 +26,9 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
       id="nav"
     >
-          <BottomNavigationAction label="Overview" icon={<InsertChart/>} component={Link} to="/"/>
-          <BottomNavigationAction label="Build Data" icon={<FolderIcon/>} component={Link} to ="/build"/>
-          <BottomNavigationAction label="Recommendations" icon={<MergeType/>} component={Link} to="/recommendations"/>
+      <BottomNavigationAction label="Overview" icon={<InsertChart />} component={Link} to="/" />
+      <BottomNavigationAction label="Build Data" icon={<FolderIcon />} component={Link} to="/build" />
+      <BottomNavigationAction label="Recommendations" icon={<MergeType />} component={Link} to="/recommendations" />
     </BottomNavigation>
   );
 }
