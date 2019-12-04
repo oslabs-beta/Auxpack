@@ -7,7 +7,6 @@ import Recommendations from '../content/containers/Recommendations.jsx'
 const ContentContainer = (props) => {
 
     const { build, activeBuild } = props;
-    //console.log(`build prop in ContentContainer: `, build)
     return (
         <React.Fragment>
             <Switch>
