@@ -18,10 +18,18 @@ $bb-grey-lite: 2px solid #ddd;
 .j-center {
     justify-content: center;
 }
-
+#auxpack-banner {
+    margin: 3%;
+    cursor: pointer;
+}
+#loading {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
 h1 {
     font-family: $raleway;
-    color: $blue1
+    color: $blue1;
 }
 
 body {
@@ -101,27 +109,45 @@ div.row{ // this styles the content inside scrollable window
     align-items: center;
     width: 98% !important;
 }
-// .tab-panel {
-//     display: flex;
-//     justify-content: center;
-//     border: 1px solid red;
-// }
+.tab-panel {
+    display: flex;
+    justify-content: center;
+}
 div.changes{
-    // display: flex;
-    // flex-direction: row;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid green;
-    section.changes-section {
+
+    .changes-section {
         display: flex;
         justify-content: center;
+        width: 50%;
+        .card {
+            width: fit-content;
+        }
     }
 }
-
-.MuiButton-label {
-  justify-content: flex-start !important;
+.changes-li {
+    display: flex;
+    justify-content: space-between;
+}
+.module-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
 }
 
+.large-card {
+    margin: 10px;
+    padding: 10px;
+    background: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    width: 80%;
+}
 .module-card {
     margin: 10px;
     padding: 10px;
@@ -132,5 +158,5 @@ div.changes{
 }
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,1);
 }

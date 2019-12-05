@@ -33,7 +33,6 @@ const AssetsTable = props => {
 
     return <div>
 
-        <strong>Assets</strong>
         <Assets />
 
     </div>

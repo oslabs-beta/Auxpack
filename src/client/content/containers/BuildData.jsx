@@ -106,8 +106,8 @@ const BuildData = (props) => {
             display: 'flex',
             height: '80%',
             margin: '0 auto',
-            maxWidth: '80%'
-
+            maxWidth: '80%',
+            marginBottom: '20px'
         },
         tabs: {
             borderRight: `1px solid ${theme.palette.divider}`,
