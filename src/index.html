@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>auxpack</title>
 </head>
+
 <body>
-  
-    <h1>auxpack</h1>
 
-    <div id="app"></div> 
+  <h1>auxpack</h1>
 
-    <script>
-      // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
+  <div id="app"></div>
+
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
       // Use the window load event to keep the page load performant
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js');
       });
-      }
-    </script>
-        
-   <script type="text/javascript" src="../build/bundle.js"></script>
+    }
+  </script>
+
+  <script type="text/javascript" src="../build/bundle.js"></script>
 </body>
+
 </html>

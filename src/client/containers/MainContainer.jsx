@@ -7,6 +7,7 @@ const MainContainer = (props) => {
     const [activeBuild, setActiveBuild] = useState(0);
 
     useEffect(() => {
+        console.log(`fetching in USEEFFECT`)
         fetch('/getStats')
             .then(res => res.json())
             .then(data => {
@@ -15,7 +16,7 @@ const MainContainer = (props) => {
             })
             .catch(err => console.log(err))
     }, [])
-    
+
 
 
     const clickHandler = e => {
