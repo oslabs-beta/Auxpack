@@ -1,13 +1,13 @@
 import React from 'react';
 import BottomNavigation from '../components/BottomNavigation.jsx'
-// import Tabs from '../components/Tabs.jsx'
+import BuildSelect from '../components/BuildSelect.jsx'
 
-const NavbarContainer = (props) => {
+const NavbarContainer = ({build, activeBuild, selectBuild}) => {
     return ( 
-        <React.Fragment>
+        <div id="nav">
             <BottomNavigation />
-            {/* <Tabs/> */}
-        </React.Fragment>
+            <BuildSelect build={build} activeBuild={activeBuild} selectBuild={selectBuild} />
+        </div>
         
      );
 }

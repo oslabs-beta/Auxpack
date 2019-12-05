@@ -5,7 +5,6 @@ import BuildData from '../content/containers/BuildData.jsx'
 import TreeShaking from '../content/containers/TreeShaking.jsx'
 
 const ContentContainer = (props) => {
-    console.log(`build prop in ContentContainer: `, props.build)
     const { build, activeBuild, handleInc, handleDec } = props;
     return (
         <React.Fragment>
