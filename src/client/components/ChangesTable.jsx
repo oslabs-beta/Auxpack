@@ -104,7 +104,7 @@ const ChangesTable = (props) => {
         itemCount={removals.length}
         itemData={removals}
         itemSize={50}
-        width={400}
+        width={600}
     >
         {RemovedRow}
     </List>;

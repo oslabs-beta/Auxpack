@@ -103,32 +103,9 @@ div.row{
 
 .row {
     width: 98% !important;
-
-
-.changes{
-    border-bottom: $bb-grey-lite;
-
-    justify-content: space-between;
-    .scroll-list {
-        width: 40% !important;
-    }
 }
 
-.module-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.scroll-list {
+    width: 95% !important;
 }
-.module-card {
-    margin: 10px;
-    padding: 10px;
-    background: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    width: 40%;
-}
-table.highlight > tbody > tr:hover {
-    color: rgba(63,81,181,1);
-    background-color: rgba(255,255,255,0.5);
-}
+
