@@ -3,8 +3,8 @@ import TreeModule from '../../components/TreeModule.jsx';
 import TreeList from '../../components/TreeList.jsx';
 import Grid from '@material-ui/core/Grid';
 
-const TreeShaking = () => {
-  const [modules, setModules] = useState({cjs:[], esm:[], both:[]});
+export default function AutoGrid(props) {
+  const [name, setName] = useState('Total');
   const [state, setState] = useState({
     displayTotal: true,
     displayEsm: false,
@@ -12,14 +12,7 @@ const TreeShaking = () => {
     displayBoth: false
   })
 
-  useEffect(() => {
-    fetch('/getStats')
-    .then(res => res.json())
-    .then(data => setModules(data[0].treeStats))
-    .catch(err => console.log(err))
-  }, [])
-
-  // parse data from aux-stats.json 
+  const modules = props.build[props.activeBuild].treeStats;
   const esmCount = modules.esm.length;
   const cjsCount = modules.cjs.length;
   const bothCount = modules.both.length;
@@ -61,6 +54,7 @@ const TreeShaking = () => {
       displayCjs: false,
       displayBoth: false
     });
+    setName('Total')
   }
 
   const showEsm = () => {
@@ -70,6 +64,7 @@ const TreeShaking = () => {
       displayCjs: false,
       displayBoth: false
     });
+    setName('ESM');
   }
 
   const showCjs = () => {
@@ -79,6 +74,7 @@ const TreeShaking = () => {
       displayCjs: true,
       displayBoth: false
     });
+    setName('CJS');
   }
 
   const showBoth = () => {
@@ -88,25 +84,35 @@ const TreeShaking = () => {
       displayCjs: false,
       displayBoth: true
     });
+    setName('Mixed');
   }
 
   return (
-    <Grid container spacing={3} className="tree-shaking">
-      <Grid className="tree-modules">
-        <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
-        <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm}/>
-        <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs}/>
-        <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth}/>
+    <div>
+      <Grid container spacing={1} className="tree-modules">
+        <Grid item xs>
+          <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
+        </Grid>
+        <Grid item xs> 
+          <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm}/>
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs}/>
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth}/>
+        </Grid>
       </Grid>
-      <Grid className="tree-lists">
-        <h3>Modules List</h3>
-        {total}
-        {esm}
-        {cjs}
-        {both}
+      <Grid container spacing={1} className="tree-lists">
+        <Grid item xs>
+          <h3>{`${name} Modules List`}</h3>
+          {total}
+          {esm}
+          {cjs}
+          {both}
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 }
  
-export default TreeShaking;

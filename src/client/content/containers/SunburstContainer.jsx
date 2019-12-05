@@ -50,7 +50,7 @@ const SunburstContainer = ({ build, activeBuild }) => {
         {(burstData !== undefined) ? <Sunburst
             burstData={burstData}
             onHover={handleBurstHover}
-        /> : <h1>Loading...</h1>}
+        /> : <h1 id="loading">Loading...</h1>}
     </React.Fragment>
 }
 

@@ -18,7 +18,15 @@ $bb-grey-lite: 2px solid #ddd;
 .j-center {
     justify-content: center;
 }
-
+#auxpack-banner {
+    margin: 3%;
+    cursor: pointer;
+}
+#loading {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
 h1 {
     font-family: $raleway;
     color: $blue1;
@@ -92,7 +100,7 @@ div.scroll-list{
     margin: 0 auto;
     margin-top: 24px;
     padding: 10px;
-    border: 2px solid #3F51B5;
+    border: 2px solid $blue1;
     margin-bottom: 24px;
 }
 /* Styles the text contents of each list row */ 
@@ -107,13 +115,39 @@ div.row{
 
 .row {
     width: 98% !important;
-    
-}
 
-.scroll-list {
-    width: 95% !important;
-}
 
 .changes{
     border-bottom: $bb-grey-lite;
+}
+
+.MuiButton-label {
+  justify-content: flex-start !important;
+}
+
+
+    justify-content: space-between;
+    .scroll-list {
+        width: 40% !important;
+    }
+}
+
+.module-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
+}
+.module-card {
+    margin: 10px;
+    padding: 10px;
+    background: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    width: 40%;
+}
+table.highlight > tbody > tr:hover {
+    color: rgba(63,81,181,1);
+    background-color: rgba(255,255,255,1);
 }
