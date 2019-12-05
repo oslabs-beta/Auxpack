@@ -6,7 +6,6 @@ import { FixedSizeList as List } from 'react-window';
 
 const AssetsTable = props => {
     const assetsArr = (props.build[0].assets.length !== 0) ? props.build[0].assets : [];
-    console.log(`assets: `, assetsArr)
 
     const convertBytes = props.getBytes;
 
