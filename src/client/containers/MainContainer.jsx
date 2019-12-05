@@ -44,12 +44,12 @@ const MainContainer = (props) => {
     return (
         <React.Fragment>
             <NavbarContainer
-                build={build}
+                build={(build.length !== 0) ? build : []}
                 activeBuild={activeBuild}
                 selectBuild={selectBuild}
             />
             <ContentContainer
-                build={build}
+                build={(build.length !== 0) ? build : []}
                 activeBuild={activeBuild}
                 clickHandler={clickHandler}
                 handleInc={handleInc}
