@@ -94,7 +94,7 @@ const ChangesTable = (props) => {
         itemCount={additions.length}
         itemData={additions}
         itemSize={50}
-        width={1120}
+        width={'100%'}
     >
         {AddedRow}
     </List>;
