@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ChangesTable from '../../components/ChangesTable.jsx';
 import AssetsTable from '../../components/AssetsTable.jsx';
 import ErrorsTable from '../../components/Errors.jsx';
 import Modules from '../../components/Modules.jsx';
+import { makeStyles } from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
 
 const BuildData = (props) => {
     const getBytes = (number) => {
@@ -61,6 +67,8 @@ const BuildData = (props) => {
     if (props.activeBuild > 0) {
         dirFinalArrayPrev = Parse(props, props.activeBuild - 1)
     }
+
+    // MATERIAL UI TABS
 
 
     return (
