@@ -2,9 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Overview from '../content/containers/Overview.jsx'
 import BuildData from '../content/containers/BuildData.jsx'
-
+import Recommendations from '../content/containers/Recommendations.jsx';
 const ContentContainer = (props) => {
-    console.log(`build prop in ContentContainer: `, props.build)
     const { build, activeBuild, handleInc, handleDec } = props;
     return (
         <React.Fragment>
@@ -16,7 +15,7 @@ const ContentContainer = (props) => {
                     )}
                 />
                 <Route
-                    exact path="/builds"
+                    exact path="/build"
                     render={() => (
                         <BuildData
                             build={build}
