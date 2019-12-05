@@ -20,7 +20,8 @@ export default function AutoGrid(props) {
   const esmList = modules.esm.map(object => object.name); 
   const cjsList = modules.cjs.map(object => object.name);
   const bothList = modules.both.map(object => object.name);
-  const totalList = esmList.concat(cjsList).concat(esmList);
+  const totalList2 = esmList.concat(cjsList);
+  const totalList = totalList2.concat(esmList);
 
   // conditional rendering to display total modules
   let total = null;
@@ -88,8 +89,8 @@ export default function AutoGrid(props) {
   }
 
   return (
-    <div>
-      <Grid container spacing={1} className="tree-modules">
+    <div className="tree-data">
+      <Grid container spacing={2} className="tree-modules">
         <Grid item xs>
           <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
         </Grid>
@@ -105,7 +106,7 @@ export default function AutoGrid(props) {
       </Grid>
       <Grid container spacing={1} className="tree-lists">
         <Grid item xs>
-          <h3>{`${name} Modules List`}</h3>
+          <h5 className="list-header">{`${name} Modules List`}</h5>
           {total}
           {esm}
           {cjs}

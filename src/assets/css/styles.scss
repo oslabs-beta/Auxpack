@@ -123,15 +123,10 @@ div.row{
     border-bottom: $bb-grey-lite;
 }
 
-.MuiButton-label {
-  justify-content: flex-start !important;
+justify-content: space-between;
+.scroll-list {
+    width: 40% !important;
 }
-
-
-    justify-content: space-between;
-    .scroll-list {
-        width: 40% !important;
-    }
 }
 
 .module-container {
@@ -153,3 +148,17 @@ table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
 }
+
+.MuiButton-label {
+  justify-content: flex-start !important;
+}
+
+.list-header {
+  font-family: $raleway;
+  color: rgba(63,81,181,1);
+}
+
+.tree-data {
+  background-color: white;
+}
+
