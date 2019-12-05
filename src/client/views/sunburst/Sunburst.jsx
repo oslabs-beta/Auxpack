@@ -28,14 +28,14 @@ export default class Sunburst extends Component {
         */
 
         // Dimensions of sunburst.
-        const width = 500;
-        const height = 500;
+        const width = 1200;
+        const height = 550;
         const radius = Math.min(width, height) / 2;
         const _self = this;
 
         // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
         const b = {
-            w: 75, h: 30, s: 3, t: 10
+            w: 30, h: 20, s: 3, t: 8
         };
 
         // Mapping of step names to colors.
@@ -231,7 +231,7 @@ export default class Sunburst extends Component {
             // Add the label at the end, for the percentage.
             trail.append("svg:text")
                 .attr("id", "endlabel")
-                .style("fill", "#fff");   //controls the color of the percentage
+                .style("fill", "#3f51b5");   //controls the color of the percentage
         }
 
         // Generate a string that describes the points of a breadcrumb polygon.

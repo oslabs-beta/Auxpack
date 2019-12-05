@@ -47,7 +47,7 @@ const ChangesTable = (props) => {
         itemCount={modulesCount}
         itemData={modulesArr}
         itemSize={50}
-        width={1120}
+        width={'100%'}
     >
         {Row}
     </List>;
