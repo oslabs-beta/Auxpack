@@ -90,7 +90,7 @@ const ChangesTable = (props) => {
 
     const AddedTable = () => <List
         className="scroll-list"
-        height={150}
+        height={350}
         itemCount={additions.length}
         itemData={additions}
         itemSize={50}
@@ -100,7 +100,7 @@ const ChangesTable = (props) => {
     </List>;
     const RemovedTable = () => <List
         className="scroll-list"
-        height={150}
+        height={350}
         itemCount={removals.length}
         itemData={removals}
         itemSize={50}
