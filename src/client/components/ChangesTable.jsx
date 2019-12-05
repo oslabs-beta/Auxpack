@@ -111,9 +111,9 @@ const ChangesTable = (props) => {
 
     return <div className="changes">
         <strong>Changes:</strong>
-        <p>Additions:</p>
+        <h5>Additions:</h5>
         <AddedTable />
-        <p>Removals:</p>
+        <h5>Removals:</h5>
         <RemovedTable />
     </div>
 }
