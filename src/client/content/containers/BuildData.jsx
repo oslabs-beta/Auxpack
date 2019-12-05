@@ -23,7 +23,7 @@ const BuildData = (props) => {
         const build = data[i];
         const findUniquePaths = [];
         const filePaths = [];
-        const totalSizes = props.build.size;
+        const totalSizes = build.size;
 
         for (let j = 0; j < build.chunks.length; j++) {
             for (let k = 0; k < build.chunks[j].modules.length; k++) {
