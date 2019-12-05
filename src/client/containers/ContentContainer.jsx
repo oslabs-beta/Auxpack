@@ -32,7 +32,10 @@ const ContentContainer = (props) => {
                 <Route
                     exact path="/treeshaking"
                     render={() => (
-                        <TreeShaking />
+                        <TreeShaking
+                        build={build}
+                        activeBuild={activeBuild}
+                        />
                     )}
                 />
             </Switch>

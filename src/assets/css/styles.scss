@@ -107,6 +107,12 @@ div.row{
 
 .changes{
     border-bottom: $bb-grey-lite;
+}
+
+.MuiButton-label {
+  justify-content: flex-start !important;
+}
+
 
     justify-content: space-between;
     .scroll-list {
