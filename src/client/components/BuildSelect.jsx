@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
@@ -19,12 +19,12 @@ const BuildSelect = ({build, selectBuild}) => {
 
     const option = []
     for (let i = 0; i < build.length; i ++) {
-        option.push(<option onClick={selectBuild} data-build={i} key={`build${i}`}>build {i + 1}</option>)
+        option.push(<option value={build.length - 1 - i} key={`build${i + 1}`}>build {i + 1}</option>)
     }
     return ( 
         <React.Fragment>
             <FormControl className={classes.formControl}>
-            <NativeSelect>
+            <NativeSelect onChange={selectBuild}>
             {option}
             </NativeSelect>
         </FormControl>

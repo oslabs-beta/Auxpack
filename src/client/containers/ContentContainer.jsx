@@ -12,7 +12,10 @@ const ContentContainer = (props) => {
                 <Route
                     exact path="/"
                     render={() => (
-                        <Overview build={build} activeBuild={activeBuild} />
+                        <Overview
+                         build={build} 
+                         activeBuild={activeBuild} 
+                        />
                     )}
                 />
                 <Route

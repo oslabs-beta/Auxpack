@@ -3,6 +3,8 @@
 $raleway: 'Raleway', sans-serif;
 $black: #000;
 $blue1: rgb(44, 99, 157);
+// border bottom grey 
+$bb-grey-lite: 2px solid #ddd;
 /* common classes */ 
 .flex {
     display: flex;
@@ -34,6 +36,7 @@ $blue1: rgb(44, 99, 157);
 }
 
 div.chart {
+    margin-top: 5vh;
     display: flex;
     position: relative;
     justify-content: center;
@@ -45,7 +48,7 @@ div.chart {
 div.explanation {
     position: absolute;
     z-index: 1;
-    font-size: 18px;
+    font-size: 12px;
     font-family: $raleway;
     color: $blue1;
 }
@@ -54,4 +57,32 @@ div.explanation {
 g#details {
     font-family: $raleway;
     font-size: 14px;
+}
+
+div.build-data {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.scroll-list{
+    margin: 0 auto;
+    margin-top: 24px;
+    padding: 10px;
+    border: 2px solid #3F51B5;
+    margin-bottom: 24px;
+}
+/* Styles the text contents of each list row */ 
+div.row{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    font-family: $raleway;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.changes{
+    border-bottom: $bb-grey-lite;
 }
