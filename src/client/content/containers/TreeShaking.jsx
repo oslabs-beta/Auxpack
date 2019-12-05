@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TreeModule from '../../components/TreeModule.jsx';
 import TreeList from '../../components/TreeList.jsx';
+import Grid from '@material-ui/core/Grid';
 
 const TreeShaking = () => {
   const [modules, setModules] = useState({cjs:[], esm:[], both:[]});
@@ -18,49 +19,48 @@ const TreeShaking = () => {
     .catch(err => console.log(err))
   }, [])
 
-
-  // parse data from aux-stats.json
+  // parse data from aux-stats.json 
   const esmCount = modules.esm.length;
   const cjsCount = modules.cjs.length;
   const bothCount = modules.both.length;
   const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
-  const esmList = modules.esm.map(object => object.name) 
-  const cjsList = modules.cjs.map(object => object.name) 
-  const bothList = modules.both.map(object => object.name) 
+  const esmList = modules.esm.map(object => object.name); 
+  const cjsList = modules.cjs.map(object => object.name);
+  const bothList = modules.both.map(object => object.name);
   const totalList = esmList.concat(cjsList).concat(esmList);
 
   // conditional rendering to display total modules
   let total = null;
   if (state.displayTotal === true) {
-    total = <TreeList list={totalList}/>
+    total = <TreeList list={totalList}/>;
   }
 
   // conditional rendering to display treeshakable (esm) modules
   let esm = null;
   if (state.displayEsm === true) {
-    esm = <TreeList list={esmList}/>
+    esm = <TreeList list={esmList}/>;
   }
 
   // conditional rendering to display non-treeshakable (cjs) modules
   let cjs = null;
   if (state.displayCjs === true) {
-    cjs = <TreeList list={cjsList}/>
+    cjs = <TreeList list={cjsList}/>;
   }
 
   // conditional rendering to display mixed (both esm and cjs) modules
   let both = null;
   if (state.displayBoth === true) {
-    both = <TreeList list={bothList}/>
+    both = <TreeList list={bothList}/>;
   }
 
-  // conditional rendering logic onClick
+  // logic for buttons in TreeModules to trigger conditional rendering and switch between lists
   const showTotal = () => {
     setState({
       displayTotal: true,
       displayEsm: true,
       displayCjs: false,
       displayBoth: false
-    })
+    });
   }
 
   const showEsm = () => {
@@ -69,7 +69,7 @@ const TreeShaking = () => {
       displayEsm: true,
       displayCjs: false,
       displayBoth: false
-    })
+    });
   }
 
   const showCjs = () => {
@@ -78,7 +78,7 @@ const TreeShaking = () => {
       displayEsm: false,
       displayCjs: true,
       displayBoth: false
-    })
+    });
   }
 
   const showBoth = () => {
@@ -87,25 +87,25 @@ const TreeShaking = () => {
       displayEsm: false,
       displayCjs: false,
       displayBoth: true
-    })
+    });
   }
 
   return (
-    <div>
-      <div className="tree-modules">
-        <TreeModule name={`Total Modules`} count={totalCount} total={totalCount}/>
-        <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount}/>
-        <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount}/>
-        <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount}/>
-      </div>
-      <div className="tree-lists">
+    <Grid container spacing={3} className="tree-shaking">
+      <Grid className="tree-modules">
+        <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
+        <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm}/>
+        <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs}/>
+        <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth}/>
+      </Grid>
+      <Grid className="tree-lists">
         <h3>Modules List</h3>
         {total}
         {esm}
         {cjs}
         {both}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
  

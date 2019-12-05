@@ -5,6 +5,7 @@ const TreeList = (props) => {
   const listSize = props.list.length;
   const listArr = (props.list.length !== 0) ? props.list : [];
 
+  // create <div> with module name for each element in listArr to display in List below
   const row = ({ index, style }) => {
     return(
       <div 
@@ -16,6 +17,7 @@ const TreeList = (props) => {
     )
   }
 
+  // create scrollable window that only renders what is visible to user
   const List = () => {
     return(
       <FixedSizeList 
@@ -23,7 +25,7 @@ const TreeList = (props) => {
         height={500}
         itemCount={listSize}
         itemSize={50}
-        width={900} 
+        width={`auto`}   
       >
         {row}
       </FixedSizeList>
