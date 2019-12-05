@@ -18,6 +18,7 @@ export default class Sunburst extends Component {
 
     componentDidUpdate() {
         d3.select(this.svg).selectAll("g").remove();
+        d3.select(this.svg).select('#details').remove()
         this.drawChart();
     }
 
@@ -114,7 +115,7 @@ export default class Sunburst extends Component {
                     return (d.x1 - d.x0 > 0.005); // 0.005 radians = 0.29 degrees
                 });
 
-            //let i = 0;
+
             const path = vis.data([json]).selectAll("path")
                 .data(nodes)
                 .enter().append("svg:path")
@@ -134,19 +135,20 @@ export default class Sunburst extends Component {
 
         // Fade all but the current sequence, and show it in the breadcrumb trail.
         function mouseover(d) {
+            console.log
             let percentage = (100 * d.value / totalSize).toPrecision(3);
             let percentageString = percentage + "%";
             if (percentage < 0.1) {
                 percentageString = "< 0.1%";
             }
-            let size =""
+            let size = ""
             const filesize = [1000, 1000000, 1000000000]
             let filesizeIndex = 0
             if (d.value > filesize[0]) {
-                size ="KiB";
-            } 
-            if(d.value > filesize[1]) {
-                size ="MiB"
+                size = "KiB";
+            }
+            if (d.value > filesize[1]) {
+                size = "MiB"
                 filesizeIndex = 1
             }
             if (d.value > filesize[2]) {
@@ -162,7 +164,7 @@ export default class Sunburst extends Component {
 
             //ADDED FILE SIZE
             d3.select("#filesize")
-                .text(  `Size: ${(d.value / filesize[filesizeIndex]).toFixed(2)} ${size}`)
+                .text(`Size: ${(d.value / filesize[filesizeIndex]).toFixed(2)} ${size}`)
 
             d3.select("#explanation")
                 .style("visibility", "");
@@ -357,7 +359,7 @@ export default class Sunburst extends Component {
         // console.log(`this.props.burstData: `, this.props.burstData)
         return <div>
             <div id="main">
-                
+
                 <div id="chart" className="chart">
 
                     <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst">
@@ -368,7 +370,7 @@ export default class Sunburst extends Component {
                         <br />
                         <span id="percentage"></span>
                         <br />
-                        
+
                         <div>
                             <span id="filesize"></span><br />
                         </div>
@@ -376,7 +378,7 @@ export default class Sunburst extends Component {
 
                 </div>{/* end div.chart */}
                 <div id="sequence"></div>
-                
+
             </div>
 
         </div>

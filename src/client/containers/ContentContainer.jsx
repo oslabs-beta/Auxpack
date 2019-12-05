@@ -5,8 +5,8 @@ import BuildData from '../content/containers/BuildData.jsx'
 import TreeShaking from '../content/containers/TreeShaking.jsx'
 
 const ContentContainer = (props) => {
-
-    const { build, activeBuild } = props;
+    console.log(`build prop in ContentContainer: `, props.build)
+    const { build, activeBuild, handleInc, handleDec } = props;
     return (
         <React.Fragment>
             <Switch>
@@ -19,7 +19,12 @@ const ContentContainer = (props) => {
                 <Route
                     exact path="/builds"
                     render={() => (
-                        <BuildData />
+                        <BuildData
+                            build={build}
+                            activeBuild={activeBuild}
+                            handleDec={handleDec}
+                            handleInc={handleInc}
+                        />
                     )}
                 />
                 <Route
