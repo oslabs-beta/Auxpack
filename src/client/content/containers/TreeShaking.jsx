@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import TreeModule from '../../components/TreeModule.jsx';
+import TreeList from '../../components/TreeList.jsx';
 
 const TreeShaking = () => {
   const [modules, setModules] = useState({cjs:[], esm:[], both:[]});
-  const [displayTotal, setTotal] = useState(true);
-  const [displayEsm, setEsm] = useState(false);
-  const [displayCjs, setCjs] = useState(false);
-  const [displayBoth, setBoth] = useState(false);
+  const [state, setState] = useState({
+    displayTotal: true,
+    displayEsm: false,
+    displayCjs: false,
+    displayBoth: false
+  })
 
   useEffect(() => {
     fetch('/getStats')
@@ -14,65 +18,87 @@ const TreeShaking = () => {
     .catch(err => console.log(err))
   }, [])
 
-  // parse from aux-stats.json
+
+  // parse data from aux-stats.json
   const esmCount = modules.esm.length;
   const cjsCount = modules.cjs.length;
   const bothCount = modules.both.length;
   const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
-  const esmList = modules.esm.map((object, i) => <div key={i}>{object.name}</div>);
-  const cjsList = modules.cjs.map((object, i) => <div key={i}>{object.name}</div>);
-  const bothList = modules.both.map((object, i) => <div key={i}>{object.name}</div>);
+  const esmList = modules.esm.map(object => object.name) 
+  const cjsList = modules.cjs.map(object => object.name) 
+  const bothList = modules.both.map(object => object.name) 
   const totalList = esmList.concat(cjsList).concat(esmList);
 
   // conditional rendering to display total modules
   let total = null;
-  if (displayTotal === true) {
-    total = <div>{totalList}</div>
+  if (state.displayTotal === true) {
+    total = <TreeList list={totalList}/>
   }
 
   // conditional rendering to display treeshakable (esm) modules
   let esm = null;
-  if (displayEsm === true) {
-    esm = <div>{esmList}</div>
+  if (state.displayEsm === true) {
+    esm = <TreeList list={esmList}/>
   }
 
   // conditional rendering to display non-treeshakable (cjs) modules
   let cjs = null;
-  if (displayCjs === true) {
-    cjs = <div>{cjsList}</div>
+  if (state.displayCjs === true) {
+    cjs = <TreeList list={cjsList}/>
   }
 
   // conditional rendering to display mixed (both esm and cjs) modules
   let both = null;
-  if (displayBoth === true) {
-    both = <div>{bothList}</div>
+  if (state.displayBoth === true) {
+    both = <TreeList list={bothList}/>
+  }
+
+  // conditional rendering logic onClick
+  const showTotal = () => {
+    setState({
+      displayTotal: true,
+      displayEsm: true,
+      displayCjs: false,
+      displayBoth: false
+    })
+  }
+
+  const showEsm = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: true,
+      displayCjs: false,
+      displayBoth: false
+    })
+  }
+
+  const showCjs = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: false,
+      displayCjs: true,
+      displayBoth: false
+    })
+  }
+
+  const showBoth = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: false,
+      displayCjs: false,
+      displayBoth: true
+    })
   }
 
   return (
     <div>
       <div className="tree-modules">
-        <div>
-          <h3>Total Modules</h3>
-          <p>{`Count: ${(totalCount !== 0) ? totalCount : 0}`}</p>
-          <p>{`Percentage: ${Math.round(totalCount / totalCount * 100)}%`}</p>
-        </div>
-        <div>
-          <h3>{`Treeshakable (ESM) Modules`}</h3>
-          <p>{`Count: ${(esmCount !== 0) ? esmCount : 0}`}</p>
-          <p>{`Percentage: ${Math.round(esmCount / totalCount * 100)}%`}</p>
-        </div>
-        <div>
-          <h3>{`Non-Treeshakable (CJS) Modules`}</h3>
-          <p>{`Count: ${(cjsCount !== 0) ? cjsCount : 0}`}</p>
-          <p>{`Percentage: ${Math.round(cjsCount / totalCount * 100)}%`}</p>
-        </div>
-        <div>
-          <h3>Mixed Modules</h3>
-          <p>{`Count: ${(bothCount !== 0) ? bothCount : 0}`}</p>
-          <p>{`Percentage: ${Math.round(bothCount / totalCount * 100)}%`}</p>
-        </div>
+        <TreeModule name={`Total Modules`} count={totalCount} total={totalCount}/>
+        <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount}/>
+        <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount}/>
+        <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount}/>
       </div>
-      <div className="tree-list">
+      <div className="tree-lists">
         <h3>Modules List</h3>
         {total}
         {esm}

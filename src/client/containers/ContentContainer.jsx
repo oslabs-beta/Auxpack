@@ -17,7 +17,7 @@ const ContentContainer = (props) => {
                     )}
                 />
                 <Route
-                    exact path="/builds"
+                    exact path="/build"
                     render={() => (
                         <BuildData
                             build={build}
