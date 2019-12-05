@@ -4,18 +4,17 @@ import { FixedSizeList as List } from 'react-window';
 
 const ErrorsTable = props => {
     const errorsArr = (props.build[0].errors.length !== 0) ? props.build[0].errors : [];
-
-    const Row = ({ index, style }) => (<div style={style} key={index}>Error {index + 1}: {(errorsArr[index]) ? errorsArr[index] : 'No errors.'} </div>);
+    //const errorsArr = []
+    const Row = ({ index, style }) => (<div className="row" style={style} key={index}>Error {index + 1}: {(!errorsArr[index]) ? 'No errors.' : errorsArr[index]} </div>);
     // List props must include: height={num}, width={num}, itemCount={errorsArr.length}, itemData = {errorsArr},
 
     const Errors = () => (
-        <List style={{
-            margin: '0 auto'
-        }}
+        <List
+            className="scroll-list"
             height={150}
             itemCount={errorsArr.length}
             itemSize={50}
-            width={900}
+            width={1100}
         >
             {Row}
         </List>

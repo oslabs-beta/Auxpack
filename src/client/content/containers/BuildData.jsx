@@ -75,11 +75,13 @@ const BuildData = (props) => {
                 dirFinalArrayPrev={dirFinalArrayPrev}
             />
             <AssetsTable
+                className="assets"
                 build={props.build}
                 activeBuild={props.activeBuild}
                 getBytes={getBytes}
             />
             <ErrorsTable
+                className="errors"
                 build={props.build}
                 activeBuild={props.activeBuild}
             />
