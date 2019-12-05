@@ -69,7 +69,7 @@ const ChangesTable = (props) => {
             removals.push({ path, size });
         }
     }
-    console.log(`final files: `, dirFinalFiles, `added: `, additions, `and removed: `, removals)
+    // console.log(`final files: `, dirFinalFiles, `added: `, additions, `and removed: `, removals)
     // List props must include: height={num}, width={num}, itemCount={modulesCount}, itemData = {modulesArr},
     const AddedRow = ({ index, style }) => {
         // use getBytes to add units after 'size'
@@ -109,14 +109,18 @@ const ChangesTable = (props) => {
         {RemovedRow}
     </List>;
 
-    return <div className="changes flex fd-row">
+    return <div className="changes">
         <section className="changes-section">
-            <h5>Additions:</h5>
-            <AddedTable />
+            <div>
+                <h5>Additions:</h5>
+                <AddedTable />
+            </div>
         </section>
         <section className="changes-section">
-            <h5>Removals:</h5>
-            <RemovedTable />
+            <div>
+                <h5>Removals:</h5>
+                <RemovedTable />
+            </div>
         </section>
     </div>
 }

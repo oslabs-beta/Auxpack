@@ -71,16 +71,15 @@ const BuildData = (props) => {
 
     // MATERIAL UI TABS
     function TabPanel(props) {
-        const { children, value, index, ...other } = props;
+        const { children, value, index } = props;
 
         return (
-            <Typography
+            <Typography className="tab-panel"
                 component="div"
                 role="tabpanel"
                 hidden={value !== index}
                 id={`vertical-tabpanel-${index}`}
                 aria-labelledby={`vertical-tab-${index}`}
-                {...other}
             >
                 {value === index && <Box p={3}>{children}</Box>}
             </Typography>
@@ -105,9 +104,10 @@ const BuildData = (props) => {
             flexGrow: 1,
             backgroundColor: theme.palette.background.paper,
             display: 'flex',
-            maxHeight: '80%',
-            margin: '20px',
-            marginBottom: '50px'
+            height: '80%',
+            margin: '0 auto',
+            maxWidth: '80%'
+
         },
         tabs: {
             borderRight: `1px solid ${theme.palette.divider}`,

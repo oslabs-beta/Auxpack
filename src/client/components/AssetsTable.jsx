@@ -25,7 +25,7 @@ const AssetsTable = props => {
             height={150}
             itemCount={assetsArr.length}
             itemSize={50}
-            width={1100}
+            width={1000}
         >
             {Row}
         </List>
