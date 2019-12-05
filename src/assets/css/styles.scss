@@ -34,6 +34,7 @@ $blue1: rgb(44, 99, 157);
 }
 
 div.chart {
+    margin-top: 5vh;
     display: flex;
     position: relative;
     justify-content: center;
@@ -45,7 +46,7 @@ div.chart {
 div.explanation {
     position: absolute;
     z-index: 1;
-    font-size: 18px;
+    font-size: 12px;
     font-family: $raleway;
     color: $blue1;
 }
