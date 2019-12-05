@@ -90,31 +90,34 @@ const ChangesTable = (props) => {
 
     const AddedTable = () => <List
         className="scroll-list"
-        height={150}
+        height={350}
         itemCount={additions.length}
         itemData={additions}
         itemSize={50}
-        width={'100%'}
+        width={400}
     >
         {AddedRow}
     </List>;
     const RemovedTable = () => <List
         className="scroll-list"
-        height={150}
+        height={350}
         itemCount={removals.length}
         itemData={removals}
         itemSize={50}
-        width={1120}
+        width={400}
     >
         {RemovedRow}
     </List>;
 
-    return <div className="changes">
-        <strong>Changes:</strong>
-        <h5>Additions:</h5>
-        <AddedTable />
-        <h5>Removals:</h5>
-        <RemovedTable />
+    return <div className="changes flex fd-row">
+        <section className="changes-section">
+            <h5>Additions:</h5>
+            <AddedTable />
+        </section>
+        <section className="changes-section">
+            <h5>Removals:</h5>
+            <RemovedTable />
+        </section>
     </div>
 }
 

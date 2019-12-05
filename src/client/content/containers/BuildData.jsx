@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ChangesTable from '../../components/ChangesTable.jsx';
 import AssetsTable from '../../components/AssetsTable.jsx';
 import ErrorsTable from '../../components/Errors.jsx';
 import Modules from '../../components/Modules.jsx';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
 
 const BuildData = (props) => {
     const getBytes = (number) => {
@@ -16,7 +23,7 @@ const BuildData = (props) => {
         const build = data[i];
         const findUniquePaths = [];
         const filePaths = [];
-        const totalSizes = props.build.size;
+        const totalSizes = build.size;
 
         for (let j = 0; j < build.chunks.length; j++) {
             for (let k = 0; k < build.chunks[j].modules.length; k++) {
@@ -62,35 +69,104 @@ const BuildData = (props) => {
         dirFinalArrayPrev = Parse(props, props.activeBuild - 1)
     }
 
+    // MATERIAL UI TABS
+    function TabPanel(props) {
+        const { children, value, index, ...other } = props;
+
+        return (
+            <Typography
+                component="div"
+                role="tabpanel"
+                hidden={value !== index}
+                id={`vertical-tabpanel-${index}`}
+                aria-labelledby={`vertical-tab-${index}`}
+                {...other}
+            >
+                {value === index && <Box p={3}>{children}</Box>}
+            </Typography>
+        );
+    }
+
+    TabPanel.propTypes = {
+        children: PropTypes.node,
+        index: PropTypes.any.isRequired,
+        value: PropTypes.any.isRequired,
+    };
+
+    function a11yProps(index) {
+        return {
+            id: `vertical-tab-${index}`,
+            'aria-controls': `vertical-tabpanel-${index}`,
+        };
+    }
+
+    const useStyles = makeStyles(theme => ({
+        root: {
+            flexGrow: 1,
+            backgroundColor: theme.palette.background.paper,
+            display: 'flex',
+            height: '800px',
+        },
+        tabs: {
+            borderRight: `1px solid ${theme.palette.divider}`,
+        },
+    }));
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
 
     return (
-        <div className="build-data">
-            <h2>Builds</h2>
-            {/* Put cards component here to display: total size, chunks, modules, assets, errors, current build? */}
-            <ChangesTable
-                build={props.build}
-                activeBuild={props.activeBuild}
-                getBytes={getBytes}
-                dirFinalArray={dirFinalArray}
-                dirFinalArrayPrev={dirFinalArrayPrev}
-            />
-            <AssetsTable
-                className="assets"
-                build={props.build}
-                activeBuild={props.activeBuild}
-                getBytes={getBytes}
-            />
-            <ErrorsTable
-                className="errors"
-                build={props.build}
-                activeBuild={props.activeBuild}
-            />
-            <Modules
-                build={props.build}
-                activeBuild={props.activeBuild}
-                getBytes={getBytes}
-                dirFinalArray={dirFinalArray}
-            />
+        <div className="build-data" className={classes.root}>
+            <Tabs
+                orientation="vertical"
+                variant="scrollable"
+                value={value}
+                onChange={handleChange}
+                aria-label="Vertical tabs example"
+                className={classes.tabs}
+            >
+                <Tab label="Changes" {...a11yProps(0)} />
+                <Tab label="Assets" {...a11yProps(1)} />
+                <Tab label="Errors" {...a11yProps(2)} />
+                <Tab label="Modules" {...a11yProps(3)} />
+            </Tabs>
+            <TabPanel value={value} index={0}>
+                <ChangesTable
+                    build={props.build}
+                    activeBuild={props.activeBuild}
+                    getBytes={getBytes}
+                    dirFinalArray={dirFinalArray}
+                    dirFinalArrayPrev={dirFinalArrayPrev}
+                />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+
+                <AssetsTable
+                    className="assets"
+                    build={props.build}
+                    activeBuild={props.activeBuild}
+                    getBytes={getBytes}
+                />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+                <ErrorsTable
+                    className="errors"
+                    build={props.build}
+                    activeBuild={props.activeBuild}
+                />
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+                <Modules
+                    build={props.build}
+                    activeBuild={props.activeBuild}
+                    getBytes={getBytes}
+                    dirFinalArray={dirFinalArray}
+                />
+            </TabPanel>
         </div>
     );
 }
