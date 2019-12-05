@@ -9,7 +9,7 @@ import { FixedSizeList as List } from 'react-window';
 
 const ChangesTable = (props) => {
     const { dirFinalArrayPrev, dirFinalArray, getBytes } = props;
-    console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
+    // console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
 
     const modulesArrProp = props.build[0].chunks[0].modules;
 
