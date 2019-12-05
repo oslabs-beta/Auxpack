@@ -4,24 +4,29 @@ import ContentContainer from './ContentContainer'
 
 const MainContainer = (props) => {
     const [build, setBuild] = useState([]);
+    const [activeBuild, setActiveBuild] = useState(0);
 
     useEffect(() => {
         fetch('/getStats')
             .then(res => res.json())
-            .then(data => setBuild(data))
+            .then(data => {
+                setBuild(data)
+                setActiveBuild(data.length - 1)
+            })
             .catch(err => console.log(err))
     }, [])
+    
 
-    const [activeBuild, setActiveBuild] = useState(0);
 
     const clickHandler = e => {
         const length = build.length;
         const i = length - e.target.getAttribute('data-build');
         setActiveBuild(length - i);
     }
+
     const selectBuild = e => {
-        const i = e.target.getAttribute('data-build');
-        setActiveBuild(i - 1)
+        const i = parseInt(e.target.value);
+        setActiveBuild(i)
     }
 
     const handleInc = () => {

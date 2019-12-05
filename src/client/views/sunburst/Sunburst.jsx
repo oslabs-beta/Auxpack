@@ -4,8 +4,8 @@ import lodash from 'lodash';
 import { red } from '@material-ui/core/colors';
 
 export default class Sunburst extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {};
     }
     componentDidMount() {
@@ -28,8 +28,8 @@ export default class Sunburst extends Component {
         */
 
         // Dimensions of sunburst.
-        const width = 900;
-        const height = 900;
+        const width = 500;
+        const height = 500;
         const radius = Math.min(width, height) / 2;
         const _self = this;
 
@@ -75,8 +75,8 @@ export default class Sunburst extends Component {
             .attr("id", "container")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        // d3.select("#explanation")
-        //     .style("visibility", "hidden");
+        d3.select("#explanation")
+            .style("visibility", "hidden");
 
         const partition = d3.partition()
             .size([2 * Math.PI, radius * radius]);

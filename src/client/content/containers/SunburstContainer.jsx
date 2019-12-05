@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sunburst from '../../views/sunburst/Sunburst.jsx'
 import { parse } from 'path';
 
-const SunburstContainer = props => {
-    const { build, activeBuild } = props;
+const SunburstContainer = ({ build, activeBuild }) => {
     //console.log(`build props in SunburstContainer: `, build, activeBuild);
 
     const [defaultBar, setBar] = useState(false);
@@ -40,8 +39,7 @@ const SunburstContainer = props => {
     useEffect(() => {
         const parsedData = dataParser();
         setData(parsedData);
-
-    }, [build]) // second arg: dependency that change
+    }, [activeBuild]) // second arg: dependency that change
 
     const handleBurstHover = (path) => {
         setBurst(path)
