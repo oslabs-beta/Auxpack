@@ -27,6 +27,10 @@ $blue1: rgb(44, 99, 157);
     top: 1vh;
     right: 1vw;
     background-color: whitesmoke;
+    display: flex;
+    #bottom-nav {
+        background-color:whitesmoke;
+    }
 }
 
 div.chart {
