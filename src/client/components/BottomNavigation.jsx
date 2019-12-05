@@ -24,7 +24,7 @@ export default function SimpleBottomNavigation() {
         setValue(newValue);
       }}
       className={classes.root}
-      id="nav"
+      id="bottom-nav"
     >
       <BottomNavigationAction label="Overview" icon={<InsertChart />} component={Link} to="/" />
       <BottomNavigationAction label="Build Data" icon={<FolderIcon />} component={Link} to="/build" />
