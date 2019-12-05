@@ -18,10 +18,18 @@ $bb-grey-lite: 2px solid #ddd;
 .j-center {
     justify-content: center;
 }
-
+#auxpack-banner {
+    margin: 3%;
+    cursor: pointer;
+}
+#loading {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
 h1 {
     font-family: $raleway;
-    color: $blue1
+    color: $blue1;
 }
 
 body {
@@ -125,6 +133,7 @@ div.row{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    overflow-y: auto;
 }
 .module-card {
     margin: 10px;
@@ -136,5 +145,5 @@ div.row{
 }
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,1);
 }
