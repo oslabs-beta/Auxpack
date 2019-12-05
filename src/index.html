@@ -14,11 +14,12 @@
 
 <body>
 
-  <h1>auxpack</h1>
+  <h1 id="auxpack-banner" onclick="location.href = location.href = '/'">auxpack</h1>
 
   <div id="app"></div>
 
   <script>
+    function refresh(){ alert('auxpack rules') }
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
       // Use the window load event to keep the page load performant
@@ -27,7 +28,6 @@
       });
     }
   </script>
-
   <script type="text/javascript" src="../build/bundle.js"></script>
 </body>
 

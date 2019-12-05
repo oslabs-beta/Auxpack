@@ -18,7 +18,7 @@ export default class Sunburst extends Component {
 
     componentDidUpdate() {
         d3.select(this.svg).selectAll("g").remove();
-        d3.select(this.svg).select('#details').remove()
+        d3.select("#sequence").select("#trail").remove()
         this.drawChart();
     }
 
@@ -28,9 +28,9 @@ export default class Sunburst extends Component {
         */
 
         // Dimensions of sunburst.
-        const width = 1200;
-        const height = 550;
-        const radius = Math.min(width, height) / 2;
+        const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) * .99;
+        const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        const radius = Math.min(width, height) / 3;
         const _self = this;
 
         // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
@@ -73,7 +73,7 @@ export default class Sunburst extends Component {
             .attr("height", height)
             .append("svg:g")
             .attr("id", "container")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            .attr("transform", "translate(" + width / 2 + "," + height / 1.75 + ")");
 
         d3.select("#explanation")
             .style("visibility", "hidden");
@@ -208,13 +208,8 @@ export default class Sunburst extends Component {
                 .style("opacity", 1)
                 .on("end", function () {
                     d3.select(this).on("mouseover", mouseover);
-                    //console.log(`removed: `, d3.select('g#details'))
                 });
 
-            //console.log(`removed: `, d3.select('g#details'));
-
-            //d3.selectAll('g#details').style('visibility', 'hidden');
-            d3.select('g#details').remove()
             d3.select("#explanation")
                 .style("visibility", "hidden");
 
@@ -264,7 +259,7 @@ export default class Sunburst extends Component {
 
             entering.append("svg:polygon")
                 .attr("points", breadcrumbPoints)
-                .style("fill", function (d) { return '#8BDBE9'; });
+                .style("fill", function (d) { return "#8BDBE9"; });
 
             entering.append("svg:text")
                 .attr("x", (b.w + b.t) / 2)
@@ -274,10 +269,10 @@ export default class Sunburst extends Component {
                 .text(function (d) { return d.data.name; });
 
             // Now move and update the percentage at the end.
-            let nodeAryFlat = '';
+            let nodeAryFlat = "";
 
             for (let i = 0; i < nodeArray.length; i++) {
-                nodeAryFlat = nodeAryFlat + ' ' + nodeArray[i].data.name
+                nodeAryFlat = nodeAryFlat + " " + nodeArray[i].data.name
             }
 
             let nodeAryFlatLength = 0;
@@ -356,14 +351,12 @@ export default class Sunburst extends Component {
 
 
     render() {
-        // console.log(`this.props.burstData: `, this.props.burstData)
         return <div>
             <div id="main">
-
+                <div id="sequence"></div>
                 <div id="chart" className="chart">
 
-                    <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst">
-                    </svg>
+                    <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst"/>
                     {/*  Explanation: displayed in middle of sunburst */}
                     <div id="explanation" className="explanation">
                         <span id="filename"></span>
@@ -377,8 +370,7 @@ export default class Sunburst extends Component {
                     </div>
 
                 </div>{/* end div.chart */}
-                <div id="sequence"></div>
-
+                
             </div>
 
         </div>
