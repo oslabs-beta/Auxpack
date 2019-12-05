@@ -105,7 +105,9 @@ const BuildData = (props) => {
             flexGrow: 1,
             backgroundColor: theme.palette.background.paper,
             display: 'flex',
-            height: '800px',
+            maxHeight: '80%',
+            margin: '20px',
+            marginBottom: '50px'
         },
         tabs: {
             borderRight: `1px solid ${theme.palette.divider}`,
