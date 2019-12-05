@@ -2,7 +2,7 @@
 
 $raleway: 'Raleway', sans-serif;
 $black: #000;
-$blue1: rgb(44, 99, 157);
+$blue1: #3f51b5;
 // border bottom grey 
 $bb-grey-lite: 2px solid #ddd;
 /* common classes */ 
@@ -19,29 +19,47 @@ $bb-grey-lite: 2px solid #ddd;
     justify-content: center;
 }
 
+h1 {
+    font-family: $raleway;
+    color: $blue1
+}
+
+body {
+    background-color: whitesmoke;
+}
+
 #trail {
     font-family: $raleway;
+    z-index: 1;
+    font-size: 15px;
 }
 
 #nav {
-    position: absolute;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
     z-index: 1;
-    top: 1vh;
-    right: 1vw;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
+    overflow: hidden;
     #bottom-nav {
-        background-color:whitesmoke;
+        background-color:white;
     }
 }
 
+#sequence {
+    position: absolute;
+    bottom: 5%;
+}
+
 div.chart {
-    margin-top: 5vh;
     display: flex;
     position: relative;
+    top: -5vh;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 80%;
 }
 
 
@@ -83,6 +101,16 @@ div.row{
     align-items: center;
 }
 
+.row {
+    width: 98% !important;
+    
+}
+
+
 .changes{
     border-bottom: $bb-grey-lite;
+    justify-content: space-between;
+    .scroll-list {
+        width: 40% !important;
+    }
 }

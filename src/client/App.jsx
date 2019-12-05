@@ -4,7 +4,7 @@ import '../assets/css/styles.scss';
 
 const App = (props) => {
     return (
-        <MainContainer />
+        <MainContainer id="main" />
     );
 }
 
