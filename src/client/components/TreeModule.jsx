@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const TreeModule = (props) => {
@@ -30,7 +31,12 @@ const TreeModule = (props) => {
       <p>{`Percentage: ${Math.round(props.count / props.total * 100)}%`}</p>
     </CardContent>
     <CardActions className={classes.div}>
-        <Button className={classes.button} onClick={props.onClick}>{props.button}</Button>
+      {/* <button style={{'text-align': 'left', 'width': '100%'}}>
+        {props.button}
+      </button> */}
+        <Button className={classes.button} onClick={props.onClick}>
+          {props.button}
+        </Button>
     </CardActions>
   </Card>
   )

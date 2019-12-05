@@ -3,8 +3,7 @@ import TreeModule from '../../components/TreeModule.jsx';
 import TreeList from '../../components/TreeList.jsx';
 import Grid from '@material-ui/core/Grid';
 
-export default function AutoGrid() {
-  const [modules, setModules] = useState({cjs:[], esm:[], both:[]});
+export default function AutoGrid(props) {
   const [name, setName] = useState('Total');
   const [state, setState] = useState({
     displayTotal: true,
@@ -13,14 +12,7 @@ export default function AutoGrid() {
     displayBoth: false
   })
 
-  useEffect(() => {
-    fetch('/getStats')
-    .then(res => res.json())
-    .then(data => setModules(data[0].treeStats))
-    .catch(err => console.log(err))
-  }, [])
-
-  // parse data from aux-stats.json 
+  const modules = props.build[props.activeBuild].treeStats;
   const esmCount = modules.esm.length;
   const cjsCount = modules.cjs.length;
   const bothCount = modules.both.length;
@@ -97,7 +89,7 @@ export default function AutoGrid() {
 
   return (
     <div>
-      <Grid container spacing={4} className="tree-modules">
+      <Grid container spacing={1} className="tree-modules">
         <Grid item xs>
           <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
         </Grid>
