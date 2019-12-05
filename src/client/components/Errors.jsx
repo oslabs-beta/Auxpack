@@ -6,8 +6,6 @@ import { FixedSizeList as List } from 'react-window';
 
 const ErrorsTable = props => {
     const errorsArr = (props.build[0].errors.length !== 0) ? props.build[0].errors : [];
-    console.log(`Errors: `, errorsArr)
-
 
     // const rowHeights = new Array(errorsArr.length)
     //     .fill(true)
@@ -25,7 +23,6 @@ const ErrorsTable = props => {
     //     itemCount: PropTypes.number.isRequired
     // };
 
-    console.log(Row)
     const Errors = () => (
         <List style={{
             margin: '0 auto'
