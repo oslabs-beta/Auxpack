@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TreeModule from '../../components/TreeModule.jsx';
-import TreeList from '../../components/TreeList.jsx';
+import TreeModule from '../components/TreeModule.jsx';
+import TreeList from '../components/TreeList.jsx';
 import Grid from '@material-ui/core/Grid';
 
 export default function AutoGrid(props) {

@@ -1,8 +1,8 @@
 import React from 'react'
-import ChangesTable from '../../components/ChangesTable.jsx';
-import AssetsTable from '../../components/AssetsTable.jsx';
-import ErrorsTable from '../../components/Errors.jsx';
-import Modules from '../../components/Modules.jsx';
+import ChangesTable from '../components/ChangesTable.jsx';
+import AssetsTable from '../components/AssetsTable.jsx';
+import ErrorsTable from '../components/Errors.jsx';
+import Modules from '../components/Modules.jsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';

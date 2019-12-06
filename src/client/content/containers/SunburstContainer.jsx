@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sunburst from '../../views/sunburst/Sunburst.jsx'
+import Sunburst from '../components/Sunburst.jsx'
 import { parse } from 'path';
 
 const SunburstContainer = ({ build, activeBuild }) => {
