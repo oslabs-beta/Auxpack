@@ -69,54 +69,101 @@ const ChangesTable = (props) => {
             removals.push({ path, size });
         }
     }
-    console.log(`final files: `, dirFinalFiles, `added: `, additions, `and removed: `, removals)
+    // console.log(`final files: `, dirFinalFiles, `added: `, additions, `and removed: `, removals)
     // List props must include: height={num}, width={num}, itemCount={modulesCount}, itemData = {modulesArr},
-    const AddedRow = ({ index, style }) => {
-        // use getBytes to add units after 'size'
-        const size = getBytes(additions[index].size)
-        return (<div style={style} key={index} className="row">
-            <span className="path-span">{additions[index].path}</span>
-            <span className="size-span">Size: {size}</span>
-        </div>);
-    }
-    const RemovedRow = ({ index, style }) => {
-        // use getBytes to add units after 'size'
-        const size = getBytes(removals[index].size)
-        return (<div style={style} key={index} className="row">
-            <span className="path-span">{removals[index].path}</span>
-            <span className="size-span">Size: {size}</span>
-        </div>);
+    // const AddedRow = ({ index, style }) => {
+    //     // use getBytes to add units after 'size'
+    //     const size = getBytes(additions[index].size)
+    //     return (<div style={style} key={index} className="row">
+    //         <span className="path-span">{additions[index].path}</span>
+    //         <span className="size-span">Size: {size}</span>
+    //     </div>);
+    // }
+    // const RemovedRow = ({ index, style }) => {
+    //     // use getBytes to add units after 'size'
+    //     const size = getBytes(removals[index].size)
+    //     return (<div style={style} key={index} className="row">
+    //         <span className="path-span">{removals[index].path}</span>
+    //         <span className="size-span">Size: {size}</span>
+    //     </div>);
+    // }
+
+    // const AddedTable = () => <List
+    //     className="scroll-list"
+    //     height={350}
+    //     itemCount={additions.length}
+    //     itemData={additions}
+    //     itemSize={50}
+    //     width={400}
+    // >
+    //     {AddedRow}
+    // </List>;
+    // const RemovedTable = () => <List
+    //     className="scroll-list"
+    //     height={350}
+    //     itemCount={removals.length}
+    //     itemData={removals}
+    //     itemSize={50}
+    //     width={600}
+    // >
+    //     {RemovedRow}
+    // </List>;
+    // const AdditionLi = (index) => {
+    //     const size = getBytes(additions[index].size);
+    //     return (<li style={style} key={index} >
+    //         <span className="path-span">{additions[index].path}</span>
+    //         <span className="size-span">Size: {size}</span>
+    //     </li>);
+    // }
+    // const RemovalsLi = (index) => {
+    //     const size = getBytes(removals[index].size);
+    //     return (<li style={style} key={index} >
+    //         <span className="path-span">{removals[index].path}</span>
+    //         <span className="size-span">Size: {size}</span>
+    //     </li>);
+    // }
+    const additionListItems = additions.map((obj, i) => {
+        return (<li className="changes-li" key={i}>
+            <span className="path-span">{obj.path}</span>
+            <span className="path-span">{obj.size}</span>
+        </li>)
+    })
+    const removalsListItems = removals.map((obj, i) => {
+        return (<li className="changes-li" key={i}>
+            <span className="path-span">{obj.path}</span>
+            <span className="path-span">{obj.size}</span>
+        </li>)
+    })
+
+    const AdditionCard = () => {
+        return (<div className="card module-card darken-1">
+            <div className="card-content">
+                <span className="card-title">Additions</span>
+                <ul className="changes-list">
+                    {additionListItems}
+                </ul>
+            </div>
+        </div>)
     }
 
-    const AddedTable = () => <List
-        className="scroll-list"
-        height={350}
-        itemCount={additions.length}
-        itemData={additions}
-        itemSize={50}
-        width={400}
-    >
-        {AddedRow}
-    </List>;
-    const RemovedTable = () => <List
-        className="scroll-list"
-        height={350}
-        itemCount={removals.length}
-        itemData={removals}
-        itemSize={50}
-        width={400}
-    >
-        {RemovedRow}
-    </List>;
+    const RemovalCard = () => {
+        return (<div className="card module-card">
+            <div className="card-content">
+                <span className="card-title">Removals</span>
+                <ul className="changes-list">
+                    {removalsListItems}
+                </ul>
+            </div>
 
-    return <div className="changes flex fd-row">
+        </div>)
+    }
+
+    return <div className="changes">
         <section className="changes-section">
-            <h5>Additions:</h5>
-            <AddedTable />
+            <AdditionCard />
         </section>
         <section className="changes-section">
-            <h5>Removals:</h5>
-            <RemovedTable />
+            <RemovalCard />
         </section>
     </div>
 }
