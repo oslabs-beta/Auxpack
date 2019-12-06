@@ -19,7 +19,11 @@ $bb-grey-lite: 2px solid #ddd;
     justify-content: center;
 }
 #auxpack-banner {
-    margin: 3%;
+    margin-left: 2%;
+    margin-bottom: 3vh;
+    margin-top: 1%;
+    position: relative;
+    z-index: 1;
     cursor: pointer;
 }
 #loading {
@@ -30,6 +34,7 @@ $bb-grey-lite: 2px solid #ddd;
 h1 {
     font-family: $raleway;
     color: $blue1;
+    font-size: 4vw;
 }
 
 body {
@@ -57,26 +62,27 @@ body {
 }
 
 #sequence {
-    position: absolute;
-    bottom: 5%;
+    position: relative;
+    bottom: 0px;
 }
 
 div.chart {
     display: flex;
     position: relative;
-    top: -5vh;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 55vh;
 }
 
 
 div.explanation {
     position: absolute;
     z-index: 1;
-    font-size: 12px;
+    font-size: 1.4vh;
     font-family: $raleway;
     color: $blue1;
+    padding-top: 15vh;
+    padding-left: 0vw;
 }
 
 
@@ -127,6 +133,11 @@ div.changes{
             width: fit-content;
         }
     }
+
+justify-content: space-between;
+.scroll-list {
+    width: 40% !important;
+}
 }
 .changes-li {
     display: flex;
@@ -160,3 +171,17 @@ table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
 }
+
+.MuiButton-label {
+  justify-content: flex-start !important;
+}
+
+.list-header {
+  font-family: $raleway;
+  color: rgba(63,81,181,1);
+}
+
+.tree-data {
+  background-color: white;
+}
+

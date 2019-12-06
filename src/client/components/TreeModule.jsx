@@ -8,37 +8,27 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const TreeModule = (props) => {
   const useStyles = makeStyles({
-    card: {
-      height: '100%',
-      display: 'flex',
-      'flex-direction': 'column',
-    },
     button: {
-      width: '100%',
-    },
-    div: {
       'margin-top': 'auto',
+      width: '100%',
     }
   });
 
   const classes = useStyles();
 
   return (
-  <Card className={classes.card}>
-    <CardContent>
-      <h3>{props.name}</h3>
-      <p>{`Count: ${(props.count !== 0) ? props.count : 0}`}</p>
-      <p>{`Percentage: ${Math.round(props.count / props.total * 100)}%`}</p>
-    </CardContent>
-    <CardActions className={classes.div}>
-      {/* <button style={{'text-align': 'left', 'width': '100%'}}>
-        {props.button}
-      </button> */}
-        <Button className={classes.button} onClick={props.onClick}>
-          {props.button}
-        </Button>
-    </CardActions>
-  </Card>
+  <div className="module-card card darken-1" style={{height: '100%', width: '100%', display: 'flex', 'flexDirection': 'column'}}>
+    <div className="highlight centered">
+      <div className="card-body">
+        <div className="card-title" style={{color:'#3F51B5'}}>{props.name}</div>
+        <p><strong>Count: </strong>{`${(props.count !== 0) ? props.count : 0}`}</p>
+        <p><strong>Percentage: </strong>{`${Math.round(props.count / props.total * 100)}%`}</p>
+      </div>
+    </div>
+    <Button className={classes.button} onClick={props.onClick}>
+      {props.button}
+    </Button>
+  </div>
   )
 }
 

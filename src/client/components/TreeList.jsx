@@ -21,11 +21,11 @@ const TreeList = (props) => {
   const List = () => {
     return(
       <FixedSizeList 
-        style={{ margin: '0 auto' }}
-        height={500}
-        itemCount={listSize}
+        className="scroll-list"
+        height={450}
+        itemCount={listArr.length}
         itemSize={50}
-        width={`auto`}   
+        width={1100}  
       >
         {row}
       </FixedSizeList>
