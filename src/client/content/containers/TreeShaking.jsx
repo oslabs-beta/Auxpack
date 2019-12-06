@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import TreeModule from '../../components/TreeModule.jsx';
-import TreeList from '../../components/TreeList.jsx';
+import TreeModule from '../components/TreeModule.jsx';
+import TreeList from '../components/TreeList.jsx';
 import Grid from '@material-ui/core/Grid';
 
-export default function AutoGrid(props) {
+export default function AutoGrid({ build, activeBuild }) {
+  //dynamic label for component being displayed currently
   const [name, setName] = useState('Total');
+  //hook used for conditional rendering of components for each set of modules
   const [state, setState] = useState({
     displayTotal: true,
     displayEsm: false,
@@ -12,7 +14,8 @@ export default function AutoGrid(props) {
     displayBoth: false
   })
 
-  const modules = props.build[props.activeBuild].treeStats;
+  //parsing through data for treeshaking information
+  const modules = build[activeBuild].treeStats;
   const esmCount = modules.esm.length;
   const cjsCount = modules.cjs.length;
   const bothCount = modules.both.length;
