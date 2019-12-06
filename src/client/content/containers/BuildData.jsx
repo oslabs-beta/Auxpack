@@ -10,16 +10,16 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-
-const BuildData = (props) => {
+const BuildData = ({build, activeBuild}) => {
+    //function to dynamically display the size of the item with proper prefix
     const getBytes = (number) => {
         if (number < 1000) return `${number} B`;
-        if (number < 1000000) return `${(number / 1000).toFixed(2)} KB`;
-        return `${(number / 1000000).toFixed(2)} MB`;
+        if (number < 1000000) return `${(number / 1000).toFixed(2)} KiB`;
+        return `${(number / 1000000).toFixed(2)} MiB`;
     };
-
-    const Parse = (props, i) => {
-        const data = props.build;
+    //breaking up the passed in data into categories to be displayed
+    const Parse = (totalBuilds, i) => {
+        const data = totalBuilds;
         const build = data[i];
         const findUniquePaths = [];
         const filePaths = [];
@@ -34,7 +34,7 @@ const BuildData = (props) => {
                 findUniquePaths.push(path.slice(1, path.length - 1).join('/'));
             }
         }
-
+        //break apart the data into unique paths that can be split up
         const uniqueArray = findUniquePaths
             .filter((item, pos) => item && findUniquePaths.indexOf(item) === pos)
             .sort();
@@ -61,17 +61,16 @@ const BuildData = (props) => {
 
         return dirFinalArray
     }
-
-    let dirFinalArray = Parse(props, props.activeBuild)
-
+    //run the parsing function
+    let dirFinalArray = Parse(build, activeBuild)
+    //saving the previous build
     let dirFinalArrayPrev = [];
-    if (props.activeBuild > 0) {
-        dirFinalArrayPrev = Parse(props, props.activeBuild - 1)
+    if (activeBuild > 0) {
+        dirFinalArrayPrev = Parse(build, activeBuild - 1)
     }
 
-    // MATERIAL UI TABS
-    function TabPanel(props) {
-        const { children, value, index } = props;
+    // MATERIAL UI TAB COMPONENT
+    function TabPanel({ children, value, index }) {
 
         return (
             <Typography className="tab-panel"
@@ -85,20 +84,20 @@ const BuildData = (props) => {
             </Typography>
         );
     }
-
+    //proptypes used to make sure there are no errors when passing props down
     TabPanel.propTypes = {
         children: PropTypes.node,
         index: PropTypes.any.isRequired,
         value: PropTypes.any.isRequired,
     };
-
+    //props passed through Material UI components for css control
     function a11yProps(index) {
         return {
             id: `vertical-tab-${index}`,
             'aria-controls': `vertical-tabpanel-${index}`,
         };
     }
-
+    //makestyles used to target components to design components
     const useStyles = makeStyles(theme => ({
         root: {
             flexGrow: 1,
@@ -114,8 +113,9 @@ const BuildData = (props) => {
         },
     }));
     const classes = useStyles();
+    //hook utilized to determine which tab is being clicked
     const [value, setValue] = React.useState(0);
-
+    //method to be used to 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -138,8 +138,8 @@ const BuildData = (props) => {
             </Tabs>
             <TabPanel value={value} index={0}>
                 <ChangesTable
-                    build={props.build}
-                    activeBuild={props.activeBuild}
+                    build={build}
+                    activeBuild={activeBuild}
                     getBytes={getBytes}
                     dirFinalArray={dirFinalArray}
                     dirFinalArrayPrev={dirFinalArrayPrev}
@@ -149,22 +149,22 @@ const BuildData = (props) => {
 
                 <AssetsTable
                     className="assets"
-                    build={props.build}
-                    activeBuild={props.activeBuild}
+                    build={build}
+                    activeBuild={activeBuild}
                     getBytes={getBytes}
                 />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <ErrorsTable
                     className="errors"
-                    build={props.build}
-                    activeBuild={props.activeBuild}
+                    build={build}
+                    activeBuild={activeBuild}
                 />
             </TabPanel>
             <TabPanel value={value} index={3}>
                 <Modules
-                    build={props.build}
-                    activeBuild={props.activeBuild}
+                    build={build}
+                    activeBuild={activeBuild}
                     getBytes={getBytes}
                     dirFinalArray={dirFinalArray}
                 />
