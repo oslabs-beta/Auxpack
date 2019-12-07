@@ -20,12 +20,6 @@ const useStyles = makeStyles(theme => ({
 const ChangesTable = (props) => {
     const { dirFinalArrayPrev, dirFinalArray, getBytes } = props;
     // console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
-    List.propTypes = {
-        height: PropTypes.number.isRequired,
-        width: PropTypes.number.isRequired,
-        itemSize: PropTypes.number.isRequired,
-        itemCount: PropTypes.number.isRequired
-    };
 
     // Changes filtering
     const dirFinalFiles = [];
