@@ -7,6 +7,8 @@ import FolderIcon from '@material-ui/icons/Folder';
 import InsertChart from '@material-ui/icons/InsertChart'
 import MergeType from '@material-ui/icons/MergeType'
 
+
+//makestyles to create styles on Material UI components
 const useStyles = makeStyles({
   root: {
     width: 500,
@@ -15,9 +17,12 @@ const useStyles = makeStyles({
 
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
+  //hook used to indicate which tab is "active"
   const [value, setValue] = React.useState(0);
 
   return (
+    //component in <BottomNavigationAction simulates a component that has behavior of that component from react router
+    //Links can send users to routes which is what "to" attributes send them towards
     <BottomNavigation
       value={value}
       onChange={(event, newValue) => {

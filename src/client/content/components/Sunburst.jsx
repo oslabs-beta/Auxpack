@@ -3,22 +3,25 @@ import * as d3 from "d3";
 import lodash from 'lodash';
 import { red } from '@material-ui/core/colors';
 
+//this component is a class component as D3 uses vanilla JS that references "this"
 export default class Sunburst extends Component {
     constructor(props) {
         super(props)
-        this.state = {};
     }
+    //to create the chart on render
     componentDidMount() {
         this.drawChart();
     }
+
     shouldComponentUpdate(nextProps, nextState) {
         // only re-render if the data will change
         return !lodash.isEqual(nextProps.burstData, this.props.burstData);
     }
-
+    //cleanup of all appends and other data to prevent perpetual filling of the DOM
     componentDidUpdate() {
         d3.select(this.svg).selectAll("g").remove();
         d3.select("#sequence").select("#trail").remove()
+        //redraw when it rerenders
         this.drawChart();
     }
 
@@ -27,7 +30,9 @@ export default class Sunburst extends Component {
           D3 code to create our visualization by appending onto this.svg
         */
 
-        // Dimensions of sunburst.
+        // Dimensions of sunburst: have to be defined in script
+        //client width and height/ inner width and height gets size of viewport to dynamically change size
+        //important for mobile(PWA)
         const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) * .99;
         const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         const radius = Math.min(width, height) / 3;
@@ -38,16 +43,7 @@ export default class Sunburst extends Component {
             w: 30, h: 20, s: 3, t: 8
         };
 
-        // Mapping of step names to colors.
-        // let colors = {
-        //     "home": "#5687d1",
-        //     "product": "#7b615c",
-        //     "search": "#de783b",
-        //     "account": "#6ab975",
-        //     "other": "#a173d1",
-        //     "end": "#bbbbbb"
-        // };
-
+        //function to loop through colors based on project size
         const color = function () {
             let ctr = 0;
             const hex = ['#53c79f', '#64b0cc', '#7a6fca', '#ca6f96', '#e58c72', '#e5c072']
@@ -69,18 +65,24 @@ export default class Sunburst extends Component {
 
         /*  ================ create the svg =================== */
         const vis = d3.select(this.svg)
+            //styles the chart with info from above
             .attr("width", width)
             .attr("height", height)
+            //appends to DOM
             .append("svg:g")
             .attr("id", "container")
+            //moves the sunburst within the svg canvas
             .attr("transform", "translate(" + width / 2 + "," + height / 1.75 + ")");
 
+        //hides the information that appears on hover until "activated"
         d3.select("#explanation")
             .style("visibility", "hidden");
 
+        //defines pieces of burst that connects layers of modules
         const partition = d3.partition()
             .size([2 * Math.PI, radius * radius]);
 
+        //draws curves of partitions
         const arc = d3.arc()
             .startAngle(function (d) { return d.x0; })
             .endAngle(function (d) { return d.x1; })
@@ -115,7 +117,6 @@ export default class Sunburst extends Component {
                     return (d.x1 - d.x0 > 0.005); // 0.005 radians = 0.29 degrees
                 });
 
-
             const path = vis.data([json]).selectAll("path")
                 .data(nodes)
                 .enter().append("svg:path")
@@ -135,7 +136,7 @@ export default class Sunburst extends Component {
 
         // Fade all but the current sequence, and show it in the breadcrumb trail.
         function mouseover(d) {
-            console.log
+            //math for information based on path
             let percentage = (100 * d.value / totalSize).toPrecision(3);
             let percentageString = percentage + "%";
             if (percentage < 0.1) {
@@ -156,6 +157,7 @@ export default class Sunburst extends Component {
                 filesizeIndex = 2
             }
 
+            //ADDED PERCENTAGE OF BUNDLE
             d3.select("#percentage")
                 .text(`${percentageString} of your bundle`);
             //ADDED FILE NAME
@@ -166,6 +168,7 @@ export default class Sunburst extends Component {
             d3.select("#filesize")
                 .text(`Size: ${(d.value / filesize[filesizeIndex]).toFixed(2)} ${size}`)
 
+            //Shows three parts of info above
             d3.select("#explanation")
                 .style("visibility", "");
 
@@ -209,7 +212,8 @@ export default class Sunburst extends Component {
                 .on("end", function () {
                     d3.select(this).on("mouseover", mouseover);
                 });
-
+            
+            //Re-hides information on mouseleave
             d3.select("#explanation")
                 .style("visibility", "hidden");
 
@@ -290,6 +294,7 @@ export default class Sunburst extends Component {
                 }
             });
 
+            //at the end of breadcrumbs, shows percentage of build
             d3.select("#trail").select("#endlabel")
                 .attr("x", (nodeAryFlatLengthPercentage))  //CONTROLS WHERE THE PERCENTAGE IS LOCATED
                 .attr("y", b.h / 2)
@@ -351,7 +356,7 @@ export default class Sunburst extends Component {
 
 
     render() {
-        return <div>
+        return <React.Fragment>
             <div id="main">
                 <div id="sequence"></div>
                 <div id="chart" className="chart">
@@ -363,17 +368,13 @@ export default class Sunburst extends Component {
                         <br />
                         <span id="percentage"></span>
                         <br />
-
                         <div>
                             <span id="filesize"></span><br />
                         </div>
                     </div>
-
                 </div>{/* end div.chart */}
-                
             </div>
-
-        </div>
+        </React.Fragment>
     }
 
 }
