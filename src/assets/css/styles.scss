@@ -5,18 +5,8 @@ $black: #000;
 $blue1: #3f51b5;
 // border bottom grey 
 $bb-grey-lite: 2px solid #ddd;
-/* common classes */ 
-.flex {
-    display: flex;
-}
-.fd-row {
-    flex-direction: row;
-}
-.fd-col {
-    flex-direction: column;
-}
-.j-center {
-    justify-content: center;
+.centered {
+    margin: 0 auto;
 }
 #auxpack-banner {
     margin-left: 2%;
@@ -118,60 +108,86 @@ div.row{ // this styles the content inside scrollable window
 .tab-panel {
     display: flex;
     justify-content: center;
-}
-div.changes{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
 
-    .changes-section {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        .card {
-            width: fit-content;
-            padding: 20px;
-        }
-    }
+}
+// div.changes{
+//     display: flex;
+//     flex-direction: row;
+//     width: 100%;
+//     justify-content: space-evenly;
 
-.scroll-list {
-    width: 40% !important;
-}
-}
+//     .changes-section {
+//         display: flex;
+//         justify-content: center;
+//         max-width: 50%;
+//         .card {
+//             width: fit-content;
+//             padding: 20px;
+//         }
+//     }
+
+// .scroll-list {
+//     width: 40% !important;
+// }
+// }
 .changes-li {
     display: flex;
     justify-content: space-between;
 }
-.module-container {
+
+.card-li {
+    margin-bottom: 1px solid rgb(109, 109, 109);
+}
+.card {
+    background: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    max-width: 40%;
+    .card-title{
+        color: $blue1;
+    }
+    .card-content {
+        width: 100%;
+    }
+
+}
+.mw-40 {
+    max-width: 40%;
+}
+// .modules-container {
+   
+// }
+// .large-card {
+//     margin: 10px;
+//     padding: 10px;
+//     background: whitesmoke;
+//     border-radius: 5px;
+//     box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+//     width: 80%;
+// }
+.tabs-section {
+    min-width: 150px;
+}
+.modules-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow-y: auto;
 }
-.card-li {
-    margin-bottom: 1px solid rgb(109, 109, 109);
-}
-.large-card {
-    margin: 10px;
-    padding: 10px;
-    background: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    width: 80%;
-}
-.module-card {
-    margin: 10px;
-    padding: 10px;
-    background: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    width: 40%;
-}
+// .module-card {
+//     margin: 10px;
+//     padding: 10px;
+//     background: whitesmoke;
+//     border-radius: 5px;
+//     box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+// }
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
+    max-width: 50%;
 }
 
 .MuiButton-label {

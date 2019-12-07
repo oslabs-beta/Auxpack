@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-const BuildData = ({build, activeBuild}) => {
+const BuildData = ({ build, activeBuild }) => {
     //function to dynamically display the size of the item with proper prefix
     const getBytes = (number) => {
         if (number < 1000) return `${number} B`;
@@ -130,6 +130,7 @@ const BuildData = ({build, activeBuild}) => {
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
                 className={classes.tabs}
+                className="tabs-section"
             >
                 <Tab label="Changes" {...a11yProps(0)} />
                 <Tab label="Assets" {...a11yProps(1)} />
