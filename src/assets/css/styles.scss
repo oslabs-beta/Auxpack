@@ -131,10 +131,10 @@ div.changes{
         width: 50%;
         .card {
             width: fit-content;
+            padding: 20px;
         }
     }
 
-justify-content: space-between;
 .scroll-list {
     width: 40% !important;
 }
@@ -150,7 +150,9 @@ justify-content: space-between;
     justify-content: space-evenly;
     overflow-y: auto;
 }
-
+.card-li {
+    margin-bottom: 1px solid rgb(109, 109, 109);
+}
 .large-card {
     margin: 10px;
     padding: 10px;

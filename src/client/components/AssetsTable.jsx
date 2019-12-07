@@ -7,33 +7,40 @@ import { FixedSizeList as List } from 'react-window';
 const AssetsTable = props => {
     const assetsArr = (props.build[0].assets.length !== 0) ? props.build[0].assets : [];
 
-    const convertBytes = props.getBytes;
+    const { getBytes } = props;
+    const assetListItems = assetsArr.map((obj, i) => {
 
+        return (<tr key={i}>
+            <td>{obj.name}</td>
+            <td>{obj.chunks}</td>
+            <td>{getBytes(obj.size)}</td>
+        </tr>)
+    })
+    const AssetsCard = () => {
+        return (<div className="card large-card darken-1">
 
-    const rowHeights = new Array(assetsArr.length)
-        .fill(true)
-        .map(() => 25 + Math.round(Math.random() * 50));
+            <table className="highlight centered">
+                <thead>
+                    <tr className="card-body">
+                        <th>File Name</th>
+                        <th>Chunks</th>
+                        <th>File Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {assetListItems}
+                </tbody>
+            </table >
+            {/* <ul className="changes-list">
+                    {assetListItems}
+                </ul> */}
 
-    //const getItemSize = index => rowHeights[index];
+        </div>)
+    }
 
-    const Row = ({ index, style }) => (<div style={style} className="row" key={index}><span>Assets name: {assetsArr[index].name}</span><span>Chunks: {assetsArr[index].chunks}</span><span>Size: {convertBytes(assetsArr[index].size)}</span></div>);
-    // List props must include: height={num}, width={num}, itemCount={assetsArr.length}, itemData = {assetsArr},
+    return <div className="module-container">
 
-
-    const Assets = () => (
-        <List className="scroll-list"
-            height={150}
-            itemCount={assetsArr.length}
-            itemSize={50}
-            width={1000}
-        >
-            {Row}
-        </List>
-    );
-
-    return <div>
-
-        <Assets />
+        <AssetsCard />
 
     </div>
 }
