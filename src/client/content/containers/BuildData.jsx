@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-const BuildData = ({build, activeBuild}) => {
+const BuildData = ({ build, activeBuild }) => {
     //function to dynamically display the size of the item with proper prefix
     const getBytes = (number) => {
         if (number < 1000) return `${number} B`;
@@ -122,7 +122,10 @@ const BuildData = ({build, activeBuild}) => {
 
 
     return (
-        <div className="build-data" className={classes.root}>
+        <div className="build-data" className={classes.root} style={{
+            height: '550px',
+            maxHeight: '40%'
+        }}>
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -130,13 +133,14 @@ const BuildData = ({build, activeBuild}) => {
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
                 className={classes.tabs}
+                className="tabs-section"
             >
                 <Tab label="Changes" {...a11yProps(0)} />
                 <Tab label="Assets" {...a11yProps(1)} />
                 <Tab label="Errors" {...a11yProps(2)} />
                 <Tab label="Modules" {...a11yProps(3)} />
             </Tabs>
-            <TabPanel value={value} index={0}>
+            <TabPanel value={value} index={0} className="tab-panels">
                 <ChangesTable
                     build={build}
                     activeBuild={activeBuild}
@@ -145,7 +149,7 @@ const BuildData = ({build, activeBuild}) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel value={value} index={1} className="tab-panels" className="flex jcenter">
 
                 <AssetsTable
                     className="assets"
@@ -154,14 +158,14 @@ const BuildData = ({build, activeBuild}) => {
                     getBytes={getBytes}
                 />
             </TabPanel>
-            <TabPanel value={value} index={2}>
+            <TabPanel value={value} index={2} className="tab-panels" className="flex jcenter">
                 <ErrorsTable
                     className="errors"
                     build={build}
                     activeBuild={activeBuild}
                 />
             </TabPanel>
-            <TabPanel value={value} index={3}>
+            <TabPanel value={value} index={3} className="tab-panels">
                 <Modules
                     build={build}
                     activeBuild={activeBuild}

@@ -5,17 +5,14 @@ $black: #000;
 $blue1: #3f51b5;
 // border bottom grey 
 $bb-grey-lite: 2px solid #ddd;
-/* common classes */ 
+
+.centered {
+    margin: 0 auto;
+}
 .flex {
     display: flex;
 }
-.fd-row {
-    flex-direction: row;
-}
-.fd-col {
-    flex-direction: column;
-}
-.j-center {
+.jcenter {
     justify-content: center;
 }
 #auxpack-banner {
@@ -96,6 +93,7 @@ g#details {
 //     display: flex;
 //     flex-direction: column;
 //     justify-content: center;
+//     margin-bottom: 20px;
 // }
 
 div.scroll-list{
@@ -115,61 +113,65 @@ div.row{ // this styles the content inside scrollable window
     align-items: center;
     width: 98% !important;
 }
-.tab-panel {
-    display: flex;
-    justify-content: center;
+.tab-panels {
+   max-width: 90%;
+   width: 100%;
+   margin-bottom: 20px;
+   overflow-y: auto;
 }
-div.changes{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
 
-    .changes-section {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        .card {
-            width: fit-content;
-        }
-    }
-
-justify-content: space-between;
-.scroll-list {
-    width: 40% !important;
-}
-}
 .changes-li {
     display: flex;
     justify-content: space-between;
 }
-.module-container {
+
+.card-li {
+    margin-bottom: 1px solid rgb(109, 109, 109);
+}
+.card {
+    background: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    width: 40%;
+    min-width: 40%;
+    max-width: 40%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card-title{
+    color: $blue1;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+// .mw-40 {
+//     max-width: 40%;
+// }
+
+.tabs-section {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+.modules-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow-y: auto;
 }
+.expansion-heading {
+    color: $blue1;
+    strong{
+        margin: 0 auto;
+    }
+}
 
-.large-card {
-    margin: 10px;
-    padding: 10px;
-    background: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    width: 80%;
-}
-.module-card {
-    margin: 10px;
-    padding: 10px;
-    background: whitesmoke;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    width: 40%;
-}
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
+    // max-width: 50%;
 }
 
 .MuiButton-label {
@@ -180,8 +182,16 @@ table.highlight > tbody > tr:hover {
   font-family: $raleway;
   color: rgba(63,81,181,1);
 }
-
+.center-heading {
+    margin: 0 auto;
+}
 .tree-data {
   background-color: white;
 }
 
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}

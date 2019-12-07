@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { makeStyles } from '@material-ui/core/styles';
-import { FixedSizeList as List } from 'react-window';
-// import InfiniteLoader from 'react-window-infinite-loader';
+import { makeStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        width: '100%',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+}));
 
 const ChangesTable = (props) => {
     const { dirFinalArrayPrev, dirFinalArray, getBytes } = props;
     // console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
-
-    const modulesArrProp = props.build[0].chunks[0].modules;
-
-    const modulesArr = (modulesArrProp.length !== 0) ? modulesArrProp : [];
-    const modulesCount = modulesArr.length;
-
-    List.propTypes = {
-        height: PropTypes.number.isRequired,
-        width: PropTypes.number.isRequired,
-        itemSize: PropTypes.number.isRequired,
-        itemCount: PropTypes.number.isRequired
-    };
 
     // Changes filtering
     const dirFinalFiles = [];
@@ -69,102 +70,98 @@ const ChangesTable = (props) => {
             removals.push({ path, size });
         }
     }
-    // console.log(`final files: `, dirFinalFiles, `added: `, additions, `and removed: `, removals)
-    // List props must include: height={num}, width={num}, itemCount={modulesCount}, itemData = {modulesArr},
-    // const AddedRow = ({ index, style }) => {
-    //     // use getBytes to add units after 'size'
-    //     const size = getBytes(additions[index].size)
-    //     return (<div style={style} key={index} className="row">
-    //         <span className="path-span">{additions[index].path}</span>
-    //         <span className="size-span">Size: {size}</span>
-    //     </div>);
-    // }
-    // const RemovedRow = ({ index, style }) => {
-    //     // use getBytes to add units after 'size'
-    //     const size = getBytes(removals[index].size)
-    //     return (<div style={style} key={index} className="row">
-    //         <span className="path-span">{removals[index].path}</span>
-    //         <span className="size-span">Size: {size}</span>
-    //     </div>);
-    // }
 
-    // const AddedTable = () => <List
-    //     className="scroll-list"
-    //     height={350}
-    //     itemCount={additions.length}
-    //     itemData={additions}
-    //     itemSize={50}
-    //     width={400}
-    // >
-    //     {AddedRow}
-    // </List>;
-    // const RemovedTable = () => <List
-    //     className="scroll-list"
-    //     height={350}
-    //     itemCount={removals.length}
-    //     itemData={removals}
-    //     itemSize={50}
-    //     width={600}
-    // >
-    //     {RemovedRow}
-    // </List>;
-    // const AdditionLi = (index) => {
-    //     const size = getBytes(additions[index].size);
-    //     return (<li style={style} key={index} >
-    //         <span className="path-span">{additions[index].path}</span>
-    //         <span className="size-span">Size: {size}</span>
-    //     </li>);
-    // }
-    // const RemovalsLi = (index) => {
-    //     const size = getBytes(removals[index].size);
-    //     return (<li style={style} key={index} >
-    //         <span className="path-span">{removals[index].path}</span>
-    //         <span className="size-span">Size: {size}</span>
-    //     </li>);
-    // }
     const additionListItems = additions.map((obj, i) => {
-        return (<li className="changes-li" key={i}>
-            <span className="path-span">{obj.path}</span>
-            <span className="path-span">{obj.size}</span>
-        </li>)
+        return (<tr key={i} className="table-row">
+            <td>{obj.path}</td>
+            <td>{getBytes(obj.size)}</td>
+        </tr>)
     })
-    const removalsListItems = removals.map((obj, i) => {
-        return (<li className="changes-li" key={i}>
-            <span className="path-span">{obj.path}</span>
-            <span className="path-span">{obj.size}</span>
-        </li>)
+    const removalListItems = additions.map((obj, i) => {
+        return (<tr key={i} className="table-row">
+            <td>{obj.path}</td>
+            <td>{getBytes(obj.size)}</td>
+        </tr>)
     })
 
     const AdditionCard = () => {
-        return (<div className="card module-card darken-1">
-            <div className="card-content">
-                <span className="card-title">Additions</span>
-                <ul className="changes-list">
-                    {additionListItems}
-                </ul>
-            </div>
-        </div>)
+        return (<table className="highlight">
+            <thead>
+                <tr className="card-body">
+                    <th>File Path</th>
+                    <th>File Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                {additionListItems}
+            </tbody>
+        </table >)
+
     }
 
     const RemovalCard = () => {
-        return (<div className="card module-card">
-            <div className="card-content">
-                <span className="card-title">Removals</span>
-                <ul className="changes-list">
-                    {removalsListItems}
-                </ul>
-            </div>
+        return (
+            <table className="highlight">
+                <thead>
+                    <tr className="card-body">
+                        <th>File Path</th>
+                        <th>File Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {removalListItems}
+                </tbody>
+            </table >
 
-        </div>)
+        )
     }
 
-    return <div className="changes">
-        <section className="changes-section">
-            <AdditionCard />
-        </section>
-        <section className="changes-section">
-            <RemovalCard />
-        </section>
+    const SimpleExpansionPanel = () => {
+        const classes = useStyles();
+
+        return (
+            <div className={classes.root}>
+                <ExpansionPanel >
+                    <ExpansionPanelSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography className={classes.heading} className="expansion-heading">
+                            {/* Expansion heading */}
+                            <strong className="centered">Additions</strong>
+                        </Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        {/* Additions Card Panel - content*/}
+                        <AdditionCard />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+                {/* Second expansion */}
+                <ExpansionPanel>
+                    <ExpansionPanelSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+
+                    >
+                        {/* Expansion heading */}
+                        <Typography className={classes.heading} className="center-heading" className="expansion-heading">
+                            <strong className="centered">Removals</strong>
+                        </Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        {/* Removals Card Panel - content*/}
+                        <RemovalCard />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
+            </div>
+        );
+    }
+
+    return <div className="cards-container centered">
+        <SimpleExpansionPanel />
     </div>
 }
 
