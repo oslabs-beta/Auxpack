@@ -29,7 +29,7 @@ const ErrorsTable = props => {
     }
 
 
-    return <div className="cards-container">
+    return <div className="flex jcenter">
         <ErrorsCard />
     </div>
 

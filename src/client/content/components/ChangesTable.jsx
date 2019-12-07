@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { FixedSizeList as List } from 'react-window';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -128,29 +127,37 @@ const ChangesTable = (props) => {
 
         return (
             <div className={classes.root}>
-                <ExpansionPanel>
+                <ExpansionPanel >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography className={classes.heading}>Additions</Typography>
+                        <Typography className={classes.heading} className="expansion-heading">
+                            {/* Expansion heading */}
+                            <strong className="centered">Additions</strong>
+                        </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        {/* Additions Card */}
+                        {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
+                {/* Second expansion */}
                 <ExpansionPanel>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
+
                     >
-                        <Typography className={classes.heading}>Removals</Typography>
+                        {/* Expansion heading */}
+                        <Typography className={classes.heading} className="center-heading" className="expansion-heading">
+                            <strong className="centered">Removals</strong>
+                        </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        {/* Removals Card */}
+                        {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -159,7 +166,7 @@ const ChangesTable = (props) => {
         );
     }
 
-    return <div className="cards-container">
+    return <div className="cards-container centered">
         <SimpleExpansionPanel />
     </div>
 }

@@ -122,7 +122,10 @@ const BuildData = ({ build, activeBuild }) => {
 
 
     return (
-        <div className="build-data" className={classes.root}>
+        <div className="build-data" className={classes.root} style={{
+            height: '550px',
+            maxHeight: '40%'
+        }}>
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -146,7 +149,7 @@ const BuildData = ({ build, activeBuild }) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
-            <TabPanel value={value} index={1} className="tab-panels">
+            <TabPanel value={value} index={1} className="tab-panels" className="flex jcenter">
 
                 <AssetsTable
                     className="assets"
@@ -155,7 +158,7 @@ const BuildData = ({ build, activeBuild }) => {
                     getBytes={getBytes}
                 />
             </TabPanel>
-            <TabPanel value={value} index={2} className="tab-panels">
+            <TabPanel value={value} index={2} className="tab-panels" className="flex jcenter">
                 <ErrorsTable
                     className="errors"
                     build={build}
