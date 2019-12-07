@@ -12,26 +12,28 @@ const Modules = props => {
         ));
 
         return (
-            <div className="module-card card darken-1" key={directory[0]}>
-                <span className="card-title" style={{ color: '#3F51B5' }}>{directory[0]}</span>
-                <table className="highlight centered">
-                    <thead>
-                        <tr className="card-body">
-                            <th>File Name</th>
-                            <th>File Size</th>
-                            <th>Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {fileListItems}
-                    </tbody>
-                </table >
+            <div className="card module-card mw-40 darken-1" key={directory[0]}>
+                <div className="card-content">
+                    <span className="card-title">{directory[0]}</span>
+                    <table className="highlight centered">
+                        <thead>
+                            <tr className="card-body">
+                                <th>File Name</th>
+                                <th>File Size</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {fileListItems}
+                        </tbody>
+                    </table >
+                </div>
             </div>
         );
     }); // end fileTable component
 
     return (
-        <div className="module-container">
+        <div className="modules-container">
             {fileTable}
         </div>
     );

@@ -10,19 +10,18 @@ const AssetsTable = props => {
     const { getBytes } = props;
     const assetListItems = assetsArr.map((obj, i) => {
 
-        return (<tr key={i}>
+        return (<tr key={i} className="table-row">
             <td>{obj.name}</td>
             <td>{obj.chunks}</td>
             <td>{getBytes(obj.size)}</td>
         </tr>)
     })
     const AssetsCard = () => {
-        return (<div className="card large-card darken-1">
-
-            <table className="highlight centered">
+        return (
+            <table className="highlight">
                 <thead>
                     <tr className="card-body">
-                        <th>File Name</th>
+                        <th>Name</th>
                         <th>Chunks</th>
                         <th>File Size</th>
                     </tr>
@@ -31,18 +30,14 @@ const AssetsTable = props => {
                     {assetListItems}
                 </tbody>
             </table >
-            {/* <ul className="changes-list">
-                    {assetListItems}
-                </ul> */}
-
-        </div>)
+        )
     }
 
-    return <div className="module-container">
-
+    return <div className="cards-container">
         <AssetsCard />
-
     </div>
+
+
 }
 
 export default AssetsTable;

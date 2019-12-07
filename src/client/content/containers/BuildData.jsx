@@ -14,8 +14,8 @@ const BuildData = ({ build, activeBuild }) => {
     //function to dynamically display the size of the item with proper prefix
     const getBytes = (number) => {
         if (number < 1000) return `${number} B`;
-        if (number < 1000000) return `${(number / 1000).toFixed(2)} KiB`;
-        return `${(number / 1000000).toFixed(2)} MiB`;
+        if (number < 1000000) return `${(number / 1000).toFixed(2)} KB`;
+        return `${(number / 1000000).toFixed(2)} MB`;
     };
     //breaking up the passed in data into categories to be displayed
     const Parse = (totalBuilds, i) => {
@@ -137,7 +137,7 @@ const BuildData = ({ build, activeBuild }) => {
                 <Tab label="Errors" {...a11yProps(2)} />
                 <Tab label="Modules" {...a11yProps(3)} />
             </Tabs>
-            <TabPanel value={value} index={0}>
+            <TabPanel value={value} index={0} className="tab-panels">
                 <ChangesTable
                     build={build}
                     activeBuild={activeBuild}
@@ -146,7 +146,7 @@ const BuildData = ({ build, activeBuild }) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel value={value} index={1} className="tab-panels">
 
                 <AssetsTable
                     className="assets"
@@ -155,14 +155,14 @@ const BuildData = ({ build, activeBuild }) => {
                     getBytes={getBytes}
                 />
             </TabPanel>
-            <TabPanel value={value} index={2}>
+            <TabPanel value={value} index={2} className="tab-panels">
                 <ErrorsTable
                     className="errors"
                     build={build}
                     activeBuild={activeBuild}
                 />
             </TabPanel>
-            <TabPanel value={value} index={3}>
+            <TabPanel value={value} index={3} className="tab-panels">
                 <Modules
                     build={build}
                     activeBuild={activeBuild}

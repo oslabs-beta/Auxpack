@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ErrorsTable = props => {
     const errorsArr = (props.build[0].errors.length !== 0) ? props.build[0].errors : [];
     const errorsListItems = errorsArr.map((str, i) => {
@@ -12,27 +13,26 @@ const ErrorsTable = props => {
     })
 
     const ErrorsCard = () => {
-        return (<div className="card large-card darken-1">
-            <div className="card-content">
-                {/* <span className="card-title">Errors</span> */}
-                <table className="highlight centered">
-                    <thead>
-                        <tr className="card-body">
 
-                            <th>Error Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {errorsListItems}
-                    </tbody>
-                </table >
-            </div>
-        </div>)
+        return (
+            <table className="highlight">
+                <thead>
+                    <tr className="card-body">
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {errorsListItems}
+                </tbody>
+            </table >
+        )
     }
 
-    return <div>
+
+    return <div className="cards-container">
         <ErrorsCard />
     </div>
+
 }
 
 export default ErrorsTable;
