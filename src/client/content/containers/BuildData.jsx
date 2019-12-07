@@ -14,8 +14,8 @@ const BuildData = ({ build, activeBuild }) => {
     //function to dynamically display the size of the item with proper prefix
     const getBytes = (number) => {
         if (number < 1000) return `${number} B`;
-        if (number < 1000000) return `${(number / 1000).toFixed(2)} KB`;
-        return `${(number / 1000000).toFixed(2)} MB`;
+        if (number < 1000000) return `${(number / 1000).toFixed(2)} KiB`;
+        return `${(number / 1000000).toFixed(2)} MiB`;
     };
     //breaking up the passed in data into categories to be displayed
     const Parse = (totalBuilds, i) => {
