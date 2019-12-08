@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const ChangesTable = (props) => {
+const ChangesTable = props => {
     const { dirFinalArrayPrev, dirFinalArray, getBytes } = props;
     // console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
 

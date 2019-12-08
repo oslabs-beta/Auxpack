@@ -144,6 +144,7 @@ const BuildData = ({ build, activeBuild }) => {
             <TabPanel value={value} index={0} className="tab-panels" style={{
                 display: 'flex',
                 justifyContent: 'center',
+                border: '1px solid blue'
             }}>
                 <ChangesTable
                     build={build}

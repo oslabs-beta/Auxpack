@@ -152,6 +152,9 @@ div.row{ // this styles the content inside scrollable window
 .expansionPanel {
     width: 40%;
 }
+.tab-panel {
+    overflow-y: auto;
+}
 .tabs-section {
     min-width: 150px;
     margin-bottom: 20px;
