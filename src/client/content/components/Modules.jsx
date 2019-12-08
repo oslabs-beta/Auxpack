@@ -31,7 +31,7 @@ const Modules = props => {
         )
     })
 
-    const hasModules = (dirFinalArray.length !== 0) ? fileRow : (<tr>
+    const hasModules = (dirFinalArray.length !== 0) ? fileRows : (<tr>
         <td>
             No files found.
     </td>
