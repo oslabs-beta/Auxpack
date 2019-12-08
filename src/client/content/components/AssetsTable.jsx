@@ -12,25 +12,21 @@ const AssetsTable = props => {
             <td>{getBytes(obj.size)}</td>
         </tr>)
     })
-    const AssetsCard = () => {
-        return (
-            <table className="highlight">
-                <thead>
-                    <tr className="card-body">
-                        <th>Name</th>
-                        <th>Chunks</th>
-                        <th>File Size</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {assetListItems}
-                </tbody>
-            </table >
-        )
-    }
 
-    return <div className="flex jcenter">
-        <AssetsCard />
+
+    return <div style={{ width: '100%' }}>
+        <table className="highlight">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Chunks</th>
+                    <th>File Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                {assetListItems}
+            </tbody>
+        </table >
     </div>
 }
 

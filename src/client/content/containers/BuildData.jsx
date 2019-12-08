@@ -123,7 +123,7 @@ const BuildData = ({ build, activeBuild }) => {
 
     return (
         <div className="build-data" className={classes.root} style={{
-            height: '700px',
+            height: '600px',
             maxHeight: '40%',
             borderRadius: '4px'
         }}>
@@ -154,7 +154,7 @@ const BuildData = ({ build, activeBuild }) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
-            <TabPanel value={value} index={1} className="tab-panels" className="flex jcenter">
+            <TabPanel value={value} index={1} className="tab-panels">
 
                 <AssetsTable
                     className="assets"
@@ -163,16 +163,14 @@ const BuildData = ({ build, activeBuild }) => {
                     getBytes={getBytes}
                 />
             </TabPanel>
-            <TabPanel value={value} index={2} className="tab-panels" className="flex jcenter">
+            <TabPanel value={value} index={2} className="tab-panels">
                 <ErrorsTable
                     className="errors"
                     build={build}
                     activeBuild={activeBuild}
                 />
             </TabPanel>
-            <TabPanel value={value} index={3} className="tab-panels" style={{
-                border: '1px solid blue'
-            }}>
+            <TabPanel value={value} index={3} className="tab-panels">
                 <Modules
                     build={build}
                     activeBuild={activeBuild}

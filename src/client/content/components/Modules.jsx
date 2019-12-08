@@ -20,6 +20,7 @@ const Modules = props => {
     const { dirFinalArray, getBytes } = props;
 
     const fileRows = dirFinalArray.map((directory) => {
+        console.log(`directory: `, directory)
         return directory[1].map((file, j) => (<tr key={file.filename + file.size + j}>
             <td>{file.filename}</td>
             <td>{getBytes(file.size)}</td>
@@ -88,9 +89,11 @@ const Modules = props => {
         const classes = useStyles();
 
         return (
-            <div className={classes.root} >
+            <div className={classes.root} style={{
+                padding: '10px'
+            }} >
                 <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
+                    width: '100%',
                 }} >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -103,8 +106,9 @@ const Modules = props => {
                         </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails style={{
-                        maxHeight: '60%',
-                        overflowY: 'auto'
+                        maxHeight: '400px',
+                        overflowY: 'auto',
+                        backgroundColor: 'whitesmoke',
                     }}>
                         {/* FileTable - content*/}
                         <FileTable />
