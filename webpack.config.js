@@ -7,7 +7,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     mode: process.env.NODE_ENV,
     module: {
@@ -46,6 +47,7 @@ module.exports = {
     ,
     devServer: {
         publicPath: 'http://localhost:8080/build',
+        historyApiFallback: true,
         // compress: true,
         // port: 8080,
         contentBase: path.join(__dirname, "./src/assets"),

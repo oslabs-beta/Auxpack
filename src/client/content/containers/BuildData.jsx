@@ -20,6 +20,7 @@ const BuildData = ({ build, activeBuild }) => {
     //breaking up the passed in data into categories to be displayed
     const Parse = (totalBuilds, i) => {
         const data = totalBuilds;
+        if (data[i] === undefined) return [];
         const build = data[i];
         const findUniquePaths = [];
         const filePaths = [];
