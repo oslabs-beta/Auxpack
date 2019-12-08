@@ -19,8 +19,10 @@ const useStyles = makeStyles(theme => ({
 const Modules = props => {
     const { dirFinalArray, getBytes } = props;
 
+    //console.log(`dirFinalArray: `, dirFinalArray)
+    // if dirFinalArray.length!==0, render 
     const fileRows = dirFinalArray.map((directory) => {
-        console.log(`directory: `, directory)
+        //console.log(`directory: `, directory)
         return directory[1].map((file, j) => (<tr key={file.filename + file.size + j}>
             <td>{file.filename}</td>
             <td>{getBytes(file.size)}</td>
@@ -29,6 +31,16 @@ const Modules = props => {
         )
     })
 
+    const hasModules = (dirFinalArray.length !== 0) ? fileRow : (<tr>
+        <td>
+            No files found.
+    </td>
+        <td>
+            0 Bytes
+    </td>
+        <td>
+            0%
+        </td></tr>)
     const FileTable = () => {
         return (<table className="highlight">
             <thead>
@@ -39,7 +51,7 @@ const Modules = props => {
                 </tr>
             </thead>
             <tbody>
-                {fileRows}
+                {hasModules}
             </tbody>
         </table>)
     }

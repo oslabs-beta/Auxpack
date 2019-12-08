@@ -155,9 +155,7 @@ const BuildData = ({ build, activeBuild }) => {
                 />
             </TabPanel>
             <TabPanel value={value} index={1} className="tab-panels">
-
                 <AssetsTable
-                    className="assets"
                     build={build}
                     activeBuild={activeBuild}
                     getBytes={getBytes}
