@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -17,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const ChangesTable = (props) => {
+const ChangesTable = props => {
     const { dirFinalArrayPrev, dirFinalArray, getBytes } = props;
     // console.log(`prev: `, props.dirFinalArrPrev, `current: `, dirFinalArray)
 
@@ -120,8 +119,10 @@ const ChangesTable = (props) => {
         const classes = useStyles();
 
         return (
-            <div className={classes.root}>
-                <ExpansionPanel >
+            <div className={classes.root} >
+                <ExpansionPanel className="expansionPanel" style={{
+                    width: '800px',
+                }} >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -132,17 +133,22 @@ const ChangesTable = (props) => {
                             <strong className="centered">Additions</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
+                    <ExpansionPanelDetails style={{
+                        maxHeight: '400px',
+                        overflowY: 'auto'
+                    }}>
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
                 {/* Second expansion */}
-                <ExpansionPanel>
+                <ExpansionPanel className="expansionPanel" style={{
+                    width: '800px',
+                }}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel2a-content"
-                        id="panel2a-header"
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
 
                     >
                         {/* Expansion heading */}
@@ -150,7 +156,10 @@ const ChangesTable = (props) => {
                             <strong className="centered">Removals</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
+                    <ExpansionPanelDetails style={{
+                        maxHeight: '400px',
+                        overflowY: 'auto'
+                    }}>
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>

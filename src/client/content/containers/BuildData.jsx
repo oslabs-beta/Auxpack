@@ -123,8 +123,9 @@ const BuildData = ({ build, activeBuild }) => {
 
     return (
         <div className="build-data" className={classes.root} style={{
-            height: '550px',
-            maxHeight: '40%'
+            height: '700px',
+            maxHeight: '40%',
+            borderRadius: '4px'
         }}>
             <Tabs
                 orientation="vertical"
@@ -140,7 +141,11 @@ const BuildData = ({ build, activeBuild }) => {
                 <Tab label="Errors" {...a11yProps(2)} />
                 <Tab label="Modules" {...a11yProps(3)} />
             </Tabs>
-            <TabPanel value={value} index={0} className="tab-panels">
+            <TabPanel value={value} index={0} className="tab-panels" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                border: '1px solid blue'
+            }}>
                 <ChangesTable
                     build={build}
                     activeBuild={activeBuild}
@@ -165,7 +170,9 @@ const BuildData = ({ build, activeBuild }) => {
                     activeBuild={activeBuild}
                 />
             </TabPanel>
-            <TabPanel value={value} index={3} className="tab-panels">
+            <TabPanel value={value} index={3} className="tab-panels" style={{
+                border: '1px solid blue'
+            }}>
                 <Modules
                     build={build}
                     activeBuild={activeBuild}

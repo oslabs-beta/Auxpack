@@ -149,7 +149,12 @@ div.row{ // this styles the content inside scrollable window
 // .mw-40 {
 //     max-width: 40%;
 // }
-
+.expansionPanel {
+    width: 40%;
+}
+.tab-panel {
+    overflow-y: auto;
+}
 .tabs-section {
     min-width: 150px;
     margin-bottom: 20px;
