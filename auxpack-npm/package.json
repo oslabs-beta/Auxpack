@@ -4,7 +4,8 @@
   "description": "A dashboard for monitoring Webpack build stats.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bin": "./bin/auxpack.js",
   },
   "keywords": [],
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",

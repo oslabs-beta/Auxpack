@@ -3,9 +3,9 @@ const path = require('path');
 const opener = require('opener');
 const chalk = require('chalk');
 
-module.exports = (data) => {
+module.exports = (data, PORT) => {
   const app = express();
-  const PORT = 1111;
+  if (!PORT) PORT = 1111;
   const url = `http://localhost:${PORT}/`;
 
   app.use(express.static(path.join(__dirname, '..', 'build')));
