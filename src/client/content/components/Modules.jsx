@@ -20,7 +20,6 @@ const Modules = props => {
     const { dirFinalArray, getBytes } = props;
 
     //console.log(`dirFinalArray: `, dirFinalArray)
-    // if dirFinalArray.length!==0, render 
     const fileRows = dirFinalArray.map((directory) => {
         //console.log(`directory: `, directory)
         return directory[1].map((file, j) => (<tr key={file.filename + file.size + j}>
@@ -30,7 +29,7 @@ const Modules = props => {
         </tr>)
         )
     })
-
+    // if dirFinalArray.length is 0, don't render fileRows
     const hasModules = (dirFinalArray.length !== 0) ? fileRows : (<tr>
         <td>
             No files found.
@@ -51,6 +50,7 @@ const Modules = props => {
                 </tr>
             </thead>
             <tbody>
+                {/* file rows */}
                 {hasModules}
             </tbody>
         </table>)
