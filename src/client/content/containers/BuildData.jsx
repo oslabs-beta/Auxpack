@@ -123,7 +123,7 @@ const BuildData = ({ build, activeBuild }) => {
 
     return (
         <div className="build-data" className={classes.root} style={{
-            height: '550px',
+            height: '700px',
             maxHeight: '40%',
             borderRadius: '4px'
         }}>

@@ -133,7 +133,10 @@ const ChangesTable = (props) => {
                             <strong className="centered">Additions</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
+                    <ExpansionPanelDetails style={{
+                        maxHeight: '400px',
+                        overflowY: 'auto'
+                    }}>
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
@@ -141,7 +144,6 @@ const ChangesTable = (props) => {
                 {/* Second expansion */}
                 <ExpansionPanel className="expansionPanel" style={{
                     width: '800px',
-
                 }}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -154,7 +156,10 @@ const ChangesTable = (props) => {
                             <strong className="centered">Removals</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
+                    <ExpansionPanelDetails style={{
+                        maxHeight: '400px',
+                        overflowY: 'auto'
+                    }}>
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
