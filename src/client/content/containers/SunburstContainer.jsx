@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Sunburst from '../../views/sunburst/Sunburst.jsx'
-import { parse } from 'path';
+import Sunburst from '../components/Sunburst.jsx'
 
-const SunburstContainer = props => {
-    const { build, activeBuild } = props;
-    //console.log(`build props in SunburstContainer: `, build, activeBuild);
-
+const SunburstContainer = ({ build, activeBuild }) => {
+    //currently unused --> hooks for graphs
     const [defaultBar, setBar] = useState(false);
     const [dataBar, setDataBar] = useState([]);
     const [burstData, setData] = useState([]);
+    //this hook displays data into graphs based on hovering
     const [activeBurst, setBurst] = useState(null);
-    //console.log(`activeBuild `, activeBuild)
 
     // parse data, return array of arrays, each subarray contains [path, sizeString]
     const dataParser = () => {
@@ -18,7 +15,6 @@ const SunburstContainer = props => {
 
         //loops through assets
         let i = activeBuild;
-        //console.log(`activeBuild in dataParser`, activeBuild)
         //let pathAry;
         let path;
         let sizeStr;
@@ -26,7 +22,6 @@ const SunburstContainer = props => {
         // check if data is empty
 
         if (data.length !== 0) {
-
             for (let k = 0; k < data[i].chunks.length; k++) {
                 for (let l = 0; l < data[i].chunks[k].modules.length; l++) {
                     sizeStr = data[i].chunks[k].modules[l].size.toString();
@@ -41,22 +36,21 @@ const SunburstContainer = props => {
     useEffect(() => {
         const parsedData = dataParser();
         setData(parsedData);
-
-    }, [build]) // second arg: dependency that change
+    }, [activeBuild]) // 2nd arg: dependency that change (activeBuild changes build --> rerenders)
 
     const handleBurstHover = (path) => {
         setBurst(path)
     }
 
-
-    return <div>
-        <p>Stats</p>
-
+    //conditional rendering to indicate loading of the data prior to data being fetched
+    return ( 
+    <React.Fragment>
         {(burstData !== undefined) ? <Sunburst
             burstData={burstData}
             onHover={handleBurstHover}
-        /> : <h1>Loading...</h1>}
-    </div>
+        /> : <h1 id="loading">Loading...</h1>}
+    </React.Fragment>
+    )
 }
 
 export default SunburstContainer;

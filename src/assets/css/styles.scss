@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+$raleway: 'Raleway', sans-serif;
+$black: #000;
+$blue1: #3f51b5;
+// border bottom grey 
+$bb-grey-lite: 2px solid #ddd;
+
+.centered {
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+.jcenter {
+    justify-content: center;
+}
+#auxpack-banner {
+    margin-left: 2%;
+    margin-bottom: 3vh;
+    margin-top: 1%;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+#loading {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
+h1 {
+    font-family: $raleway;
+    color: $blue1;
+    font-size: 4vw;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#trail {
+    font-family: $raleway;
+    z-index: 1;
+    font-size: 15px;
+}
+
+#nav {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    #bottom-nav {
+        background-color:white;
+    }
+}
+
+#sequence {
+    position: relative;
+    bottom: 0px;
+}
+
+div.chart {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+}
+
+
+div.explanation {
+    position: absolute;
+    z-index: 1;
+    font-size: 1.4vh;
+    font-family: $raleway;
+    color: $blue1;
+    padding-top: 15vh;
+    padding-left: 0vw;
+}
+
+
+g#details {
+    font-family: $raleway;
+    font-size: 14px;
+}
+
+// div.build-data {
+//     margin: 0 auto;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     margin-bottom: 20px;
+// }
+
+div.scroll-list{
+    margin: 0 auto;
+    margin-top: 24px;
+    padding: 10px;
+    border: 2px solid $blue1;
+    margin-bottom: 24px;
+}
+/* Styles the text contents of each list row */ 
+div.row{ // this styles the content inside scrollable window
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    font-family: $raleway;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    width: 98% !important;
+}
+.tab-panels {
+   max-width: 90%;
+   width: 100%;
+   margin-bottom: 20px;
+   overflow-y: auto;
+}
+
+.changes-li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-li {
+    margin-bottom: 1px solid rgb(109, 109, 109);
+}
+.card {
+    background: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    width: 40%;
+    min-width: 40%;
+    max-width: 40%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card-title{
+    color: $blue1;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+// .mw-40 {
+//     max-width: 40%;
+// }
+.expansionPanel {
+    width: 40%;
+}
+.tab-panel {
+    overflow-y: auto;
+}
+.tabs-section {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+.modules-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
+}
+.expansion-heading {
+    color: $blue1;
+    strong{
+        margin: 0 auto;
+    }
+}
+
+table.highlight > tbody > tr:hover {
+    color: rgba(63,81,181,1);
+    background-color: rgba(255,255,255,1);
+    // max-width: 50%;
+}
+
+.MuiButton-label {
+  justify-content: flex-start !important;
+}
+
+.list-header {
+  font-family: $raleway;
+  color: rgba(63,81,181,1);
+}
+.center-heading {
+    margin: 0 auto;
+}
+.tree-data {
+  background-color: white;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
