@@ -9,7 +9,7 @@ const MainContainer = (props) => {
     useEffect(() => {
         //fetch used to hit enpoint that bring data from Webpack plugin to be displayed on front end
         //setActiveBuild at the end of the length to start from last build analyzed as "first"
-        fetch('/getStats')
+        fetch('getStats')
             .then(res => res.json())
             .then(data => {
                 setBuild(data)
