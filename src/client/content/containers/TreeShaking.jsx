@@ -13,7 +13,10 @@ export default function AutoGrid({ build, activeBuild }) {
     displayCjs: false,
     displayBoth: false
   })
+  
+  if(build[activeBuild] !== undefined) {
 
+  
   //parsing through data for treeshaking information
   const modules = build[activeBuild].treeStats;
   const esmCount = modules.esm.length;
@@ -118,5 +121,9 @@ export default function AutoGrid({ build, activeBuild }) {
       </Grid>
     </div>
   );
+  }
+  return (
+    <React.Fragment />
+  )
 }
  
