@@ -159,14 +159,16 @@ div.row{ // this styles the content inside scrollable window
         background-color: $blue1;
     }
 }
-
-.tab-panel {
+td.word-break {
+    word-break: break-word;
+}
+.tab-panel { /* Material UI tab panel section that contains all contents*/
     overflow-y: auto;
     // border: 2px solid red;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    border: 2px solid green;
+    // border: 2px solid green;
 }
 
 .tabs-section {

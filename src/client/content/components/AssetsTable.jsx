@@ -14,20 +14,19 @@ const AssetsTable = props => {
     })
 
 
-    return <div style={{ width: '100%' }}>
-        <table className="highlight">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Chunks</th>
-                    <th>File Size</th>
-                </tr>
-            </thead>
-            <tbody>
-                {assetListItems}
-            </tbody>
-        </table >
-    </div>
+    return (<table className="highlight">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Chunks</th>
+                <th>File Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {assetListItems}
+        </tbody>
+    </table >)
+
 }
 
 export default AssetsTable;
