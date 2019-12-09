@@ -26,6 +26,6 @@ const AssetsTable = props => {
         </tbody>
     </table >)
 
-
+}
 
 export default AssetsTable;
