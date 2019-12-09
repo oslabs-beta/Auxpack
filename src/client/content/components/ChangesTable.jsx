@@ -69,7 +69,10 @@ const ChangesTable = props => {
             removals.push({ path, size });
         }
     }
-
+    //console.log(`dirFinalFiles`, dirFinalFiles, `dirFinalFilesPrev: `, dirFinalFilesPrev)
+    //console.log(`additions: `, additions);
+    console.log(`removed`, removed)
+    console.log(`removals: `, removals);
     const additionListItems = additions.map((obj, i) => {
         return (<tr key={i} className="table-row">
             <td>{obj.path}</td>
