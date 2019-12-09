@@ -133,6 +133,7 @@ div.scroll-list{
 .tab-panel {
     overflow-y: auto;
     width: 100%;
+}
 
 .tabs-section {
     min-width: 150px;
@@ -146,7 +147,13 @@ div.scroll-list{
     overflow-y: auto;
 }
 .expansion-heading {
-    color: $blue1;
+    font-family: $raleway;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    .centered {
+      color: $blue1;
+    }
 }
 
 .panelDetails {
@@ -159,19 +166,8 @@ table.highlight > tbody > tr:hover {
     background-color: rgba(255,255,255,1);
 }
 
-.MuiButton-label {
-  justify-content: flex-start !important;
-}
-
-.list-header {
-  font-family: $raleway;
-  color: rgba(63,81,181,1);
-}
 .center-heading {
     margin: 0 auto;
-}
-.tree-data {
-  background-color: white;
 }
 
 .cards-container {

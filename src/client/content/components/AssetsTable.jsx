@@ -24,7 +24,14 @@ const AssetsTable = props => {
         <tbody>
             {assetListItems}
         </tbody>
+<<<<<<< HEAD
+    </table>)
+}
+=======
     </table >)
+
+
+>>>>>>> master
 
 
 
