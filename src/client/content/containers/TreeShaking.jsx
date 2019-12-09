@@ -52,84 +52,73 @@ export default function AutoGrid({ build, activeBuild }) {
     if (state.displayBoth === true) {
       both = <TreeList list={bothList} />;
     }
-
-    // logic for buttons in TreeModules to trigger conditional rendering and switch between lists
-    const showTotal = () => {
-      setState({
-        displayTotal: true,
-        displayEsm: true,
-        displayCjs: false,
-        displayBoth: false
-      });
-      setName('Total')
-    }
-
-    const showEsm = () => {
-      setState({
-        displayTotal: false,
-        displayEsm: true,
-        displayCjs: false,
-        displayBoth: false
-      });
-      setName('ESM');
-    }
-
-    const showCjs = () => {
-      setState({
-        displayTotal: false,
-        displayEsm: false,
-        displayCjs: true,
-        displayBoth: false
-      });
-      setName('CJS');
-    }
-
-    const showBoth = () => {
-      setState({
-        displayTotal: false,
-        displayEsm: false,
-        displayCjs: false,
-        displayBoth: true
-      });
-      setName('Mixed');
-    }
-
-    return (
-      <div className="tree-data">
-        <Grid container spacing={2} className="tree-modules">
-          <Grid item xs>
-            <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal} />
-          </Grid>
-          <Grid item xs>
-            <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm} />
-          </Grid>
-          <Grid item xs>
-            <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs} />
-          </Grid>
-          <Grid item xs>
-            <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth} />
-          </Grid>
-        </Grid>
-        <Grid container spacing={1} className="tree-lists">
-          <Grid item xs>
-            <h5 className="list-header">{`${name} Modules List`}</h5>
-            {total}
-            {esm}
-            {cjs}
-            {both}
-          </Grid>
-        </Grid>
-<<<<<<< HEAD
-      </div>
-    );
-=======
-      </Grid>
-    </div>
-  );
-  } else {
-    return (
-      <React.Fragment />
-    )
->>>>>>> 08789c4fdd73364cb10ce796265d8a813bd0fc01
   }
+  // logic for buttons in TreeModules to trigger conditional rendering and switch between lists
+  const showTotal = () => {
+    setState({
+      displayTotal: true,
+      displayEsm: true,
+      displayCjs: false,
+      displayBoth: false
+    });
+    setName('Total')
+  }
+
+  const showEsm = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: true,
+      displayCjs: false,
+      displayBoth: false
+    });
+    setName('ESM');
+  }
+
+  const showCjs = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: false,
+      displayCjs: true,
+      displayBoth: false
+    });
+    setName('CJS');
+  }
+
+  const showBoth = () => {
+    setState({
+      displayTotal: false,
+      displayEsm: false,
+      displayCjs: false,
+      displayBoth: true
+    });
+    setName('Mixed');
+  }
+
+  return (
+    <div className="tree-data">
+      <Grid container spacing={2} className="tree-modules">
+        <Grid item xs>
+          <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal} />
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm} />
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs} />
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth} />
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} className="tree-lists">
+        <Grid item xs>
+          <h5 className="list-header">{`${name} Modules List`}</h5>
+          {total}
+          {esm}
+          {cjs}
+          {both}
+        </Grid>
+      </Grid>
+    </div >
+  )
 }

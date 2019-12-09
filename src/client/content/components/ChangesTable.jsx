@@ -138,8 +138,8 @@ const ChangesTable = props => {
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                {/* Second expansion */}
-                <ExpansionPanel className="expansionPanel">
+                {/* Second expansion: defaultExpanded prop set to 'true' for expand on render */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
