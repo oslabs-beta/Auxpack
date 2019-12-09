@@ -35,4 +35,5 @@ module.exports = (data) => {
         throw err;
       }
   });
+})
 };
