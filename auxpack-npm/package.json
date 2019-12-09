@@ -1,6 +1,6 @@
 {
   "name": "auxpack",
-  "version": "1.0.3a",
+  "version": "1.0.4a",
   "description": "A dashboard for monitoring Webpack build stats.",
   "main": "index.js",
   "scripts": {

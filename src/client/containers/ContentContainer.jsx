@@ -1,8 +1,9 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
-import Overview from '../content/containers/Overview.jsx'
-import BuildData from '../content/containers/BuildData.jsx'
-import TreeShaking from '../content/containers/TreeShaking.jsx'
+import { Switch, Route } from 'react-router-dom';
+import Overview from '../content/containers/Overview.jsx';
+import BuildData from '../content/containers/BuildData.jsx';
+import TreeShaking from '../content/containers/TreeShaking.jsx';
+import HistoryCharts from '../content/containers/HistoryCharts.jsx';
 
 const ContentContainer = (props) => {
     const { build, activeBuild, handleInc, handleDec } = props;
@@ -35,6 +36,14 @@ const ContentContainer = (props) => {
                         <TreeShaking
                         build={build}
                         activeBuild={activeBuild}
+                        />
+                    )}
+                />
+                <Route
+                    exact path="/history"
+                    render={() => (
+                        <HistoryCharts
+                        build={build}
                         />
                     )}
                 />
