@@ -20,15 +20,17 @@ const TreeList = (props) => {
   // create scrollable window that only renders what is visible to user
   const List = () => {
     return(
-      <FixedSizeList 
-        className="scroll-list"
-        height={450}
-        itemCount={listArr.length}
-        itemSize={50}
-        width={1100}  
-      >
-        {row}
-      </FixedSizeList>
+      <div>
+        <FixedSizeList 
+          className="scroll-list"
+          height={450}
+          itemCount={listArr.length}
+          itemSize={50}
+          width={1100}  
+        >
+          {row}
+        </FixedSizeList>
+      </div>
     )
   }
 

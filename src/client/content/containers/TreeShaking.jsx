@@ -20,8 +20,7 @@ export default function AutoGrid(props) {
   const esmList = modules.esm.map(object => object.name); 
   const cjsList = modules.cjs.map(object => object.name);
   const bothList = modules.both.map(object => object.name);
-  const totalList2 = esmList.concat(cjsList);
-  const totalList = totalList2.concat(esmList);
+  const totalList = esmList.concat(cjsList).concat(esmList);
 
   // conditional rendering to display total modules
   let total = null;
@@ -92,16 +91,40 @@ export default function AutoGrid(props) {
     <div className="tree-data">
       <Grid container spacing={2} className="tree-modules">
         <Grid item xs>
-          <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
+          <TreeModule 
+            name={`Total Modules`} 
+            count={totalCount} 
+            total={totalCount} 
+            button={'Display Total Modules'} 
+            onClick={showTotal}
+          />
         </Grid>
         <Grid item xs> 
-          <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm}/>
+          <TreeModule 
+            name={`Treeshakable (ESM) Modules`} 
+            count={esmCount} 
+            total={totalCount} 
+            button={'Display ESM Modules'} 
+            onClick={showEsm}
+          />
         </Grid>
         <Grid item xs>
-          <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs}/>
+          <TreeModule 
+            name={`Non-Treeshakable (CJS) Modules`} 
+            count={cjsCount} 
+            total={totalCount} 
+            button={'Display CJS Modules'} 
+            onClick={showCjs}
+          />
         </Grid>
         <Grid item xs>
-          <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth}/>
+          <TreeModule 
+            name={`Mixed Modules`} 
+            count={bothCount} 
+            total={totalCount} 
+            button={'Display Mixed Modules'} 
+            onClick={showBoth}
+          />
         </Grid>
       </Grid>
       <Grid container spacing={1} className="tree-lists">
