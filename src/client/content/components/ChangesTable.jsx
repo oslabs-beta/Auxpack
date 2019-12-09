@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
-    },
+    }
 }));
 
 const ChangesTable = props => {
@@ -121,7 +121,7 @@ const ChangesTable = props => {
         return (
             <div className={classes.root} >
                 <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
+                    width: '100%',
                 }} >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -129,13 +129,13 @@ const ChangesTable = props => {
                         id="panel1a-header"
                     >
                         <Typography className={classes.heading} className="expansion-heading">
-                            {/* Expansion heading */}
-                            <strong className="centered">Additions</strong>
+                            <strong className="centered">Additions</strong>{/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
+                    <ExpansionPanelDetails className="panelDetails" style={{
                         maxHeight: '400px',
-                        overflowY: 'auto'
+                        overflowY: 'auto',
+                        backgroundColor: 'whitesmoke',
                     }}>
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
@@ -143,28 +143,27 @@ const ChangesTable = props => {
                 </ExpansionPanel>
                 {/* Second expansion */}
                 <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
+                    width: '100%',
                 }}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
-
                     >
-                        {/* Expansion heading */}
                         <Typography className={classes.heading} className="center-heading" className="expansion-heading">
-                            <strong className="centered">Removals</strong>
+                            <strong className="centered">Removals</strong> {/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
+                    {/* styles expansion panel inner content to allow scrolling, makes background color grey */}
                     <ExpansionPanelDetails style={{
                         maxHeight: '400px',
-                        overflowY: 'auto'
+                        overflowY: 'auto',
+                        backgroundColor: 'whitesmoke'
                     }}>
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-
             </div>
         );
     }

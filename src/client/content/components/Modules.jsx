@@ -19,7 +19,9 @@ const useStyles = makeStyles(theme => ({
 const Modules = props => {
     const { dirFinalArray, getBytes } = props;
 
+    //console.log(`dirFinalArray: `, dirFinalArray)
     const fileRows = dirFinalArray.map((directory) => {
+        //console.log(`directory: `, directory)
         return directory[1].map((file, j) => (<tr key={file.filename + file.size + j}>
             <td>{file.filename}</td>
             <td>{getBytes(file.size)}</td>
@@ -27,7 +29,17 @@ const Modules = props => {
         </tr>)
         )
     })
-
+    // if dirFinalArray.length is 0, don't render fileRows
+    const hasModules = (dirFinalArray.length !== 0) ? fileRows : (<tr>
+        <td>
+            No files found.
+    </td>
+        <td>
+            0 Bytes
+    </td>
+        <td>
+            0%
+        </td></tr>)
     const FileTable = () => {
         return (<table className="highlight">
             <thead>
@@ -38,7 +50,8 @@ const Modules = props => {
                 </tr>
             </thead>
             <tbody>
-                {fileRows}
+                {/* file rows */}
+                {hasModules}
             </tbody>
         </table>)
     }
@@ -88,9 +101,11 @@ const Modules = props => {
         const classes = useStyles();
 
         return (
-            <div className={classes.root} >
+            <div className={classes.root} style={{
+                padding: '10px'
+            }} >
                 <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
+                    width: '100%',
                 }} >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -103,8 +118,9 @@ const Modules = props => {
                         </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails style={{
-                        maxHeight: '60%',
-                        overflowY: 'auto'
+                        maxHeight: '400px',
+                        overflowY: 'auto',
+                        backgroundColor: 'whitesmoke',
                     }}>
                         {/* FileTable - content*/}
                         <FileTable />
