@@ -29,9 +29,11 @@ const AssetsTable = props => {
         )
     }
 
-    return <div className="flex jcenter">
+    return (
         <AssetsCard />
-    </div>
+    )
+        
+    
 }
 
 export default AssetsTable;

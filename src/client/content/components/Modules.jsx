@@ -89,9 +89,7 @@ const Modules = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
-                }} >
+                <ExpansionPanel className="expansionPanel">
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -102,10 +100,7 @@ const Modules = props => {
                             <strong className="centered">Modules</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '60%',
-                        overflowY: 'auto'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* FileTable - content*/}
                         <FileTable />
                     </ExpansionPanelDetails>

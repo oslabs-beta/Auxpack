@@ -120,9 +120,7 @@ const ChangesTable = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
-                }} >
+                <ExpansionPanel className="expansionPanel">
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -133,18 +131,13 @@ const ChangesTable = props => {
                             <strong className="centered">Additions</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
                 {/* Second expansion */}
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
-                }}>
+                <ExpansionPanel className="expansionPanel">
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -156,10 +149,7 @@ const ChangesTable = props => {
                             <strong className="centered">Removals</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
