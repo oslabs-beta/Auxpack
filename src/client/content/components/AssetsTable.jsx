@@ -24,8 +24,7 @@ const AssetsTable = props => {
         <tbody>
             {assetListItems}
         </tbody>
-
-    </table>)
+            </table>)
 }
 
 
