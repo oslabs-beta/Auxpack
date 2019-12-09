@@ -14,7 +14,7 @@ const HistoryCharts = ({ build }) => {
 
     return <React.Fragment>
 
-        <SizeChart chartData={chartData} />
+        {/* <SizeChart chartData={chartData} /> */}
         <TimeChart chartData={chartData} />
 
     </React.Fragment>
