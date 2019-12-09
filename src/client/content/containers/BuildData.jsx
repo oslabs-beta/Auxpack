@@ -118,6 +118,7 @@ const BuildData = ({ build, activeBuild }) => {
 
     return (
         <div id="build-data" className={`${classes.root} content-card`}>
+
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -141,15 +142,17 @@ const BuildData = ({ build, activeBuild }) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
+
             <TabPanel value={value} index={1}>
+
                 <AssetsTable
-                    className="assets"
                     build={build}
                     activeBuild={activeBuild}
                     getBytes={getBytes}
                 />
             </TabPanel>
             <TabPanel value={value} index={2}>
+
                 <ErrorsTable
                     className="errors"
                     build={build}
@@ -157,6 +160,7 @@ const BuildData = ({ build, activeBuild }) => {
                 />
             </TabPanel>
             <TabPanel value={value} index={3}>
+
                 <Modules
                     build={build}
                     activeBuild={activeBuild}

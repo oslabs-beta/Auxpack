@@ -133,7 +133,7 @@ div.scroll-list{
 .tab-panel {
     overflow-y: auto;
     width: 100%;
-}
+
 .tabs-section {
     min-width: 150px;
     margin-bottom: 20px;
@@ -147,9 +147,6 @@ div.scroll-list{
 }
 .expansion-heading {
     color: $blue1;
-    strong{
-        margin: 0 auto;
-    }
 }
 
 .panelDetails {
@@ -160,7 +157,6 @@ div.scroll-list{
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
-    // max-width: 50%;
 }
 
 .MuiButton-label {

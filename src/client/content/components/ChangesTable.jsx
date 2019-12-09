@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
-    },
+    }
 }));
 
 const ChangesTable = props => {
@@ -127,8 +127,7 @@ const ChangesTable = props => {
                         id="panel1a-header"
                     >
                         <Typography className={classes.heading} className="expansion-heading">
-                            {/* Expansion heading */}
-                            <strong className="centered">Additions</strong>
+                            <strong className="centered">Additions</strong>{/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails className="panelDetails">
@@ -142,11 +141,9 @@ const ChangesTable = props => {
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
-
                     >
-                        {/* Expansion heading */}
                         <Typography className={classes.heading} className="center-heading" className="expansion-heading">
-                            <strong className="centered">Removals</strong>
+                            <strong className="centered">Removals</strong> {/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails className="panelDetails">
@@ -154,7 +151,6 @@ const ChangesTable = props => {
                         <RemovalCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-
             </div>
         );
     }

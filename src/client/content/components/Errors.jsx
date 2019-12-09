@@ -7,32 +7,23 @@ const ErrorsTable = props => {
         // return (<li className="errors-li" key={i}>
         //     <span>Error: {str}</span>
         // </li>)
-        return (<tr key={i}>
+        return (<tr key={i} className="word-break">
             <td>{str}</td>
         </tr>)
     })
 
-    const ErrorsCard = () => {
-
-        return (
-            <table className="highlight">
-                <thead>
-                    <tr className="card-body">
-                        <th>Error</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {errorsListItems}
-                </tbody>
-            </table >
-        )
-    }
 
 
-    return <div className="flex jcenter">
-        <ErrorsCard />
-    </div>
-
+    return (<table className="highlight">
+        <thead>
+            <tr>
+                <th>Error</th>
+            </tr>
+        </thead>
+        <tbody>
+            {errorsListItems}
+        </tbody>
+    </table >)
 }
 
 export default ErrorsTable;
