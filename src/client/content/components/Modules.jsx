@@ -101,12 +101,9 @@ const Modules = props => {
         const classes = useStyles();
 
         return (
-            <div className={classes.root} style={{
-                padding: '10px'
-            }} >
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '100%',
-                }} >
+            <div className={classes.root} >
+                <ExpansionPanel className="expansionPanel">
+
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -117,11 +114,7 @@ const Modules = props => {
                             <strong className="centered">Modules</strong>
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto',
-                        backgroundColor: 'whitesmoke',
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* FileTable - content*/}
                         <FileTable />
                     </ExpansionPanelDetails>

@@ -13,7 +13,6 @@ const AssetsTable = props => {
         </tr>)
     })
 
-
     return (<table className="highlight">
         <thead>
             <tr>

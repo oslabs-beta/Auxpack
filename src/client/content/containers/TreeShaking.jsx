@@ -119,10 +119,17 @@ export default function AutoGrid({ build, activeBuild }) {
             {both}
           </Grid>
         </Grid>
+<<<<<<< HEAD
       </div>
     );
+=======
+      </Grid>
+    </div>
+  );
+  } else {
+    return (
+      <React.Fragment />
+    )
+>>>>>>> 08789c4fdd73364cb10ce796265d8a813bd0fc01
   }
-  return (
-    <React.Fragment />
-  )
 }
