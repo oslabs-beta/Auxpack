@@ -88,7 +88,7 @@ g#details {
     font-size: 14px;
 }
 
-.content-card {
+.content-card { // this is the whole white area including tabs section and tab panel
     margin: 0 auto;
     display: flex;
     width: 80vw;
@@ -132,7 +132,14 @@ div.scroll-list{
 
 .tab-panel {
     overflow-y: auto;
-    width: 100%;
+    // overflow-x: hidden;
+    overflow-x: hidden;
+    width: 80%;
+    max-width: 100%;
+    table {
+        width: 100%;
+
+    }
 }
 .tabs-section {
     min-width: 150px;

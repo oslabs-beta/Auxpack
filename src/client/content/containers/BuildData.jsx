@@ -117,7 +117,7 @@ const BuildData = ({ build, activeBuild }) => {
 
 
     return (
-        <div id="build-data" className={`${classes.root} content-card`}>
+        <div className={`${classes.root} content-card`}>
 
             <Tabs
                 orientation="vertical"
@@ -152,7 +152,6 @@ const BuildData = ({ build, activeBuild }) => {
                 />
             </TabPanel>
             <TabPanel value={value} index={2}>
-
                 <ErrorsTable
                     className="errors"
                     build={build}
