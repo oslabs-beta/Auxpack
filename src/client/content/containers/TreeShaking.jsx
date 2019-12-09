@@ -196,6 +196,7 @@ const TreeShaking = ({ build, activeBuild }) => {
       )
     }
 
+<<<<<<< HEAD
     return (
       <div className="cards-container centered">
         <SimpleExpansionPanel/>
@@ -362,3 +363,39 @@ export default TreeShaking;
 //   )
 // }
 
+=======
+  return (
+    <div className="tree-data">
+      <Grid container spacing={2} className="tree-modules">
+        <Grid item xs>
+          <TreeModule name={`Total Modules`} count={totalCount} total={totalCount} button={'Display Total Modules'} onClick={showTotal}/>
+        </Grid>
+        <Grid item xs> 
+          <TreeModule name={`Treeshakable (ESM) Modules`} count={esmCount} total={totalCount} button={'Display ESM Modules'} onClick={showEsm}/>
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Non-Treeshakable (CJS) Modules`} count={cjsCount} total={totalCount} button={'Display CJS Modules'} onClick={showCjs}/>
+        </Grid>
+        <Grid item xs>
+          <TreeModule name={`Mixed Modules`} count={bothCount} total={totalCount} button={'Display Mixed Modules'} onClick={showBoth}/>
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} className="tree-lists">
+        <Grid item xs>
+          <h5 className="list-header">{`${name} Modules List`}</h5>
+          {total}
+          {esm}
+          {cjs}
+          {both}
+        </Grid>
+      </Grid>
+    </div>
+  );
+  } else {
+    return (
+      <React.Fragment />
+    )
+  }
+}
+ 
+>>>>>>> master

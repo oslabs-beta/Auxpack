@@ -120,9 +120,7 @@ const ChangesTable = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '100%',
-                }} >
+                <ExpansionPanel className="expansionPanel">
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -132,19 +130,13 @@ const ChangesTable = props => {
                             <strong className="centered">Additions</strong>{/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails className="panelDetails" style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto',
-                        backgroundColor: 'whitesmoke',
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
                 {/* Second expansion */}
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '100%',
-                }}>
+                <ExpansionPanel className="expansionPanel">
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -154,12 +146,7 @@ const ChangesTable = props => {
                             <strong className="centered">Removals</strong> {/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
-                    {/* styles expansion panel inner content to allow scrolling, makes background color grey */}
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto',
-                        backgroundColor: 'whitesmoke'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
