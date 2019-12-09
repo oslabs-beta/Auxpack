@@ -7,7 +7,8 @@ const MainContainer = (props) => {
     const [activeBuild, setActiveBuild] = useState(0);
 
     useEffect(() => {
-        console.log(`fetching in USEEFFECT`)
+        //fetch used to hit enpoint that bring data from Webpack plugin to be displayed on front end
+        //setActiveBuild at the end of the length to start from last build analyzed as "first"
         fetch('/getStats')
             .then(res => res.json())
             .then(data => {
@@ -18,18 +19,20 @@ const MainContainer = (props) => {
     }, [])
 
 
-
+    //clickHandler to change build (unused)
     const clickHandler = e => {
         const length = build.length;
-        const i = length - e.target.getAttribute('data-build');
+        const i = length - parseInt(e.target.value);
         setActiveBuild(length - i);
     }
 
+    //Selecting a build utilizing a select element that alters the active build to be displayed
     const selectBuild = e => {
         const i = parseInt(e.target.value);
         setActiveBuild(i)
     }
 
+    //method for incrementing the active build for buttons (unused)
     const handleInc = () => {
         if (activeBuild < build.length - 1) {
             activeBuild += 1;
@@ -37,6 +40,7 @@ const MainContainer = (props) => {
         }
     }
 
+    //method for decrementing the active build for buttons (unused)
     const handleDec = () => {
         if (activeBuild > 0) {
             activeBuild -= 1;
@@ -45,9 +49,11 @@ const MainContainer = (props) => {
     }
 
     // Navbar props: build, activeBuild, selectBuild
-    // ContentContainer props: build, activeBuild, all methods except selectBuild
+    // ContentContainer props: build, activeBuild, selectBuild 
+    //all methods except build
 
     return (
+        //conditional rendering to prevent errors without data being available 
         <React.Fragment>
             <ContentContainer
                 build={(build.length !== 0) ? build : []}
