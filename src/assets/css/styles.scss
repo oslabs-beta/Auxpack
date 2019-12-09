@@ -88,13 +88,12 @@ g#details {
     font-size: 14px;
 }
 
-// div.build-data {
-//     margin: 0 auto;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     margin-bottom: 20px;
-// }
+.content-card {
+    margin: 0 auto;
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+}
 
 div.scroll-list{
     margin: 0 auto;
@@ -102,22 +101,6 @@ div.scroll-list{
     padding: 10px;
     border: 2px solid $blue1;
     margin-bottom: 24px;
-}
-/* Styles the text contents of each list row */ 
-div.row{ // this styles the content inside scrollable window
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    font-family: $raleway;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-    width: 98% !important;
-}
-.tab-panels {
-   max-width: 90%;
-   width: 100%;
-   margin-bottom: 20px;
-   overflow-y: auto;
 }
 
 .changes-li {
@@ -147,29 +130,9 @@ div.row{ // this styles the content inside scrollable window
     word-wrap: break-word;
 }
 
-.expansionPanel {
-    // width: 40%;
-    width: 500px;
-    max-width: 800px;
-}
-.panelDetails {
-    // border: 2px solid blue;
-    // z-index: -1;
-    ::-webkit-scrollbar-track {
-        background-color: $blue1;
-    }
-}
-td.word-break {
-    word-break: break-word;
-}
-.tab-panel { /* Material UI tab panel section that contains all contents*/
+.tab-panel {
     overflow-y: auto;
-    // border: 2px solid red;
-    margin-top: 10px;
-    margin-bottom: 10px;
     width: 100%;
-    // border: 2px solid green;
-}
 
 .tabs-section {
     min-width: 150px;
@@ -184,6 +147,11 @@ td.word-break {
 }
 .expansion-heading {
     color: $blue1;
+}
+
+.panelDetails {
+    height: 60%;
+    overflow-Y: auto;
 }
 
 table.highlight > tbody > tr:hover {
