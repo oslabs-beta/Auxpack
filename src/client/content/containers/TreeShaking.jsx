@@ -18,14 +18,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const TreeShaking = ({ build, activeBuild }) => {
-  if(build[activeBuild] !== undefined) {
+  if (build[activeBuild] !== undefined) {
     // parsing through data for treeshaking information
     const modules = build[activeBuild].treeStats;
     const esmCount = modules.esm.length;
     const cjsCount = modules.cjs.length;
     const bothCount = modules.both.length;
     const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
-    
+
     // list items displayed when expansion panel/card opens
     const esmList = modules.esm.map((obj, i) => {
       return (
@@ -33,29 +33,29 @@ const TreeShaking = ({ build, activeBuild }) => {
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const cjsList = modules.cjs.map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const bothList = modules.both.map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const totalList = modules.esm.concat(modules.cjs).concat(modules.both).map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
-      </tr>
+        </tr>
       )
     })
 
@@ -107,7 +107,7 @@ const TreeShaking = ({ build, activeBuild }) => {
           <div className={classes.root}>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
@@ -118,12 +118,12 @@ const TreeShaking = ({ build, activeBuild }) => {
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <TotalCard/>
+                <TotalCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
@@ -134,12 +134,12 @@ const TreeShaking = ({ build, activeBuild }) => {
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <ESMCard/>
+                <ESMCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
@@ -150,12 +150,12 @@ const TreeShaking = ({ build, activeBuild }) => {
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <CJSCard/>
+                <CJSCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
@@ -166,7 +166,7 @@ const TreeShaking = ({ build, activeBuild }) => {
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <BothCard/>
+                <BothCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
           </div>
@@ -176,17 +176,17 @@ const TreeShaking = ({ build, activeBuild }) => {
 
     return (
       <div className="cards-container centered">
-        <SimpleExpansionPanel/>
+        <SimpleExpansionPanel />
       </div>
     )
   }
   return (
     <React.Fragment />
   )
-} 
+}
 
 export default TreeShaking;
- 
+
 
 
 

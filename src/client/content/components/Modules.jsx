@@ -102,7 +102,8 @@ const Modules = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel">
+                {/*  expansion panel: defaultExpanded prop set to 'true' for expand on render */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
 
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}

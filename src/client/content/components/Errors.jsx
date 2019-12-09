@@ -14,10 +14,10 @@ const ErrorsTable = props => {
 
 
 
-    return (<table className="highlight">
+    return (<table className="highlight error-table">
         <thead>
             <tr>
-                <th>Error</th>
+                <th>Error Messages:</th>
             </tr>
         </thead>
         <tbody>
