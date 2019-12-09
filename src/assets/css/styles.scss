@@ -133,7 +133,10 @@ div.scroll-list{
 .tab-panel {
     overflow-y: auto;
     width: 100%;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> master
 
 .tabs-section {
     min-width: 150px;
@@ -154,6 +157,11 @@ div.scroll-list{
     .centered {
       color: $blue1;
     }
+}
+
+.panelDetails {
+    height: 60%;
+    overflow-Y: auto;
 }
 
 .panelDetails {
