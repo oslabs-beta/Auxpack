@@ -101,13 +101,7 @@ const BuildData = ({ build, activeBuild }) => {
     //makestyles used to target components to design components
     const useStyles = makeStyles(theme => ({
         root: {
-            flexGrow: 1,
             backgroundColor: theme.palette.background.paper,
-            display: 'flex',
-            height: '80%',
-            margin: '0 auto',
-            maxWidth: '80%',
-            marginBottom: '20px'
         },
         tabs: {
             borderRight: `1px solid ${theme.palette.divider}`,
@@ -123,11 +117,8 @@ const BuildData = ({ build, activeBuild }) => {
 
 
     return (
-        <div className="build-data" className={classes.root} style={{
-            height: '700px',
-            maxHeight: '40%',
-            borderRadius: '4px'
-        }}>
+        <div id="build-data" className={`${classes.root} content-card`}>
+
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -142,11 +133,7 @@ const BuildData = ({ build, activeBuild }) => {
                 <Tab label="Errors" {...a11yProps(2)} />
                 <Tab label="Modules" {...a11yProps(3)} />
             </Tabs>
-            <TabPanel value={value} index={0} className="tab-panels" style={{
-                display: 'flex',
-                justifyContent: 'center',
-                border: '1px solid blue'
-            }}>
+            <TabPanel value={value} index={0}>
                 <ChangesTable
                     build={build}
                     activeBuild={activeBuild}
@@ -155,25 +142,25 @@ const BuildData = ({ build, activeBuild }) => {
                     dirFinalArrayPrev={dirFinalArrayPrev}
                 />
             </TabPanel>
-            <TabPanel value={value} index={1} className="tab-panels" className="flex jcenter">
+
+            <TabPanel value={value} index={1}>
 
                 <AssetsTable
-                    className="assets"
                     build={build}
                     activeBuild={activeBuild}
                     getBytes={getBytes}
                 />
             </TabPanel>
-            <TabPanel value={value} index={2} className="tab-panels" className="flex jcenter">
+            <TabPanel value={value} index={2}>
+
                 <ErrorsTable
                     className="errors"
                     build={build}
                     activeBuild={activeBuild}
                 />
             </TabPanel>
-            <TabPanel value={value} index={3} className="tab-panels" style={{
-                border: '1px solid blue'
-            }}>
+            <TabPanel value={value} index={3}>
+
                 <Modules
                     build={build}
                     activeBuild={activeBuild}
