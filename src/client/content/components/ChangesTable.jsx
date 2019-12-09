@@ -94,7 +94,7 @@ const ChangesTable = props => {
             <tbody>
                 {additionListItems}
             </tbody>
-        </table >)
+        </table>)
 
     }
 
@@ -110,7 +110,7 @@ const ChangesTable = props => {
                 <tbody>
                     {removalListItems}
                 </tbody>
-            </table >
+            </table>
 
         )
     }
