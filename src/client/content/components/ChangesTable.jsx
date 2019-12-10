@@ -69,7 +69,10 @@ const ChangesTable = props => {
             removals.push({ path, size });
         }
     }
-
+    //console.log(`dirFinalFiles`, dirFinalFiles, `dirFinalFilesPrev: `, dirFinalFilesPrev)
+    //console.log(`additions: `, additions);
+    // console.log(`removed`, removed)
+    // console.log(`removals: `, removals);
     const additionListItems = additions.map((obj, i) => {
         return (<tr key={i} className="table-row">
             <td>{obj.path}</td>
@@ -94,7 +97,7 @@ const ChangesTable = props => {
             <tbody>
                 {additionListItems}
             </tbody>
-        </table >)
+        </table>)
 
     }
 
@@ -110,7 +113,7 @@ const ChangesTable = props => {
                 <tbody>
                     {removalListItems}
                 </tbody>
-            </table >
+            </table>
 
         )
     }
@@ -120,7 +123,8 @@ const ChangesTable = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel">
+                {/* Additions expansion panel */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -135,8 +139,8 @@ const ChangesTable = props => {
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                {/* Second expansion */}
-                <ExpansionPanel className="expansionPanel">
+                {/* Second expansion: defaultExpanded prop set to 'true' for expand on render */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
