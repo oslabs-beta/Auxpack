@@ -14,14 +14,15 @@ class SizeChart extends Component {
     drawChart() {
         //CHART MARGINS AND DIMENSIONS
         var margin = {top: 10, right: 30, bottom: 50, left: 60},
-            width = 300 - margin.left - margin.right,
-            height = 250 - margin.top - margin.bottom;
+            width = 350 - margin.left - margin.right,
+            height = 300 - margin.top - margin.bottom;
 
         //APPENDING THE OVERALL SVG CHART
         var svg = d3.select("#size-chart")
         .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
+            .attr("class", "build-chart-svg")
         .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
@@ -51,7 +52,7 @@ class SizeChart extends Component {
             .datum(chartData)
             .attr("fill", "none")
             .attr("stroke", "rgb(63,81,181)")
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 1.8)
             .attr("d", d3.line()
                 .x(function(d) { return x(d.build) })
                 .y(function(d) { return y(d.size) })
@@ -61,9 +62,10 @@ class SizeChart extends Component {
             svg.append("text")
             .attr("class", "x label")
             .attr("text-anchor", "end")
-            .attr("x", width / 1.75)
+            .attr("x", width)
             .attr("y", height + 35)
-            .text("BUILD");
+            .text("build, by size")
+            .attr("fill", "rgba(63,81,181,1)");
 
             //ADDING Y-AXIS LABEL
             svg.append("text")
@@ -72,7 +74,8 @@ class SizeChart extends Component {
             .attr("y", -50)
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
-            .text("SIZE\xa0\xa0\xa0\xa0(in kB)");
+            .text("size\xa0\xa0\xa0\xa0(in kB)")
+            .attr("fill", "rgba(63,81,181,1)");
 
         })()
     }
@@ -81,7 +84,6 @@ class SizeChart extends Component {
         return (
             <div className="single-chart">
                 <div id="size-chart"></div>
-                <p className="chart-label">BUILD SIZES</p>
             </div>
         )
     }

@@ -15,10 +15,12 @@ const HistoryCharts = ({ build }) => {
     })
 
     return <React.Fragment>
+        <div className={`content-card`}>
             <div id="chart-container">
                 <SizeChart chartData={chartData} />
                 <TimeChart chartData={chartData} />
             </div>
+        </div>
         </React.Fragment>
 }
 
