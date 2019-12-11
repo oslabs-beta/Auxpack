@@ -40,12 +40,12 @@ const BuildData = ({ build, activeBuild }) => {
             .filter((item, pos) => item && findUniquePaths.indexOf(item) === pos)
             .sort();
 
-        var filePathAry = [];
-        var finalArray = [];
-        var dirFinalArray = [];
+        let filePathAry = [];
+        let finalArray = [];
+        const dirFinalArray = [];
 
-        for (var l = 0; l < uniqueArray.length; l++) {
-            for (var k = 0; k < filePaths.length; k++) {
+        for (let l = 0; l < uniqueArray.length; l++) {
+            for (let k = 0; k < filePaths.length; k++) {
                 filePathAry = [filePaths[k][0].split('/'), filePaths[k][1], filePaths[k][2]]
                 let uniquePathCheck = filePathAry[0].slice(0, filePathAry[0].length - 1).join('/')
                 if (uniqueArray[l] === uniquePathCheck) {
@@ -117,14 +117,14 @@ const BuildData = ({ build, activeBuild }) => {
 
 
     return (
-        <div id="build-data" className={`${classes.root} content-card`}>
+        <div className={`${classes.root} content-card`}>
 
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
                 value={value}
                 onChange={handleChange}
-                aria-label="Vertical tabs example"
+                aria-label="Vertical tabs"
                 className={classes.tabs}
                 className="tabs-section"
             >
@@ -152,7 +152,6 @@ const BuildData = ({ build, activeBuild }) => {
                 />
             </TabPanel>
             <TabPanel value={value} index={2}>
-
                 <ErrorsTable
                     className="errors"
                     build={build}

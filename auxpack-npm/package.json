@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bin": "./bin/auxpack.js",
+    "bin": "./bin/auxpack.js"
   },
   "keywords": [],
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",

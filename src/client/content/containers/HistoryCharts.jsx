@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import SizeChart from '../../views/graphs/SizeChart.jsx';
-import TimeChart from '../../views/graphs/TimeChart.jsx';
+import SizeChart from '../components/SizeChart.jsx';
+import TimeChart from '../components/TimeChart.jsx';
 
 const HistoryCharts = ({ build }) => {
 
@@ -13,10 +13,10 @@ const HistoryCharts = ({ build }) => {
     })
 
     return <React.Fragment>
-
-            <SizeChart chartData={chartData} />
-            <TimeChart chartData={chartData} />
-
+            <div id="chart-container">
+                <SizeChart chartData={chartData} />
+                <TimeChart chartData={chartData} />
+            </div>
         </React.Fragment>
 }
 

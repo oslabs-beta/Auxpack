@@ -18,14 +18,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const TreeShaking = ({ build, activeBuild }) => {
-  if(build[activeBuild] !== undefined) {
+  if (build[activeBuild] !== undefined) {
     // parsing through data for treeshaking information
     const modules = build[activeBuild].treeStats;
     const esmCount = modules.esm.length;
     const cjsCount = modules.cjs.length;
     const bothCount = modules.both.length;
     const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
-    
+
     // list items displayed when expansion panel/card opens
     const esmList = modules.esm.map((obj, i) => {
       return (
@@ -33,29 +33,29 @@ const TreeShaking = ({ build, activeBuild }) => {
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const cjsList = modules.cjs.map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const bothList = modules.both.map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
         </tr>
       )
-    }); 
-    
+    });
+
     const totalList = modules.esm.concat(modules.cjs).concat(modules.both).map((obj, i) => {
       return (
         <tr key={i} className="table-row">
           <td>{obj.name}</td>
-      </tr>
+        </tr>
       )
     })
 
@@ -107,66 +107,74 @@ const TreeShaking = ({ build, activeBuild }) => {
           <div className={classes.root}>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">Total Modules</strong>
-                  <strong>Count: </strong>{`${(totalCount !== 0) ? totalCount : 0}`}
-                  <strong>Percentage: </strong>{`${Math.round(totalCount / totalCount * 100)}%`}
+                  <span>
+                    <strong>Count: </strong>{`${(totalCount !== 0) ? totalCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(totalCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <TotalCard/>
+                <TotalCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Treeshakable (ESM) Modules`}</strong>
-                  <strong>Count: </strong>{`${(esmCount !== 0) ? esmCount : 0}`}
-                  <strong>Percentage: </strong>{`${Math.round(esmCount / totalCount * 100)}%`}
+                  <span>
+                    <strong>Count: </strong>{`${(esmCount !== 0) ? esmCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(esmCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <ESMCard/>
+                <ESMCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Non-Treeshakable (CJS) Modules`}</strong>
-                  <strong>Count: </strong>{`${(cjsCount !== 0) ? cjsCount : 0}`}
-                  <strong>Percentage: </strong>{`${Math.round(cjsCount / totalCount * 100)}%`}
+                  <span>
+                    <strong>Count: </strong>{`${(cjsCount !== 0) ? cjsCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(cjsCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <CJSCard/>
+                <CJSCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel className="expansionPanel">
               <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
+                expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Mixed Modules`}</strong>
-                  <strong>Count: </strong>{`${(bothCount !== 0) ? bothCount : 0}`}
-                  <strong>Percentage: </strong>{`${Math.round(bothCount / totalCount * 100)}%`}
+                  <span>
+                    <strong>Count: </strong>{`${(bothCount !== 0) ? bothCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(bothCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
-                <BothCard/>
+                <BothCard />
               </ExpansionPanelDetails>
             </ExpansionPanel>
           </div>
@@ -176,17 +184,17 @@ const TreeShaking = ({ build, activeBuild }) => {
 
     return (
       <div className="cards-container centered">
-        <SimpleExpansionPanel/>
+        <SimpleExpansionPanel />
       </div>
     )
   }
   return (
     <React.Fragment />
   )
-} 
+}
 
 export default TreeShaking;
- 
+
 
 
 
