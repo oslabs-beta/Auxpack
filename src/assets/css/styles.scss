@@ -144,6 +144,10 @@ div.scroll-list{
     overflow-y: auto;
     width: 100%;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 3e7b2efbe2116dc4e379a61fb3a26f04e6768653
 .tabs-section {
     min-width: 150px;
     margin-bottom: 20px;
@@ -191,4 +195,22 @@ table.highlight > tbody > tr:hover {
     justify-content: center;
     flex-direction: row;
     width: 100%;
+}
+
+#chart-container {
+    margin: 50px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.single-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chart-label {
+    color: $blue1;
+    font-weight: bold;
 }
