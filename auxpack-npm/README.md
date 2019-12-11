@@ -1,9 +1,4 @@
-# auxpack
-[![GitHub license](https://img.shields.io/github/license/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/blob/master/LICENSE)
-![npm](https://img.shields.io/npm/v/auxpack?style=flat-square)
-[![GitHub issues](https://img.shields.io/github/issues/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/network)
-![npm](https://img.shields.io/npm/dw/auxpack?style=flat-square)
+## auxpack
 
 auxpack is the new, configurable, auxillary Webpack plugin that monitors relevent statistics from your production builds when using Webpack. This interactive interface allows allows for developers to  better understand bundle composition and implement optimization strategies.
 

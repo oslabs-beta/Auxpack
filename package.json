@@ -8,6 +8,7 @@
     "@material-ui/icons": "^4.5.1",
     "d3": "^5.14.2",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "lodash": "^4.17.15",
     "path": "^0.12.7",
     "react": "^16.12.0",
@@ -35,7 +36,7 @@
   },
   "scripts": {
     "start": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "NODE_ENV=production webpack",
     "scss": "node-sass --watch src/assets/scss -o src/assets/css",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open\" \"cross-env nodemon server/server.js || true\""

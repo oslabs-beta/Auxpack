@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
-    },
+    }
 }));
 
 const ChangesTable = props => {
@@ -69,7 +69,10 @@ const ChangesTable = props => {
             removals.push({ path, size });
         }
     }
-
+    //console.log(`dirFinalFiles`, dirFinalFiles, `dirFinalFilesPrev: `, dirFinalFilesPrev)
+    //console.log(`additions: `, additions);
+    // console.log(`removed`, removed)
+    // console.log(`removals: `, removals);
     const additionListItems = additions.map((obj, i) => {
         return (<tr key={i} className="table-row">
             <td>{obj.path}</td>
@@ -94,7 +97,7 @@ const ChangesTable = props => {
             <tbody>
                 {additionListItems}
             </tbody>
-        </table >)
+        </table>)
 
     }
 
@@ -110,7 +113,7 @@ const ChangesTable = props => {
                 <tbody>
                     {removalListItems}
                 </tbody>
-            </table >
+            </table>
 
         )
     }
@@ -120,51 +123,38 @@ const ChangesTable = props => {
 
         return (
             <div className={classes.root} >
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
-                }} >
+                {/* Additions expansion panel */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
                         <Typography className={classes.heading} className="expansion-heading">
-                            {/* Expansion heading */}
-                            <strong className="centered">Additions</strong>
+                            <strong className="centered">Additions</strong>{/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Additions Card Panel - content*/}
                         <AdditionCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                {/* Second expansion */}
-                <ExpansionPanel className="expansionPanel" style={{
-                    width: '800px',
-                }}>
+                {/* Second expansion: defaultExpanded prop set to 'true' for expand on render */}
+                <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
-
                     >
-                        {/* Expansion heading */}
                         <Typography className={classes.heading} className="center-heading" className="expansion-heading">
-                            <strong className="centered">Removals</strong>
+                            <strong className="centered">Removals</strong> {/* Expansion heading */}
                         </Typography>
                     </ExpansionPanelSummary>
-                    <ExpansionPanelDetails style={{
-                        maxHeight: '400px',
-                        overflowY: 'auto'
-                    }}>
+                    <ExpansionPanelDetails className="panelDetails">
                         {/* Removals Card Panel - content*/}
                         <RemovalCard />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-
             </div>
         );
     }

@@ -15,6 +15,7 @@ $bb-grey-lite: 2px solid #ddd;
 .jcenter {
     justify-content: center;
 }
+//header h1 value for auxpack
 #auxpack-banner {
     margin-left: 2%;
     margin-bottom: 3vh;
@@ -23,11 +24,17 @@ $bb-grey-lite: 2px solid #ddd;
     z-index: 1;
     cursor: pointer;
 }
+//message while sunburst is loading
 #loading {
     position: fixed;
     top: 40%;
     left: 40%;
 }
+//top of expansion panel headings
+#panel1a-header {
+    background-color: rgba($blue1, .95);
+}
+//title page
 h1 {
     font-family: $raleway;
     color: $blue1;
@@ -53,6 +60,7 @@ body {
     background-color: white;
     display: flex;
     overflow: hidden;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, .3);
     #bottom-nav {
         background-color:white;
     }
@@ -88,13 +96,14 @@ g#details {
     font-size: 14px;
 }
 
-// div.build-data {
-//     margin: 0 auto;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     margin-bottom: 20px;
-// }
+.content-card { // this is the whole white area including tabs section and tab panel
+    margin: 0 auto;
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+}
 
 div.scroll-list{
     margin: 0 auto;
@@ -102,22 +111,6 @@ div.scroll-list{
     padding: 10px;
     border: 2px solid $blue1;
     margin-bottom: 24px;
-}
-/* Styles the text contents of each list row */ 
-div.row{ // this styles the content inside scrollable window
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    font-family: $raleway;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-    width: 98% !important;
-}
-.tab-panels {
-   max-width: 90%;
-   width: 100%;
-   margin-bottom: 20px;
-   overflow-y: auto;
 }
 
 .changes-li {
@@ -146,14 +139,10 @@ div.row{ // this styles the content inside scrollable window
     max-width: 100%;
     word-wrap: break-word;
 }
-// .mw-40 {
-//     max-width: 40%;
-// }
-.expansionPanel {
-    width: 40%;
-}
+
 .tab-panel {
     overflow-y: auto;
+    width: 100%;
 }
 .tabs-section {
     min-width: 150px;
@@ -167,31 +156,34 @@ div.row{ // this styles the content inside scrollable window
     overflow-y: auto;
 }
 .expansion-heading {
-    color: $blue1;
-    strong{
-        margin: 0 auto;
+    font-family: $raleway;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    .centered {
+      color: whitesmoke;
+      margin: 0;
     }
+}
+
+.MuiTab-textColorInherit.Mui-selected {
+    color: $blue1;
+}
+
+.panelDetails {
+    height: 60%;
+    overflow-Y: auto;
 }
 
 table.highlight > tbody > tr:hover {
     color: rgba(63,81,181,1);
     background-color: rgba(255,255,255,1);
-    // max-width: 50%;
 }
 
-.MuiButton-label {
-  justify-content: flex-start !important;
-}
-
-.list-header {
-  font-family: $raleway;
-  color: rgba(63,81,181,1);
-}
 .center-heading {
     margin: 0 auto;
-}
-.tree-data {
-  background-color: white;
 }
 
 .cards-container {
@@ -199,4 +191,22 @@ table.highlight > tbody > tr:hover {
     justify-content: center;
     flex-direction: row;
     width: 100%;
+}
+
+#chart-container {
+    margin: 50px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.single-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chart-label {
+    color: $blue1;
+    font-weight: bold;
 }
