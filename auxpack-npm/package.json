@@ -1,6 +1,6 @@
 {
   "name": "auxpack",
-  "version": "1.0.4a",
+  "version": "1.0.6",
   "description": "A dashboard for monitoring Webpack build stats.",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",
   "license": "MIT",
   "dependencies": {
+    "d3": "^5.14.2",
     "express": "^4.17.1",
     "opener": "^1.5.1"
   }
