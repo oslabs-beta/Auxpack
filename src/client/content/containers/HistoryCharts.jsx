@@ -4,11 +4,13 @@ import TimeChart from '../components/TimeChart.jsx';
 
 const HistoryCharts = ({ build }) => {
 
+    //PARSING PASSED DOWN BUILD DATA INTO SIMPLE OBJECTS FOR CHARTS
+
     let chartData = build.map((b, i) => {
         return b = {
             'build': i + 1,
-            'size': b.size,
-            'time': b.time
+            'size': b.size / 1000,
+            'time': b.time / 1000,
         }
     })
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import * as d3 from "d3";
+// import * as d3 from "d3"; << NOT IMPORTING, AS WE'VE BUILT ON d3.v4, as imported in index.html
 
 class SizeChart extends Component {
     constructor(props) {
@@ -7,16 +7,17 @@ class SizeChart extends Component {
     }
 
     componentDidMount() {
+        //RENDERING CHART WHEN COMPONENT MOUNTS
         this.drawChart();
     }
 
     drawChart() {
-        // set the dimensions and margins of the graph
-        var margin = {top: 10, right: 30, bottom: 30, left: 60},
+        //CHART MARGINS AND DIMENSIONS
+        var margin = {top: 10, right: 30, bottom: 50, left: 60},
             width = 300 - margin.left - margin.right,
             height = 250 - margin.top - margin.bottom;
 
-        // append the svg object to the body of the page
+        //APPENDING THE OVERALL SVG CHART
         var svg = d3.select("#size-chart")
         .append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -25,29 +26,27 @@ class SizeChart extends Component {
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
+        //TAKING IN THE PASSED DOWN DATA
         let chartData = this.props.chartData;
 
-        //Read the data
-        d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
-
-        // Now I can use this dataset:
-        function(data) {
-            // Add X axis --> it is a date format
+        //IFFY FUNCTION TO IMMEDIATELY RENDER OUT THE CHART
+        (function() {
+            //ADDING X-AXIS - BUILD
             var x = d3.scaleTime()
             .domain(d3.extent(chartData, function(d) { return d.build; }))
             .range([ 0, width ]);
             svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x));
+            .call(d3.axisBottom(x).tickFormat(d3.format("d")));
 
-            // Add Y axis
+            //ADDING Y-AXIS - SIZE
             var y = d3.scaleLinear()
             .domain([0, d3.max(chartData, function(d) { return +d.size; })])
             .range([ height, 0 ]);
             svg.append("g")
             .call(d3.axisLeft(y));
 
-            // Add the line
+            //ADDING THE LINE
             svg.append("path")
             .datum(chartData)
             .attr("fill", "none")
@@ -57,15 +56,32 @@ class SizeChart extends Component {
                 .x(function(d) { return x(d.build) })
                 .y(function(d) { return y(d.size) })
                 )
-        
-        })
+
+            //ADDING X-AXIS LABEL
+            svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "end")
+            .attr("x", width / 1.75)
+            .attr("y", height + 35)
+            .text("BUILD");
+
+            //ADDING Y-AXIS LABEL
+            svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", -50)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text("SIZE\xa0\xa0\xa0\xa0(in kB)");
+
+        })()
     }
     
     render() {
         return (
             <div className="single-chart">
                 <div id="size-chart"></div>
-                <p className="chart-label">SIZE CHART</p>
+                <p className="chart-label">BUILD SIZES</p>
             </div>
         )
     }
