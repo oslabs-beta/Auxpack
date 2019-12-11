@@ -113,10 +113,10 @@ const TreeShaking = ({ build, activeBuild }) => {
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">Total Modules</strong>
-                  <div>
+                  <span>
                     <strong>Count: </strong>{`${(totalCount !== 0) ? totalCount : 0}   `}
                     <strong>Percentage: </strong>{`${Math.round(totalCount / totalCount * 100)}%`}
-                  </div>
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
@@ -131,10 +131,10 @@ const TreeShaking = ({ build, activeBuild }) => {
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Treeshakable (ESM) Modules`}</strong>
-                  <div>
+                  <span>
                     <strong>Count: </strong>{`${(esmCount !== 0) ? esmCount : 0}   `}
                     <strong>Percentage: </strong>{`${Math.round(esmCount / totalCount * 100)}%`}
-                  </div>
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
@@ -149,10 +149,10 @@ const TreeShaking = ({ build, activeBuild }) => {
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Non-Treeshakable (CJS) Modules`}</strong>
-                  <div>
-                  <strong>Count: </strong>{`${(cjsCount !== 0) ? cjsCount : 0}   `}
-                  <strong>Percentage: </strong>{`${Math.round(cjsCount / totalCount * 100)}%`}
-                  </div>
+                  <span>
+                    <strong>Count: </strong>{`${(cjsCount !== 0) ? cjsCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(cjsCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
@@ -167,10 +167,10 @@ const TreeShaking = ({ build, activeBuild }) => {
               >
                 <Typography className={classes.heading} className="expansion-heading">
                   <strong className="centered">{`Mixed Modules`}</strong>
-                  <div>
-                  <strong>Count: </strong>{`${(bothCount !== 0) ? bothCount : 0}   `}
-                  <strong>Percentage: </strong>{`${Math.round(bothCount / totalCount * 100)}%`}
-                  </div>
+                  <span>
+                    <strong>Count: </strong>{`${(bothCount !== 0) ? bothCount : 0}   `}
+                    <strong>Percentage: </strong>{`${Math.round(bothCount / totalCount * 100)}%`}
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className="panelDetails">
