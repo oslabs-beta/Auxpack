@@ -7,15 +7,6 @@
 
 Auxpack is the new, configurable, auxillary Webpack plugin that monitors relevent statistics from your build when using Webpack.
 
-<<<<<<< HEAD
-In order to get started, in your webpack.config.js file, require in our plugin with 
-
-`const Auxpack = require('auxpack)`
-
-and add a plugin key, or add another value into your plugin array if you have other plugins installed with
-
-`plugin : [ new Auxpack(), ]` 
-=======
 ## Installation
 
 Install via `npm -D auxpack`
@@ -45,4 +36,3 @@ modules.exports = [
 ]
 
 ```
->>>>>>> ffeeddb2d5903769dc2ef453f9d0bde5452184ae
