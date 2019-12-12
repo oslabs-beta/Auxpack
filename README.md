@@ -13,6 +13,20 @@ Install via `npm i -D auxpack`
 
 ## Setup
 
+`plugin : [ new Auxpack(), ]` 
+
+## Standalone server
+If you just want to display the stats, without having to rebuild your project, `auxpack` publishes the `auxpack` executable to just launch the server.
+
+```
+  Usage: auxpack [options] [filename]
+  Options:
+    -V, --version     output the version number
+    -p --port [port]  The port to run the server on (default: 8081)
+    -f --filename     The json file to load stats from - Resolved relative to where the command is executed
+    -h, --help        output usage information
+```
+
 ```javascript
 // webpack.config.js
 
