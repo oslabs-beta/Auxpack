@@ -15,6 +15,7 @@ $bb-grey-lite: 2px solid #ddd;
 .jcenter {
     justify-content: center;
 }
+//header h1 value for auxpack
 #auxpack-banner {
     margin-left: 2%;
     margin-bottom: 3vh;
@@ -23,11 +24,17 @@ $bb-grey-lite: 2px solid #ddd;
     z-index: 1;
     cursor: pointer;
 }
+//message while sunburst is loading
 #loading {
     position: fixed;
     top: 40%;
     left: 40%;
 }
+//top of expansion panel headings
+#panel1a-header {
+    background-color: rgba($blue1, .95);
+}
+//title page
 h1 {
     font-family: $raleway;
     color: $blue1;
@@ -53,6 +60,7 @@ body {
     background-color: white;
     display: flex;
     overflow: hidden;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, .3);
     #bottom-nav {
         background-color:white;
     }
@@ -92,7 +100,9 @@ g#details {
     margin: 0 auto;
     display: flex;
     width: 80vw;
-    height: 80vh;
+    height: 75vh;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
 }
 
 div.scroll-list{
@@ -134,6 +144,7 @@ div.scroll-list{
     overflow-y: auto;
     width: 100%;
 }
+
 .tabs-section {
     min-width: 150px;
     margin-bottom: 20px;
@@ -147,12 +158,19 @@ div.scroll-list{
 }
 .expansion-heading {
     font-family: $raleway;
-    color: $black;
+    color: whitesmoke;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     .centered {
-      color: $blue1;
+      color: whitesmoke;
+      margin: 0;
     }
+}
+
+.MuiTab-textColorInherit.Mui-selected {
+    color: $blue1;
 }
 
 .panelDetails {
@@ -174,4 +192,31 @@ table.highlight > tbody > tr:hover {
     justify-content: center;
     flex-direction: row;
     width: 100%;
+}
+
+#chart-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.single-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chart-label {
+    color: $blue1;
+    font-family: $raleway;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.build-chart-svg {
+    // background-color: whitesmoke;
+    font-family: $raleway;
+    font-weight: bold;
 }
