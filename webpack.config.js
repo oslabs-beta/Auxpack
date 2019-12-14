@@ -16,15 +16,15 @@ module.exports = {
             { 
                 test: /\.jsx?/,
                 exclude: /node_modules/,
-                use: {
-                    loader:'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env','@babel/preset-react']
-                    }
+                loader: 'babel-loader',
+                query: {
+                  presets: ['@babel/env', '@babel/react'],
+                  plugins: ['@babel/plugin-transform-runtime', '@babel/transform-async-to-generator'],
                 }
             },
             {
                 test: /\.scss$/,
+                exclude: /node_modules/,
                 use: [
                   // style-loader
                   { loader: 'style-loader' },
