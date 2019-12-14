@@ -1,6 +1,7 @@
-import App from '../client/App.jsx';
-// see setupTests.js for config
+// Refer to setupTests.js for config
+import Overview from '../client/content/containers/Overview.jsx';
 
+// sample test to ensure Jest is working
 describe('Examining the syntax of Jest tests', () => {
    
   it('sums numbers', () => {
@@ -9,3 +10,32 @@ describe('Examining the syntax of Jest tests', () => {
    });
 });
 
+// sample test to ensure Enzyme is working
+describe('React unit tests', () => {
+  describe('Overview', () => {
+    let wrapper;
+
+    const props = {
+      build:[{
+      timeStamp:1575426090404,
+      time:1439,
+      hash:"546142ce1b49a6ba7d6f",
+      errors:[],
+      size:1172113,
+      assets:[{"name":"bundle.js","chunks":["main"],"size":1172113}],
+      chunks:[{"size":1118609,"files":["bundle.js"],"modules":[{"name":"./client/App.jsx","size":6375,"id":"./client/App.jsx"}]}],
+      treeStats:{csj:[], esm:[], both:[]}
+      }],
+      activeBuild: 1
+    }
+
+    beforeAll(() => {
+      wrapper = shallow(<Overview {...props} />);
+    });
+
+    it('Snapshot testing labeled test', () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    })
+  })
+
+})
