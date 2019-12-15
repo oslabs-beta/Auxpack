@@ -356,7 +356,6 @@ export default class Sunburst extends Component {
 
 
     render() {
-        console.log(this.props.burstData)
         return <React.Fragment>
             <div id="main">
                 <div id="sequence"></div>
