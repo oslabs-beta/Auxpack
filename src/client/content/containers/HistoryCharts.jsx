@@ -21,7 +21,7 @@ const HistoryCharts = ({ build }) => {
                 <TimeChart chartData={chartData} />
             </div>
         </div>
-        </React.Fragment>
+    </React.Fragment>
 }
 
 export default HistoryCharts;
