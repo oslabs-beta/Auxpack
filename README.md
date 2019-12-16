@@ -1,10 +1,4 @@
 # auxpack
-[![GitHub license](https://img.shields.io/github/license/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/blob/master/LICENSE)
-![npm](https://img.shields.io/npm/v/auxpack?style=flat-square)
-[![GitHub issues](https://img.shields.io/github/issues/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Auxpack/Auxpack?style=flat-square)](https://github.com/Auxpack/Auxpack/network)
-![npm](https://img.shields.io/npm/dw/auxpack?style=flat-square)
-
 auxpack is the new, (soon-to-be) configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
 
 ## Installation
@@ -23,7 +17,13 @@ modules.exports = [
   ... 
   plugins: [
     ...
-    new Auxpack() // add Auxpack into plugins
+    new Auxpack(  // add Auxpack into plugins
+      {
+        PORT: 1111, // configurable PORT
+        targetFile: 'aux-stats', // configurable output filename
+        logMe: true, // configure with true to console.log the current build's aux-stats
+      }
+    ),
   ]
   ...
 ]
