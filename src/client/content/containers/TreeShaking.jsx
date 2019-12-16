@@ -5,6 +5,7 @@ const TreeShaking = ({ build, activeBuild }) => {
   // render expansion panels if build data is available
   if (build[activeBuild] !== undefined) {
     const modules = build[activeBuild].treeStats;
+    const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
 
     return (
       <div className='cards-container centered'>
@@ -12,7 +13,7 @@ const TreeShaking = ({ build, activeBuild }) => {
           <div className='tree-module'>
             <TreeModule list={modules.esm.concat(modules.cjs).concat(modules.both)} 
               title={`Total Modules`} 
-              count={modules.cjs.length + modules.esm.length + modules.both.length} 
+              count={totalCount} 
               totalCount={totalCount} 
             />
             <TreeModule list={modules.esm} 

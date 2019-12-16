@@ -1,5 +1,7 @@
 // Refer to setupTests.js for config
+import App from '../client/App.jsx';
 import Overview from '../client/content/containers/Overview.jsx';
+import SunburstContainer from '../client/content/containers/SunburstContainer.jsx';
 
 // sample test to ensure Jest is working
 describe('Examining the syntax of Jest tests', () => {
@@ -11,6 +13,10 @@ describe('Examining the syntax of Jest tests', () => {
 });
 
 // sample test to ensure Enzyme is working
+it('renders without crashing', () => {
+  shallow(<App />);
+});
+
 describe('React unit tests', () => {
   describe('Overview', () => {
     let wrapper;
@@ -31,11 +37,22 @@ describe('React unit tests', () => {
 
     beforeAll(() => {
       wrapper = shallow(<Overview {...props} />);
+
     });
 
-    it('Snapshot testing labeled test', () => {
+    it('Snapshot testing', () => {
       expect(toJson(wrapper)).toMatchSnapshot();
     })
-  })
 
-})
+    it("Overview should display all of its build prop inside the SunburstContainer component", () => {
+      const propValues = Object.values(props);
+      wrapper.find(SunburstContainer).forEach(node => {
+        expect(propValues.includes(node.prop("build"))).toBe(true);
+      });
+    });
+
+  })
+});
+
+
+
