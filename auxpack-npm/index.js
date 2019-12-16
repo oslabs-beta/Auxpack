@@ -4,11 +4,15 @@ const parseStats = require('./utils/parser');
 const server = require('./utils/server');
 
 module.exports = class Auxpack {
-  constructor() {  }
+  constructor(options) {
+    this.targetFile = options.targetFile
+    this.PORT = options.PORT
+    this.logMe = options.logMe
+  }
   
   apply(compiler) {
       let data;
-      const target = path.resolve(__dirname, '..', '../aux-stats.json');
+      const target = path.resolve(__dirname, '..', `../${this.targetFile}.json`);
 
       //GETTING PREVIOUS STATS, OR SETTING A BLANK ARRAY
       if (fs.existsSync(target)) {
@@ -21,10 +25,10 @@ module.exports = class Auxpack {
         stats = stats.toJson();
         const parsed = parseStats(stats, target);
         data.push(parsed)
-        console.log('\n\nAUXPACK STATS RECORDED\nCURRENT BUILD:\n', parsed);
+        if(this.logMe) console.log('\n\nAUXPACK STATS RECORDED\nCURRENT BUILD:\n', parsed);
         fs.writeFile(target, JSON.stringify(data), (err) => {
           if (err) throw err;
-          server(data)
+          server(data, this.PORT)
         });
     });
   }
