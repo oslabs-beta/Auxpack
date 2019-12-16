@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["Webpack", "Monitor", "auxpack", "build", "bundle","plugin"],
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",
+  "repository": "https://github.com/Auxpack/Auxpack.com",
   "license": "MIT",
   "dependencies": {
     "d3": "^5.14.2",

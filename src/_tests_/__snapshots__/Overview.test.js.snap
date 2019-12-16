@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview snapshot Snapshot testing Overview component 1`] = `
+<div
+  id="container"
+>
+  <SunburstContainer
+    activeBuild={1}
+    build={
+      Array [
+        Object {
+          "assets": Array [
+            Object {
+              "chunks": Array [
+                "main",
+              ],
+              "name": "bundle.js",
+              "size": 1172113,
+            },
+          ],
+          "chunks": Array [
+            Object {
+              "files": Array [
+                "bundle.js",
+              ],
+              "modules": Array [
+                Object {
+                  "id": "./client/App.jsx",
+                  "name": "./client/App.jsx",
+                  "size": 6375,
+                },
+              ],
+              "size": 1118609,
+            },
+          ],
+          "errors": Array [],
+          "hash": "546142ce1b49a6ba7d6f",
+          "size": 1172113,
+          "time": 1439,
+          "timeStamp": 1575426090404,
+          "treeStats": Object {
+            "both": Array [],
+            "csj": Array [],
+            "esm": Array [],
+          },
+        },
+      ]
+    }
+  />
+</div>
+`;
