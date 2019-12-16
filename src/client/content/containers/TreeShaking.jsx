@@ -2,36 +2,32 @@ import React from 'react';
 import TreeModule from '../components/TreeModule.jsx';
 
 const TreeShaking = ({ build, activeBuild }) => {
+  // render expansion panels if build data is available
   if (build[activeBuild] !== undefined) {
-    // parsing through data for treeshaking information
     const modules = build[activeBuild].treeStats;
-    const esmCount = modules.esm.length;
-    const cjsCount = modules.cjs.length;
-    const bothCount = modules.both.length;
-    const totalCount = modules.cjs.length + modules.esm.length + modules.both.length;
 
     return (
-      <div className="cards-container centered">
+      <div className='cards-container centered'>
         <div className='content-card'>
-          <div className="tree-module">
+          <div className='tree-module'>
             <TreeModule list={modules.esm.concat(modules.cjs).concat(modules.both)} 
               title={`Total Modules`} 
-              count={totalCount} 
+              count={modules.cjs.length + modules.esm.length + modules.both.length} 
               totalCount={totalCount} 
             />
             <TreeModule list={modules.esm} 
               title={`Treeshakable (ESM) Modules`} 
-              count={esmCount} 
+              count={modules.esm.length} 
               totalCount={totalCount} 
             />
             <TreeModule list={modules.cjs} 
               title={`Non-Treeshakable (CJS) Modules`} 
-              count={cjsCount} 
+              count={modules.cjs.length} 
               totalCount={totalCount} 
             />
             <TreeModule list={modules.both} 
               title={`Mixed Modules`} 
-              count={bothCount} 
+              count={modules.both.length} 
               totalCount={totalCount} 
             />
           </div>
@@ -40,8 +36,15 @@ const TreeShaking = ({ build, activeBuild }) => {
     )
   }
 
+  // render note if build data is not available
   return (
-    <React.Fragment />
+    <div className='cards-container centered'>
+      <div className='content-card full-center'>
+        <div className='full-center'>
+          No modules to display 
+        </div>
+      </div>
+    </div>
   )
 }
 

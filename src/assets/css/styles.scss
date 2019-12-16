@@ -15,6 +15,13 @@ $bb-grey-lite: 2px solid #ddd;
 .jcenter {
     justify-content: center;
 }
+
+.full-center {
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+}
+
 //header h1 value for auxpack
 #auxpack-banner {
     margin-left: 2%;
