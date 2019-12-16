@@ -35,6 +35,10 @@ const TreeShaking = ({ build, activeBuild }) => {
         </div>
       </div>
     )
+  } else {
+    return (<div className="centered cards-container">
+      <p>No treeshakable modules available.</p>
+    </div>)
   }
 
   // render note if build data is not available

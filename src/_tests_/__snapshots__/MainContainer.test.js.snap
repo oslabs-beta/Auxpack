@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContainer test App snapshot 1`] = `
+<Fragment>
+  <ContentContainer
+    activeBuild={0}
+    build={Array []}
+    clickHandler={[Function]}
+    handleDec={[Function]}
+    handleInc={[Function]}
+  />
+  <NavbarContainer
+    activeBuild={0}
+    build={Array []}
+    selectBuild={[Function]}
+  />
+</Fragment>
+`;

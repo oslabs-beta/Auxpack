@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-exports[`React unit tests Overview Snapshot testing 1`] = `
+exports[`Overview snapshot Snapshot testing Overview component 1`] = `
 <div
   id="container"
 >
@@ -49,10 +48,4 @@ exports[`React unit tests Overview Snapshot testing 1`] = `
     }
   />
 </div>
-=======
-exports[`App App snapshot 1`] = `
-<MainContainer
-  id="main"
-/>
->>>>>>> master
 `;
