@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContentContainer test ContentContainer snapshot 1`] = `
+exports[`ContentContainer Unit Tests ContentContainer snapshot testing 1`] = `
 <Fragment>
   <Switch>
     <Route
