@@ -1,7 +1,7 @@
 import Overview from '../client/content/containers/Overview.jsx';
 import SunburstContainer from '../client/content/containers/SunburstContainer.jsx'
 
-describe('Overview', () => {
+describe('Overview Unit Tests', () => {
     let wrapper;
 
     const props = {

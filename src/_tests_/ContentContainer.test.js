@@ -3,7 +3,7 @@ import Overview from '../client/content/containers/Overview.jsx';
 import BuildData from '../client/content/containers/BuildData.jsx'
 import Treeshaking from '../client/content/containers/Treeshaking.jsx'
 
-describe('ContentContainer test', () => {
+describe('ContentContainer Unit Tests', () => {
     let wrapper;
 
     const props = {
@@ -28,13 +28,12 @@ describe('ContentContainer test', () => {
         expect(wrapper);
     })
 
-    test('ContentContainer snapshot', () => {
+    test('ContentContainer snapshot testing', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
-    })
+    });
 
     xit('ContentContainer should render Overview', () => {
-        console.log(mount(<ContentContainer />).debug());
+        //console.log(mount(<ContentContainer />).debug());
         expect(wrapper.find(Overview).length).to.equal(1);
     })
-
 })

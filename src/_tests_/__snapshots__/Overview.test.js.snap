@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Overview Snapshot testing Overview component 1`] = `
+exports[`Overview Unit Tests Overview snapshot testing 1`] = `
 <div
   id="container"
 >

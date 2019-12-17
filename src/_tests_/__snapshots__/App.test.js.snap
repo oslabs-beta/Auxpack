@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App App snapshot 1`] = `
+exports[`App Unit Tests App snapshot testing 1`] = `
 <MainContainer
   id="main"
 />

@@ -2,11 +2,8 @@ import MainContainer from '../client/containers/MainContainer.jsx';
 import ContentContainer from '../client/containers/ContentContainer.jsx';
 import NavbarContainer from '../client/containers/NavbarContainer.jsx';
 
-describe('MainContainer test', () => {
+describe('MainContainer Unit Tests', () => {
     let wrapper;
-    beforeEach(() => {
-        wrapper = shallow(<MainContainer />)
-    })
 
     it('should render', () => {
         expect(wrapper);
@@ -25,4 +22,7 @@ describe('MainContainer test', () => {
     })
 
 
+    it('MainContainer should render NavbarContainer', () => {
+        expect(wrapper.find(NavbarContainer)).toHaveLength(1);
+    });
 })
