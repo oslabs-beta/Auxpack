@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as d3 from 'd3';
 // import * as d3 from "d3"; << NOT IMPORTING, AS WE'VE BUILT ON d3.v4, as imported in index.html
 
 class SizeChart extends Component {
