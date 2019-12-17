@@ -16,8 +16,8 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/"
                     render={() => (
                         <Overview
-                         build={build} 
-                         activeBuild={activeBuild} 
+                            build={build}
+                            activeBuild={activeBuild}
                         />
                     )}
                 />
@@ -36,8 +36,8 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/treeshaking"
                     render={() => (
                         <TreeShaking
-                        build={build}
-                        activeBuild={activeBuild}
+                            build={build}
+                            activeBuild={activeBuild}
                         />
                     )}
                 />
@@ -45,7 +45,7 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/history"
                     render={() => (
                         <HistoryCharts
-                        build={build}
+                            build={build}
                         />
                     )}
                 />
