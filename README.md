@@ -8,6 +8,8 @@
 
 auxpack is the new, (soon-to-be) configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
 
+![](whole.gif)
+
 ## Installation
 
 Install via `npm i -D auxpack`
