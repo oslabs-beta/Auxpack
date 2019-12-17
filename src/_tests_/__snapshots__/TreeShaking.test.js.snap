@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TreeShaking Component Unit Tests TreeModule Snapshot testing 1`] = `ShallowWrapper {}`;
+exports[`TreeShaking Unit Tests TreeModule TreeModule snapshot testing 1`] = `ShallowWrapper {}`;
 
-exports[`TreeShaking Component Unit Tests TreeShaking Snapshot testing 1`] = `ShallowWrapper {}`;
+exports[`TreeShaking Unit Tests TreeShaking Container TreeShaking snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`TreeShaking Unit Tests TreeShaking TreeShaking snapshot testing 1`] = `ShallowWrapper {}`;

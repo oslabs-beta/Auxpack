@@ -1,37 +1,13 @@
-// Refer to setupTests.js for global variables used in testing
-import TreeModule from '../client/content/components/TreeModule.jsx';
 import TreeShaking from '../client/content/containers/TreeShaking.jsx';
+import TreeModule from '../client/content/components/TreeModule.jsx';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 
-describe('TreeShaking Component Unit Tests', () => {
+describe('TreeShaking Unit Tests', () => {
 
-  describe('TreeModule', () => {
+  describe('TreeShaking Container', () => {
     let shallow;
     let wrapper;
-    const props = {
-      list: [{name:'one'}, {name:'two'}, {name:'three'}], 
-      title: 'total', 
-      count: 5, 
-      totalCount: 10
-    };
 
-    beforeAll(() => {
-      shallow = createShallow();
-      wrapper = shallow(<TreeModule {...props} />);
-    });
-
-    it('Snapshot testing', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
-
-    it('Should render an Expansion Panel element', () => {
-      expect((wrapper.find(ExpansionPanel)).length).toBe(1);
-    });
-  })
-
-  describe('TreeShaking', () => {
-    let shallow;
-    let wrapper;
     const props = {
       build:[{
         timeStamp:1575426090404,
@@ -54,15 +30,15 @@ describe('TreeShaking Component Unit Tests', () => {
       wrapper = shallow(<TreeShaking {...props} />);
     });
 
-    it('Snapshot testing', () => {
+    it('TreeShaking snapshot testing', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('Should render four TreeModule components', () => {
+    it('TreeShaking should render four TreeModule components', () => {
       expect((wrapper.find(TreeModule)).length).toBe(4);
     });
 
-    it('Should display correct module counts inside each TreeModule component', () => {
+    it('TreeShaking should display correct module counts inside each TreeModule component', () => {
       // expect total count to be sum of lengths of props.build[0].treeStats
       wrapper.find(TreeModule).forEach(node => {
         expect(node.prop('totalCount')).toBe(4)
@@ -76,5 +52,29 @@ describe('TreeShaking Component Unit Tests', () => {
       // expect count displayed in module 4 to be equal to both count
       expect(wrapper.find(TreeModule).at(3).prop('count')).toBe(1);
     });
-  })
+  });
+
+  describe('TreeModule', () => {
+    let shallow;
+    let wrapper;
+    const props = {
+      list: [{name:'one'}, {name:'two'}, {name:'three'}], 
+      title: 'total', 
+      count: 5, 
+      totalCount: 10
+    };
+
+    beforeAll(() => {
+      shallow = createShallow();
+      wrapper = shallow(<TreeModule {...props} />);
+    });
+
+    it('TreeModule snapshot testing', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('TreeModule should render an Expansion Panel element', () => {
+      expect((wrapper.find(ExpansionPanel)).length).toBe(1);
+    });
+  });
 });

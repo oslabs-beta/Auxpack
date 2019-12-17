@@ -2,23 +2,22 @@
 import App from '../client/App.jsx';
 import MainContainer from '../client/containers/MainContainer.jsx';
 
-describe('App', () => {
-
+describe('App Unit Tests', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(<App />)
   });
 
-  test('App snapshot', () => {
+  test('App snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
-  })
+  });
   
-});
-
   it('App should render MainContainer', () => {
     expect(wrapper.find(MainContainer)).toHaveLength(1);
-  })
+  });
+});
+
 
 
 
