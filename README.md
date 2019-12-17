@@ -24,7 +24,13 @@ modules.exports = [
   ... 
   plugins: [
     ...
-    new Auxpack() // add Auxpack into plugins
+    new Auxpack(  // add Auxpack into plugins
+      {
+        PORT: 1111, // configurable PORT
+        targetFile: 'aux-stats', // configurable output filename
+        logMe: true, // configure with true to console.log the current build's aux-stats
+      }
+    ),
   ]
   ...
 ]
