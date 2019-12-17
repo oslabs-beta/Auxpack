@@ -45,6 +45,11 @@
     "scss": "node-sass --watch src/assets/scss -o src/assets/css",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open\" \"cross-env nodemon server/server.js || true\""
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ]
+  },
   "keywords": [],
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",
   "license": "ISC"

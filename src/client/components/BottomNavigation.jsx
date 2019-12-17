@@ -12,6 +12,7 @@ import ListIcon from '@material-ui/icons/List'
 // import MergeType from '@material-ui/icons/MergeType'
 import CallSplit from '@material-ui/icons/CallSplit'
 import Timeline from '@material-ui/icons/Timeline'
+import { Router } from 'react-router-dom'
 
 
 //makestyles to create styles on Material UI components
@@ -29,6 +30,7 @@ export default function SimpleBottomNavigation() {
   return (
     //component in <BottomNavigationAction simulates a component that has behavior of that component from react router
     //Links can send users to routes which is what "to" attributes send them towards
+    <Router>
     <BottomNavigation
       value={value}
       onChange={(event, newValue) => {
@@ -42,5 +44,6 @@ export default function SimpleBottomNavigation() {
       <BottomNavigationAction label="Tree Shaking" icon={<CallSplit/>} component={Link} to="/treeshaking"/>
       <BottomNavigationAction label="History" icon={<Timeline/>} component={Link} to="/history"/>
     </BottomNavigation>
+    </Router>
   );
 }
