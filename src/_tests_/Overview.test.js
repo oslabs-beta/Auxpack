@@ -1,7 +1,7 @@
 import Overview from '../client/content/containers/Overview.jsx';
 import SunburstContainer from '../client/content/containers/SunburstContainer.jsx'
 
-describe('Overview snapshot', () => {
+describe('Overview', () => {
     let wrapper;
 
     const props = {
@@ -18,19 +18,23 @@ describe('Overview snapshot', () => {
         activeBuild: 1
     }
 
-    beforeAll(() => {
+    beforeEach(() => {
         wrapper = shallow(<Overview {...props} />);
     });
+
+    it('should render', () => {
+        expect(wrapper);
+    })
 
     it('Snapshot testing Overview component', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     })
 
-    it("Overview should render a div with id of 'container'",()=>{ 
+    it("Overview should render a div with id of 'container'", () => {
         expect(shallow(<Overview />).find('#container').length).toEqual(1);
     })
 
-    it("Overview should render a div wrapped around SunburstContainer",()=>{
+    it("Overview should render a div wrapped around SunburstContainer", () => {
         let div = shallow(<Overview />).find('#container');
         expect(div.find(SunburstContainer).length).toEqual(1);
     })

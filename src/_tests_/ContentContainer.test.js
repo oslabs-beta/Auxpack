@@ -20,17 +20,21 @@ describe('ContentContainer test', () => {
         activeBuild: 1
     }
 
-    beforeAll(() => {
-        wrapper = shallow(<ContentContainer {...props}/>);
+    beforeEach(() => {
+        wrapper = shallow(<ContentContainer {...props} />);
+    })
+
+    it('should render', () => {
+        expect(wrapper);
     })
 
     test('ContentContainer snapshot', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     })
 
-    xit('ContentContainer should render Overview',()=>{
+    xit('ContentContainer should render Overview', () => {
         console.log(mount(<ContentContainer />).debug());
         expect(wrapper.find(Overview).length).to.equal(1);
     })
-    
+
 })

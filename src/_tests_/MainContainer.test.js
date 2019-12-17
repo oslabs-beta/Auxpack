@@ -8,17 +8,21 @@ describe('MainContainer test', () => {
         wrapper = shallow(<MainContainer />)
     })
 
+    it('should render', () => {
+        expect(wrapper);
+    })
+
     test('App snapshot', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     })
 
-    it('MainContainer should render ContentContainer',()=>{
+    it('MainContainer should render ContentContainer', () => {
         expect(wrapper.find(ContentContainer)).toHaveLength(1);
     })
 
-    it('MainContainer should render NavbarContainer',()=>{
+    it('MainContainer should render NavbarContainer', () => {
         expect(wrapper.find(NavbarContainer)).toHaveLength(1);
     })
-    
+
 
 })

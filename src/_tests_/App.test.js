@@ -17,6 +17,11 @@ describe('App', () => {
   beforeEach(() => {
     wrapper = shallow(<App />)
   })
+
+  it('should render', () => {
+    expect(wrapper);
+  })
+
   test('App snapshot', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   })
