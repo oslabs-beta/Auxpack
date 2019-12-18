@@ -30,6 +30,12 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "nodemon": "^2.0.1",
@@ -42,6 +48,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "test": "jest --verbose",
+    "lint": "eslint . --fix",
     "build": "webpack",
     "scss": "node-sass --watch src/assets/scss -o src/assets/css",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open\" \"cross-env nodemon server/server.js || true\""
