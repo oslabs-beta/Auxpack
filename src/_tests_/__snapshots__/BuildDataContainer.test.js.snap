@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildData Unit Tests AssetsTable AssetsTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests AssetsTable ChangesTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests BuildData BuildData snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests BuildData Container BuildData snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests ChangesTable ChangesTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests ErrorsTable ChangesTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests ErrorsTable ErrorsTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests ErrorsTable ErrorsTable snapshot testing 2`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests Modules ErrorsTable snapshot testing 1`] = `ShallowWrapper {}`;
+
+exports[`BuildData Unit Tests Modules Modules snapshot testing 1`] = `ShallowWrapper {}`;
