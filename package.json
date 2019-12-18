@@ -21,6 +21,7 @@
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@testing-library/react": "^9.4.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.0",
@@ -40,10 +41,15 @@
   },
   "scripts": {
     "start": "nodemon server/server.js",
-    "test": "jest --verbose --watchAll",
+    "test": "jest --verbose",
     "build": "webpack",
     "scss": "node-sass --watch src/assets/scss -o src/assets/css",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open\" \"cross-env nodemon server/server.js || true\""
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ]
   },
   "keywords": [],
   "author": "N.Ajito, S.Chiu, T.Clark, C.Lai",

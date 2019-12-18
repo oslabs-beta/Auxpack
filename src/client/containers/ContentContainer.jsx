@@ -4,7 +4,6 @@ import Overview from '../content/containers/Overview.jsx';
 import BuildData from '../content/containers/BuildData.jsx';
 import TreeShaking from '../content/containers/TreeShaking.jsx';
 import HistoryCharts from '../content/containers/HistoryCharts.jsx';
-
 const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
     //Switch creates exclusive routes
     //Route creates paths that conditionally render components
@@ -52,5 +51,4 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
         </React.Fragment>
     );
 }
-
 export default ContentContainer;

@@ -7,12 +7,16 @@ describe('App Unit Tests', () => {
 
   beforeEach(() => {
     wrapper = shallow(<App />)
-  });
+  })
+
+  it('should render', () => {
+    expect(wrapper);
+  })
 
   test('App snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  
+
   it('App should render MainContainer', () => {
     expect(wrapper.find(MainContainer)).toHaveLength(1);
   });

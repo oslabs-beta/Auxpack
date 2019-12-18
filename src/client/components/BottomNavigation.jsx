@@ -12,6 +12,7 @@ import ListIcon from '@material-ui/icons/List'
 // import MergeType from '@material-ui/icons/MergeType'
 import CallSplit from '@material-ui/icons/CallSplit'
 import Timeline from '@material-ui/icons/Timeline'
+import { Router } from 'react-router-dom'
 
 
 //makestyles to create styles on Material UI components
@@ -37,10 +38,10 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
       id="bottom-nav"
     >
-      <BottomNavigationAction label="Overview" icon={<DataUsage />} component={Link} to="/"/>
-      <BottomNavigationAction label="Build Data" icon={<ListIcon />} component={Link} to ="/build"/>
-      <BottomNavigationAction label="Tree Shaking" icon={<CallSplit/>} component={Link} to="/treeshaking"/>
-      <BottomNavigationAction label="History" icon={<Timeline/>} component={Link} to="/history"/>
+      <BottomNavigationAction label="Overview" icon={<DataUsage />} component={Link} to="/" />
+      <BottomNavigationAction label="Build Data" icon={<ListIcon />} component={Link} to="/build" />
+      <BottomNavigationAction label="Tree Shaking" icon={<CallSplit />} component={Link} to="/treeshaking" />
+      <BottomNavigationAction label="History" icon={<Timeline />} component={Link} to="/history" />
     </BottomNavigation>
   );
 }
