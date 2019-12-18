@@ -1,16 +1,14 @@
 import React from 'react';
-import { Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Overview from '../content/containers/Overview.jsx';
 import BuildData from '../content/containers/BuildData.jsx';
 import TreeShaking from '../content/containers/TreeShaking.jsx';
 import HistoryCharts from '../content/containers/HistoryCharts.jsx';
-
 const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
     //Switch creates exclusive routes
     //Route creates paths that conditionally render components
     return (
         <React.Fragment>
-            <Router>
             <Switch>
                 <Route
                     exact path="/"
@@ -50,9 +48,7 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     )}
                 />
             </Switch>
-            </Router>
         </React.Fragment>
     );
 }
-
 export default ContentContainer;

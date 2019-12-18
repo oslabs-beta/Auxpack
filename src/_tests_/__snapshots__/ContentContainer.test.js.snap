@@ -2,29 +2,27 @@
 
 exports[`ContentContainer Unit Tests ContentContainer snapshot testing 1`] = `
 <Fragment>
-  <Router>
-    <Switch>
-      <Route
-        exact={true}
-        path="/"
-        render={[Function]}
-      />
-      <Route
-        exact={true}
-        path="/build"
-        render={[Function]}
-      />
-      <Route
-        exact={true}
-        path="/treeshaking"
-        render={[Function]}
-      />
-      <Route
-        exact={true}
-        path="/history"
-        render={[Function]}
-      />
-    </Switch>
-  </Router>
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/build"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/treeshaking"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/history"
+      render={[Function]}
+    />
+  </Switch>
 </Fragment>
 `;

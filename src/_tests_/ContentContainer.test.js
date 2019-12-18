@@ -2,6 +2,8 @@ import ContentContainer from '../client/containers/ContentContainer.jsx';
 import Overview from '../client/content/containers/Overview.jsx';
 import BuildData from '../client/content/containers/BuildData.jsx'
 import Treeshaking from '../client/content/containers/Treeshaking.jsx'
+import { Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 describe('ContentContainer Unit Tests', () => {
     let wrapper;
@@ -31,8 +33,19 @@ describe('ContentContainer Unit Tests', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    xit('ContentContainer should render Overview', () => {
+    it('ContentContainer should render a React Fragment', () => {
         //console.log(mount(<ContentContainer />).debug());
-        expect(wrapper.find(Overview).length).to.equal(1);
+        expect(wrapper.find('Fragment').length).toEqual(1);
     })
+
+    it('Fragment should have 1 Switch component', () => {
+        let fragment = wrapper.find('Fragment');
+        expect(fragment.find('Switch').length).toEqual(1);
+    })
+
+    it('Fragment should have 4 Route components', () => {
+        let fragment = wrapper.find('Fragment');
+        expect(fragment.find('Route').length).toEqual(4);
+    })
+
 })
