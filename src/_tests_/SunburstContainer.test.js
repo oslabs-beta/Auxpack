@@ -1,7 +1,7 @@
 import SunburstContainer from '../client/content/containers/SunburstContainer.jsx';
 import Sunburst from '../client/content/components/Sunburst.jsx';
 
-describe('SunburstContainer test', ()=>{
+describe('SunburstContainer Unit Tests', ()=>{
   let wrapper;
 
   const props = {
@@ -22,11 +22,11 @@ describe('SunburstContainer test', ()=>{
       wrapper = shallow(<SunburstContainer {...props} />);
   });
 
-  it('Snapshot testing SunburstContainer', () => {
+  it('SunburstContainer snapshot testing', () => {
       expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("Should render Sunburst",()=>{
+  it("Sunburst Container should render Sunburst",()=>{
       expect(wrapper.find(Sunburst).length).toEqual(1);
   });
 })
