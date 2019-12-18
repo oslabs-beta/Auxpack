@@ -1,6 +1,8 @@
 # auxpack
 auxpack is the new, (soon-to-be) configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
 
+![](whole.gif)
+
 ## Installation
 
 Install via `npm i -D auxpack`
@@ -17,7 +19,13 @@ modules.exports = [
   ... 
   plugins: [
     ...
-    new Auxpack() // add Auxpack into plugins
+    new Auxpack(  // add Auxpack into plugins
+      {
+        PORT: 1111, // configurable PORT
+        targetFile: 'aux-stats', // configurable output filename
+        logMe: true, // configure with true to console.log the current build's aux-stats
+      }
+    ),
   ]
   ...
 ]

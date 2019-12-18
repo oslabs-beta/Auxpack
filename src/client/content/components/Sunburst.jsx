@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
 import lodash from 'lodash';
-import { red } from '@material-ui/core/colors';
 
 //this component is a class component as D3 uses vanilla JS that references "this"
 export default class Sunburst extends Component {
@@ -93,10 +92,8 @@ export default class Sunburst extends Component {
         // row, and can receive the csv as an array of arrays.
         const json = buildHierarchy(this.props.burstData);
         createVisualization(json);
-
         // Main function to draw and set up the visualization, once we have the data.
         function createVisualization(json) {
-
             // Basic setup of page elements.
             initializeBreadcrumbTrail();
 
@@ -212,7 +209,7 @@ export default class Sunburst extends Component {
                 .on("end", function () {
                     d3.select(this).on("mouseover", mouseover);
                 });
-            
+
             //Re-hides information on mouseleave
             d3.select("#explanation")
                 .style("visibility", "hidden");
@@ -361,7 +358,7 @@ export default class Sunburst extends Component {
                 <div id="sequence"></div>
                 <div id="chart" className="chart">
 
-                    <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst"/>
+                    <svg width={630} height={500} className="#chart" ref={(elem) => { this.svg = elem; }} className="sunburst" />
                     {/*  Explanation: displayed in middle of sunburst */}
                     <div id="explanation" className="explanation">
                         <span id="filename"></span>

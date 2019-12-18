@@ -4,7 +4,6 @@ import Overview from '../content/containers/Overview.jsx';
 import BuildData from '../content/containers/BuildData.jsx';
 import TreeShaking from '../content/containers/TreeShaking.jsx';
 import HistoryCharts from '../content/containers/HistoryCharts.jsx';
-
 const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
     //Switch creates exclusive routes
     //Route creates paths that conditionally render components
@@ -15,8 +14,8 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/"
                     render={() => (
                         <Overview
-                         build={build} 
-                         activeBuild={activeBuild} 
+                            build={build}
+                            activeBuild={activeBuild}
                         />
                     )}
                 />
@@ -35,8 +34,8 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/treeshaking"
                     render={() => (
                         <TreeShaking
-                        build={build}
-                        activeBuild={activeBuild}
+                            build={build}
+                            activeBuild={activeBuild}
                         />
                     )}
                 />
@@ -44,7 +43,7 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
                     exact path="/history"
                     render={() => (
                         <HistoryCharts
-                        build={build}
+                            build={build}
                         />
                     )}
                 />
@@ -52,5 +51,4 @@ const ContentContainer = ({ build, activeBuild, handleInc, handleDec }) => {
         </React.Fragment>
     );
 }
-
 export default ContentContainer;
