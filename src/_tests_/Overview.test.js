@@ -31,11 +31,11 @@ describe('Overview Unit Tests', () => {
     })
 
     it("Overview should render a div with id of 'container'", () => {
-        expect(shallow(<Overview />).find('#container').length).toEqual(1);
+        expect(wrapper.find('#container').length).toEqual(1);
     })
 
     it("Overview should render a div wrapped around SunburstContainer", () => {
-        let div = shallow(<Overview />).find('#container');
+        let div = wrapper.find('#container');
         expect(div.find(SunburstContainer).length).toEqual(1);
     })
 })

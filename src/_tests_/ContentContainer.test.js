@@ -17,7 +17,6 @@ describe('ContentContainer Unit Tests', () => {
             chunks: [{ "size": 1118609, "files": ["bundle.js"], "modules": [{ "name": "./client/App.jsx", "size": 6375, "id": "./client/App.jsx" }] }],
             treeStats: { csj: [], esm: [], both: [] }
         }],
-        activeBuild: 1
     }
 
     beforeEach(() => {

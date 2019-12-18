@@ -13,10 +13,6 @@ describe('App Unit Tests', () => {
     expect(wrapper);
   })
 
-  test('App snapshot', () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
-  })
-
   test('App snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
