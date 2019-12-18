@@ -6,12 +6,12 @@ describe('App Unit Tests', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<App />)
-  })
+    wrapper = shallow(<App />);
+  });
 
   it('should render', () => {
     expect(wrapper);
-  })
+  });
 
   test('App snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -21,7 +21,3 @@ describe('App Unit Tests', () => {
     expect(wrapper.find(MainContainer)).toHaveLength(1);
   });
 });
-
-
-
-

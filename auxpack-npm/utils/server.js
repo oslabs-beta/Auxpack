@@ -18,7 +18,7 @@ module.exports = (data, PORT) => {
   });
 
   app.listen(PORT, () => {
-    opener(url)
-    console.log(chalk.inverse(`Auxpack on port ${PORT}`))
-  })
+    opener(url);
+    console.log(chalk.inverse(`Auxpack on port ${PORT}`));
+  });
 };

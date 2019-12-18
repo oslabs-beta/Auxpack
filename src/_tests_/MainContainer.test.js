@@ -3,25 +3,25 @@ import ContentContainer from '../client/containers/ContentContainer.jsx';
 import NavbarContainer from '../client/containers/NavbarContainer.jsx';
 
 describe('MainContainer Unit Tests', () => {
-    let wrapper;
+  let wrapper;
 
-    beforeAll(() => {
-        wrapper = shallow(<MainContainer />);
-    })
+  beforeAll(() => {
+    wrapper = shallow(<MainContainer />);
+  });
 
-    it('should render', () => {
-        expect(wrapper);
-    })
+  it('should render', () => {
+    expect(wrapper);
+  });
 
-    test('MainContainer snapshot', () => {
-        expect(toJson(wrapper)).toMatchSnapshot();
-    })
+  test('MainContainer snapshot', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
-    it('MainContainer should render ContentContainer', () => {
-        expect(wrapper.find(ContentContainer)).toHaveLength(1);
-    })
+  it('MainContainer should render ContentContainer', () => {
+    expect(wrapper.find(ContentContainer)).toHaveLength(1);
+  });
 
-    it('MainContainer should render NavbarContainer', () => {
-        expect(wrapper.find(NavbarContainer)).toHaveLength(1);
-    })
-})
+  it('MainContainer should render NavbarContainer', () => {
+    expect(wrapper.find(NavbarContainer)).toHaveLength(1);
+  });
+});
