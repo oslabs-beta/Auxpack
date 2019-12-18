@@ -4,9 +4,12 @@ import React from 'react';
 import { shallow, render, mount } from 'enzyme';
 import toJson from 'enzyme-to-json'
 import { createShallow, createRender, createMount } from '@material-ui/core/test-utils'
+import { JSDOM } from 'jsdom';
+const dom = new JSDOM();
 
 configure({ adapter: new Adapter() });
 
+global.document = dom.window.document;
 global.React = React;
 global.shallow = shallow;
 global.render = render;

@@ -30,7 +30,6 @@ export default function SimpleBottomNavigation() {
   return (
     //component in <BottomNavigationAction simulates a component that has behavior of that component from react router
     //Links can send users to routes which is what "to" attributes send them towards
-    <Router>
     <BottomNavigation
       value={value}
       onChange={(event, newValue) => {
@@ -39,11 +38,10 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
       id="bottom-nav"
     >
-      <BottomNavigationAction label="Overview" icon={<DataUsage />} component={Link} to="/"/>
-      <BottomNavigationAction label="Build Data" icon={<ListIcon />} component={Link} to ="/build"/>
-      <BottomNavigationAction label="Tree Shaking" icon={<CallSplit/>} component={Link} to="/treeshaking"/>
-      <BottomNavigationAction label="History" icon={<Timeline/>} component={Link} to="/history"/>
+      <BottomNavigationAction label="Overview" icon={<DataUsage />} component={Link} to="/" />
+      <BottomNavigationAction label="Build Data" icon={<ListIcon />} component={Link} to="/build" />
+      <BottomNavigationAction label="Tree Shaking" icon={<CallSplit />} component={Link} to="/treeshaking" />
+      <BottomNavigationAction label="History" icon={<Timeline />} component={Link} to="/history" />
     </BottomNavigation>
-    </Router>
   );
 }
