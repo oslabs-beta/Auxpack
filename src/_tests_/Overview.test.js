@@ -26,7 +26,7 @@ describe('Overview Unit Tests', () => {
         expect(wrapper);
     })
 
-    it('Snapshot testing Overview component', () => {
+    test('Snapshot testing Overview component', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     })
 

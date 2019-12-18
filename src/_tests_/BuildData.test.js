@@ -1,5 +1,5 @@
 import BuildData from '../client/content/containers/BuildData.jsx';
-import { Tab, Tabs, Typography } from '@material-ui/core';
+import { Tab, Tabs } from '@material-ui/core';
 import ChangesTable from '../client/content/components/ChangesTable.jsx';
 import AssetsTable from '../client/content/components/AssetsTable.jsx';
 import ErrorsTable from '../client/content/components/Errors.jsx';

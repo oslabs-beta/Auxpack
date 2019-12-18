@@ -30,7 +30,7 @@ describe('SunburstContainer test', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     })
 
-    xit("Should render Sunburst", () => { // FAILED
+    it("Should render Sunburst", () => { // FAILED
         expect(wrapper.find(Sunburst).length).toEqual(1);
     })
 })
