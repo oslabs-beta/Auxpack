@@ -1,4 +1,5 @@
 import Sunburst from '../client/content/components/Sunburst.jsx';
+import App from '../client/App.jsx';
 
 describe('Sunburst Unit Tests', () => {
     let wrapper;
@@ -14,22 +15,23 @@ describe('Sunburst Unit Tests', () => {
         ]
     }
 
-    beforeAll(() => {
-        wrapper = shallow(<Sunburst {...props.burstData} />);
+
+    beforeEach(() => {
+        wrapper = shallow(<Sunburst {...props} />);
     });
 
-    it("Sunburst should render a div with id = main", () => {
+    xit("Sunburst should render a div with id = main", () => {
         expect(props.burstData.length).toEqual(6);
         expect(wrapper.find('div#main').length).toEqual(1);
     });
 
-    it('Sunburst div#main should have div#sequence and div#chart as children', () => {
+    xit('Sunburst div#main should have div#sequence and div#chart as children', () => {
         const mainDiv = expect(wrapper.find('div#main'));
         expect(mainDiv.find('div#sequence').length).toEqual(1);
         expect(mainDiv.find('div#chart').length).toEqual(1);
     });
 
-    it('Sunburstdiv#chart should have svg.sunburst and div#explanation as children', () => {
+    xit('Sunburstdiv#chart should have svg.sunburst and div#explanation as children', () => {
         const mainDiv = expect(wrapper.find('div#main'));
         const chartDiv = expect(mainDiv.find('div#chart'));
         expect(chartDiv.find('svg.sunburst').length).toEqual(1);

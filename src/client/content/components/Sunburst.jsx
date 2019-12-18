@@ -92,10 +92,8 @@ export default class Sunburst extends Component {
         // row, and can receive the csv as an array of arrays.
         const json = buildHierarchy(this.props.burstData);
         createVisualization(json);
-
         // Main function to draw and set up the visualization, once we have the data.
         function createVisualization(json) {
-            console.log(`this.props.burstData: `, json)
             // Basic setup of page elements.
             initializeBreadcrumbTrail();
 
