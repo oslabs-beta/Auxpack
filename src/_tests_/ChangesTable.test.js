@@ -1,60 +1,4 @@
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
 import ChangesTable from '../client/content/components/ChangesTable.jsx';
-import { makeStyles } from '@material-ui/core/styles';
-
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     width: '100%',
-//   },
-//   heading: {
-//     fontSize: theme.typography.pxToRem(15),
-//     fontWeight: theme.typography.fontWeightRegular,
-//   }
-// }));
-
-// const SimpleExpansionPanel = () => {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.root} >
-//       {/* Additions expansion panel */}
-//       <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
-//         <ExpansionPanelSummary
-//           expandIcon={<ExpandMoreIcon />}
-//           aria-controls="panel1a-content"
-//           id="panel1a-header"
-//         >
-//           <Typography className={classes.heading} className="expansion-heading">
-//             <strong className="centered">Additions</strong>{/* Expansion heading */}
-//           </Typography>
-//         </ExpansionPanelSummary>
-//         <ExpansionPanelDetails className="panelDetails">
-//           {/* Additions Card Panel - content*/}
-//           <AdditionCard />
-//         </ExpansionPanelDetails>
-//       </ExpansionPanel>
-//       {/* Second expansion: defaultExpanded prop set to 'true' for expand on render */}
-//       <ExpansionPanel className="expansionPanel" defaultExpanded={true}>
-//         <ExpansionPanelSummary
-//           expandIcon={<ExpandMoreIcon />}
-//           aria-controls="panel1a-content"
-//           id="panel1a-header"
-//         >
-//           <Typography className={classes.heading} className="center-heading" className="expansion-heading">
-//             <strong className="centered">Removals</strong> {/* Expansion heading */}
-//           </Typography>
-//         </ExpansionPanelSummary>
-//         <ExpansionPanelDetails className="panelDetails">
-//           {/* Removals Card Panel - content*/}
-//           <RemovalCard />
-//         </ExpansionPanelDetails>
-//       </ExpansionPanel>
-//     </div>
-//   );
-// }
 
 describe('ChangesTable Unit Tests', () => {
   let wrapper;
@@ -128,7 +72,7 @@ describe('ChangesTable Unit Tests', () => {
     wrapper = shallow(<ChangesTable {...props} />);
   });
 
-  it('hould render', () => {
+  it('ChangesTable should render', () => {
     expect(wrapper);
   });
 

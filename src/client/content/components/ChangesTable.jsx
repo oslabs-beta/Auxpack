@@ -68,10 +68,6 @@ const ChangesTable = props => {
             removals.push({ path, size });
         }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     const additionListItems = additions.map((obj, i) => {
         return (<tr key={i} className="table-row">
             <td>{obj.path}</td>

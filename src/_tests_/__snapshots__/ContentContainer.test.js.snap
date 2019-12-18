@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentContainer Unit Tests ContentContainer snapshot testing 1`] = `
+<Fragment>
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/build"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/treeshaking"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/history"
+      render={[Function]}
+    />
+  </Switch>
+</Fragment>
+`;

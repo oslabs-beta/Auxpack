@@ -6,7 +6,7 @@ import ErrorsTable from '../client/content/components/Errors.jsx';
 import Modules from '../client/content/components/Modules.jsx';
 
 
-describe('BuildData Unit Test', () => {
+describe('BuildData Unit Tests', () => {
   let wrapper, shallow;
 
   const props = {
@@ -35,11 +35,13 @@ describe('BuildData Unit Test', () => {
   it('BuildData should render', () => {
     expect(wrapper);
   });
+
   it('BuildData snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  
   // Need to mock props/ Parse function
-  it('BuildData should render a div"', () => {
+  it('BuildData should render a "div"', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });
 

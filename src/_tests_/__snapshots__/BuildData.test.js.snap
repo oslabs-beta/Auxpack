@@ -1,0 +1,434 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildData Unit Tests BuildData snapshot testing 1`] = `
+<div
+  className="makeStyles-root-3 content-card"
+>
+  <WithStyles(ForwardRef(Tabs))
+    aria-label="Vertical tabs"
+    className="tabs-section"
+    onChange={[Function]}
+    orientation="vertical"
+    value={0}
+    variant="scrollable"
+  >
+    <WithStyles(ForwardRef(Tab))
+      aria-controls="vertical-tabpanel-0"
+      id="vertical-tab-0"
+      label="Changes"
+    />
+    <WithStyles(ForwardRef(Tab))
+      aria-controls="vertical-tabpanel-1"
+      id="vertical-tab-1"
+      label="Assets"
+    />
+    <WithStyles(ForwardRef(Tab))
+      aria-controls="vertical-tabpanel-2"
+      id="vertical-tab-2"
+      label="Errors"
+    />
+    <WithStyles(ForwardRef(Tab))
+      aria-controls="vertical-tabpanel-3"
+      id="vertical-tab-3"
+      label="Modules"
+    />
+  </WithStyles(ForwardRef(Tabs))>
+  <TabPanel
+    index={0}
+    value={0}
+  >
+    <ChangesTable
+      activeBuild={0}
+      build={
+        Array [
+          Object {
+            "assets": Array [
+              Object {
+                "chunks": Array [
+                  "main",
+                ],
+                "name": "bundle.js",
+                "size": 1172113,
+              },
+            ],
+            "chunks": Array [
+              Object {
+                "files": Array [
+                  "bundle.js",
+                ],
+                "modules": Array [
+                  Object {
+                    "id": "./client/App.jsx",
+                    "name": "./client/App.jsx",
+                    "size": 6375,
+                  },
+                ],
+                "size": 1118609,
+              },
+            ],
+            "errors": Array [],
+            "hash": "546142ce1b49a6ba7d6f",
+            "size": 1172113,
+            "time": 1439,
+            "timeStamp": 1575426090404,
+            "treeStats": Object {
+              "both": Array [
+                Object {
+                  "name": "./node_modules/react/index.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/App.jsx",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 190,
+                },
+              ],
+              "cjs": Array [
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+              ],
+              "esm": Array [
+                Object {
+                  "name": "./client/App.jsx",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/index.js",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 6375,
+                },
+              ],
+            },
+          },
+        ]
+      }
+      dirFinalArray={
+        Array [
+          Array [
+            "client",
+            Array [
+              Object {
+                "filename": "App.jsx",
+                "percentage": "0.54%",
+                "size": 6375,
+              },
+            ],
+          ],
+        ]
+      }
+      dirFinalArrayPrev={Array []}
+      getBytes={[Function]}
+    />
+  </TabPanel>
+  <TabPanel
+    index={1}
+    value={0}
+  >
+    <AssetsTable
+      activeBuild={0}
+      build={
+        Array [
+          Object {
+            "assets": Array [
+              Object {
+                "chunks": Array [
+                  "main",
+                ],
+                "name": "bundle.js",
+                "size": 1172113,
+              },
+            ],
+            "chunks": Array [
+              Object {
+                "files": Array [
+                  "bundle.js",
+                ],
+                "modules": Array [
+                  Object {
+                    "id": "./client/App.jsx",
+                    "name": "./client/App.jsx",
+                    "size": 6375,
+                  },
+                ],
+                "size": 1118609,
+              },
+            ],
+            "errors": Array [],
+            "hash": "546142ce1b49a6ba7d6f",
+            "size": 1172113,
+            "time": 1439,
+            "timeStamp": 1575426090404,
+            "treeStats": Object {
+              "both": Array [
+                Object {
+                  "name": "./node_modules/react/index.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/App.jsx",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 190,
+                },
+              ],
+              "cjs": Array [
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+              ],
+              "esm": Array [
+                Object {
+                  "name": "./client/App.jsx",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/index.js",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 6375,
+                },
+              ],
+            },
+          },
+        ]
+      }
+      getBytes={[Function]}
+    />
+  </TabPanel>
+  <TabPanel
+    index={2}
+    value={0}
+  >
+    <ErrorsTable
+      activeBuild={0}
+      build={
+        Array [
+          Object {
+            "assets": Array [
+              Object {
+                "chunks": Array [
+                  "main",
+                ],
+                "name": "bundle.js",
+                "size": 1172113,
+              },
+            ],
+            "chunks": Array [
+              Object {
+                "files": Array [
+                  "bundle.js",
+                ],
+                "modules": Array [
+                  Object {
+                    "id": "./client/App.jsx",
+                    "name": "./client/App.jsx",
+                    "size": 6375,
+                  },
+                ],
+                "size": 1118609,
+              },
+            ],
+            "errors": Array [],
+            "hash": "546142ce1b49a6ba7d6f",
+            "size": 1172113,
+            "time": 1439,
+            "timeStamp": 1575426090404,
+            "treeStats": Object {
+              "both": Array [
+                Object {
+                  "name": "./node_modules/react/index.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/App.jsx",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 190,
+                },
+              ],
+              "cjs": Array [
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+              ],
+              "esm": Array [
+                Object {
+                  "name": "./client/App.jsx",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/index.js",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 6375,
+                },
+              ],
+            },
+          },
+        ]
+      }
+      className="errors"
+    />
+  </TabPanel>
+  <TabPanel
+    index={3}
+    value={0}
+  >
+    <Modules
+      activeBuild={0}
+      build={
+        Array [
+          Object {
+            "assets": Array [
+              Object {
+                "chunks": Array [
+                  "main",
+                ],
+                "name": "bundle.js",
+                "size": 1172113,
+              },
+            ],
+            "chunks": Array [
+              Object {
+                "files": Array [
+                  "bundle.js",
+                ],
+                "modules": Array [
+                  Object {
+                    "id": "./client/App.jsx",
+                    "name": "./client/App.jsx",
+                    "size": 6375,
+                  },
+                ],
+                "size": 1118609,
+              },
+            ],
+            "errors": Array [],
+            "hash": "546142ce1b49a6ba7d6f",
+            "size": 1172113,
+            "time": 1439,
+            "timeStamp": 1575426090404,
+            "treeStats": Object {
+              "both": Array [
+                Object {
+                  "name": "./node_modules/react/index.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/App.jsx",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 190,
+                },
+              ],
+              "cjs": Array [
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+                Object {
+                  "name": "./test2.js",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./test.js",
+                      "type": "cjs require",
+                    },
+                  ],
+                  "size": 49,
+                },
+              ],
+              "esm": Array [
+                Object {
+                  "name": "./client/App.jsx",
+                  "reasonTypes": Array [
+                    Object {
+                      "name": "./client/index.js",
+                      "type": "harmony side effect evaluation",
+                    },
+                  ],
+                  "size": 6375,
+                },
+              ],
+            },
+          },
+        ]
+      }
+      dirFinalArray={
+        Array [
+          Array [
+            "client",
+            Array [
+              Object {
+                "filename": "App.jsx",
+                "percentage": "0.54%",
+                "size": 6375,
+              },
+            ],
+          ],
+        ]
+      }
+      getBytes={[Function]}
+    />
+  </TabPanel>
+</div>
+`;

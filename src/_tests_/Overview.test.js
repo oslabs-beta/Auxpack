@@ -22,7 +22,7 @@ describe('Overview Unit Tests', () => {
         wrapper = shallow(<Overview {...props} />);
     });
 
-    it('should render', () => {
+    it('Overview should render', () => {
         expect(wrapper);
     })
 

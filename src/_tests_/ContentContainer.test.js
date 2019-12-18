@@ -25,7 +25,7 @@ describe('ContentContainer Unit Tests', () => {
         wrapper = shallow(<ContentContainer {...props} />);
     })
 
-    it('should render', () => {
+    it('ContentContainer should render', () => {
         expect(wrapper);
     })
 

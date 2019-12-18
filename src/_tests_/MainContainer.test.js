@@ -9,7 +9,7 @@ describe('MainContainer Unit Tests', () => {
         wrapper = shallow(<MainContainer />);
     })
 
-    it('should render', () => {
+    it('MainContainer should render', () => {
         expect(wrapper);
     })
 
