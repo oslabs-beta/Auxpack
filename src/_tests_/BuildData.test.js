@@ -1,5 +1,5 @@
-import BuildData from '../client/content/containers/BuildData.jsx';
 import { Tab, Tabs } from '@material-ui/core';
+import BuildData from '../client/content/containers/BuildData.jsx';
 import ChangesTable from '../client/content/components/ChangesTable.jsx';
 import AssetsTable from '../client/content/components/AssetsTable.jsx';
 import ErrorsTable from '../client/content/components/Errors.jsx';
@@ -13,18 +13,18 @@ describe('BuildData Unit Tests', () => {
     build: [{
       timeStamp: 1575426090404,
       time: 1439,
-      hash: "546142ce1b49a6ba7d6f",
+      hash: '546142ce1b49a6ba7d6f',
       errors: [],
       size: 1172113,
-      assets: [{ "name": "bundle.js", "chunks": ["main"], "size": 1172113 }],
-      chunks: [{ "size": 1118609, "files": ["bundle.js"], "modules": [{ "name": "./client/App.jsx", "size": 6375, "id": "./client/App.jsx" }] }],
+      assets: [{ name: 'bundle.js', chunks: ['main'], size: 1172113 }],
+      chunks: [{ size: 1118609, files: ['bundle.js'], modules: [{ name: './client/App.jsx', size: 6375, id: './client/App.jsx' }] }],
       treeStats: {
-        "cjs": [{ "name": "./test2.js", "size": 49, "reasonTypes": [{ "name": "./test.js", "type": "cjs require" }] }, { "name": "./test2.js", "size": 49, "reasonTypes": [{ "name": "./test.js", "type": "cjs require" }] }],
-        "esm": [{ "name": "./client/App.jsx", "size": 6375, "reasonTypes": [{ "name": "./client/index.js", "type": "harmony side effect evaluation" }] }],
-        "both": [{ "name": "./node_modules/react/index.js", "size": 190, "reasonTypes": [{ "name": "./client/App.jsx", "type": "harmony side effect evaluation" }] }]
-      }
+        cjs: [{ name: './test2.js', size: 49, reasonTypes: [{ name: './test.js', type: 'cjs require' }] }, { name: './test2.js', size: 49, reasonTypes: [{ name: './test.js', type: 'cjs require' }] }],
+        esm: [{ name: './client/App.jsx', size: 6375, reasonTypes: [{ name: './client/index.js', type: 'harmony side effect evaluation' }] }],
+        both: [{ name: './node_modules/react/index.js', size: 190, reasonTypes: [{ name: './client/App.jsx', type: 'harmony side effect evaluation' }] }],
+      },
     }],
-    activeBuild: 0
+    activeBuild: 0,
   };
 
   beforeEach(() => {
