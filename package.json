@@ -21,6 +21,7 @@
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@testing-library/react": "^9.4.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.0",
