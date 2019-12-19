@@ -1,9 +1,6 @@
 import { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import ContentContainer from '../client/containers/ContentContainer.jsx';
-import Overview from '../client/content/containers/Overview.jsx';
-import BuildData from '../client/content/containers/BuildData.jsx';
-import Treeshaking from '../client/content/containers/Treeshaking.jsx';
 
 describe('ContentContainer Unit Tests', () => {
   let wrapper;
@@ -34,7 +31,6 @@ describe('ContentContainer Unit Tests', () => {
   });
 
   it('ContentContainer should render a React Fragment', () => {
-    // console.log(mount(<ContentContainer />).debug());
     expect(wrapper.find('Fragment').length).toEqual(1);
   });
 
