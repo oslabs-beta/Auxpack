@@ -20,7 +20,8 @@ module.exports = class Auxpack {
     } else {
       data = [];
     }
-
+    
+    //THIS IS WHERE WE HARVEST THE STATS FROM WEBPACK, THEN SERVE
     compiler.hooks.done.tap('MonitorStats', (stats) => {
       stats = stats.toJson();
       const parsed = parseStats(stats, target);

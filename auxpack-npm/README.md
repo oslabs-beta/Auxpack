@@ -1,7 +1,5 @@
 # auxpack
-auxpack is the new, (soon-to-be) configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
-
-![](whole.gif)
+auxpack is the configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
 
 ## Installation
 
@@ -36,7 +34,7 @@ modules.exports = [
 
 By installing the plugin into your Webpack configuration, you can run 
 `webpack`
-within your scripts as you would in production bundling, and our plugin will launch on port 1111. (We'll be adding a user port configuration option soon!)
+within your scripts as you would in production bundling, and our plugin will launch on port 1111. (or your chosen port in webpack.config.js)
 
 Please note that collecting information on your first auxpack build may take a moment; this occurs due to our plugin collecting data.
 

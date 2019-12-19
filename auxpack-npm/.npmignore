@@ -1,3 +1,2 @@
-__mocks__
-*.spec.js
-package-lock.js
+package-lock.json
+node_modules/
