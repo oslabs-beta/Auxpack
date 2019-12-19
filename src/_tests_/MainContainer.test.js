@@ -9,9 +9,9 @@ describe('MainContainer Unit Tests', () => {
     wrapper = shallow(<MainContainer />);
   });
 
-  it('should render', () => {
-    expect(wrapper);
-  });
+    it('MainContainer should render', () => {
+        expect(wrapper);
+    })
 
   test('MainContainer snapshot', () => {
     expect(toJson(wrapper)).toMatchSnapshot();

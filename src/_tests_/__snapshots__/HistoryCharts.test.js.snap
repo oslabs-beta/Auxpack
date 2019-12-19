@@ -66,3 +66,35 @@ exports[`HistoryCharts Unit Testing SizeChart SizeChart snapshot testing 1`] = `
   </div>
 </SizeChart>
 `;
+
+exports[`HistoryCharts Unit Testing TimeChart TimeChart snapshot testing 1`] = `
+<TimeChart
+  chartData={
+    Array [
+      Object {
+        "build": 1,
+        "size": 100,
+        "time": 3,
+      },
+      Object {
+        "build": 2,
+        "size": 100,
+        "time": 3,
+      },
+      Object {
+        "build": 3,
+        "size": 100,
+        "time": 3,
+      },
+    ]
+  }
+>
+  <div
+    className="single-chart"
+  >
+    <div
+      id="time-chart"
+    />
+  </div>
+</TimeChart>
+`;

@@ -56,5 +56,31 @@ describe('HistoryCharts Unit Testing', () => {
       expect(wrapper.find('div').at(0).hasClass('single-chart')).toBe(true);
       expect(wrapper.find('#size-chart').length).toBe(1);
     });
+<<<<<<< HEAD
+  })
+
+  describe('TimeChart', () => {
+    let wrapper;
+
+    const props = {
+      chartData: [{build: 1, size: 100, time: 3}, {build: 2, size: 100, time: 3}, {build: 3, size: 100, time: 3}]
+    }
+
+    beforeAll(() => {
+      wrapper = mount(<TimeChart {...props} />)
+    });
+
+    it('TimeChart snapshot testing', () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('TimeChart should render divs with class "single-chart" and id "time-chart"', () => {
+      expect(wrapper.find('div').at(0).hasClass("single-chart")).toBe(true);
+      expect(wrapper.find('#time-chart').length).toBe(1);
+    });
+  })
+})
+=======
   });
 });
+>>>>>>> master

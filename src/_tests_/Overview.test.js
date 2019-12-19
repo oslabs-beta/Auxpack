@@ -22,9 +22,9 @@ describe('Overview Unit Tests', () => {
     wrapper = shallow(<Overview {...props} />);
   });
 
-  it('should render', () => {
-    expect(wrapper);
-  });
+    it('Overview should render', () => {
+        expect(wrapper);
+    })
 
   test('Snapshot testing Overview component', () => {
     expect(toJson(wrapper)).toMatchSnapshot();

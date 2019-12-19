@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BuildData Snapshot testing BuildData component 1`] = `
+exports[`BuildData Unit Tests BuildData snapshot testing 1`] = `
 <div
   className="makeStyles-root-3 content-card"
 >
