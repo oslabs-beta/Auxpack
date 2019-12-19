@@ -6,7 +6,9 @@
 [![npm](https://img.shields.io/npm/dw/auxpack?style=flat-square)](https://www.npmjs.com/package/auxpack)
 
 
-auxpack is the new, (soon-to-be) configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
+auxpack is the new configurable Webpack plugin that monitors statistics from your production builds. Our interactive interface allows developers to better understand bundle composition to get a better grasp on optimization strategies.
+
+http://auxpack.com
 
 ![](whole.gif)
 

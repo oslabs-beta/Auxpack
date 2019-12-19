@@ -1,10 +1,13 @@
-import { configure } from 'enzyme';
+import {
+  configure, shallow, render, mount,
+} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import { shallow, render, mount } from 'enzyme';
-import toJson from 'enzyme-to-json'
-import { createShallow, createRender, createMount } from '@material-ui/core/test-utils'
+
+import toJson from 'enzyme-to-json';
+import { createShallow, createRender, createMount } from '@material-ui/core/test-utils';
 import { JSDOM } from 'jsdom';
+
 const dom = new JSDOM();
 
 configure({ adapter: new Adapter() });

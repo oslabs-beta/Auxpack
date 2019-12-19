@@ -19,9 +19,7 @@ const useStyles = makeStyles(theme => ({
 const Modules = props => {
     const { dirFinalArray, getBytes } = props;
 
-    //console.log(`dirFinalArray: `, dirFinalArray)
     const fileRows = dirFinalArray.map((directory) => {
-        //console.log(`directory: `, directory)
         return directory[1].map((file, j) => (<tr key={file.filename + file.size + j}>
             <td>{file.filename}</td>
             <td>{getBytes(file.size)}</td>
