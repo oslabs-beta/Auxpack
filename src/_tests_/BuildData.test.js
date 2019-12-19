@@ -7,7 +7,8 @@ import Modules from '../client/content/components/Modules.jsx';
 
 
 describe('BuildData Unit Tests', () => {
-  let wrapper, shallow;
+  let wrapper; let
+    shallow;
 
   const props = {
     build: [{
@@ -39,19 +40,19 @@ describe('BuildData Unit Tests', () => {
   it('BuildData snapshot testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  
+
   // Need to mock props/ Parse function
   it('BuildData should render a "div"', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });
 
   it('BuildData should render 1 Tabs component', () => {
-    let div = wrapper.find('div');
+    const div = wrapper.find('div');
     expect(div.find(Tabs).length).toEqual(1);
   });
 
   it('BuildData tabs component should contain 4 Tab components, with theses texts: Changes, Assets, Errors, Modules', () => {
-    let div = wrapper.find('div');
+    const div = wrapper.find('div');
     const TabsComponent = div.find(Tabs);
     expect(TabsComponent.find(Tab).length).toEqual(4);
   });
@@ -67,7 +68,7 @@ describe('BuildData Unit Tests', () => {
   it('BuildData should have a ErrorsTable component', () => {
     expect(wrapper.find(ErrorsTable).length).toEqual(1);
   });
-  
+
   it('BuildData should have a Modules component', () => {
     expect(wrapper.find(Modules).length).toEqual(1);
   });
