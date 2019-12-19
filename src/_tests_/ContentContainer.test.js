@@ -31,7 +31,6 @@ describe('ContentContainer Unit Tests', () => {
   });
 
   it('ContentContainer should render a React Fragment', () => {
-    // console.log(mount(<ContentContainer />).debug());
     expect(wrapper.find('Fragment').length).toEqual(1);
   });
 
