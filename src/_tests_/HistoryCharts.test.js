@@ -56,7 +56,6 @@ describe('HistoryCharts Unit Testing', () => {
       expect(wrapper.find('div').at(0).hasClass('single-chart')).toBe(true);
       expect(wrapper.find('#size-chart').length).toBe(1);
     });
-<<<<<<< HEAD
   })
 
   describe('TimeChart', () => {
@@ -80,7 +79,3 @@ describe('HistoryCharts Unit Testing', () => {
     });
   })
 })
-=======
-  });
-});
->>>>>>> master
