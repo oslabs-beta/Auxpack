@@ -57,10 +57,10 @@ To contribute to `auxpack`, please fork this repository, clone it to your machin
 
 ## Authors
 
+* Connie Lai (https://github.com/connielion)
 * Nobuhide Ajito (https://github.com/najito)
 * Stephanie Chiu (https://github.com/stephkchiu)
 * Travis Clark (https://github.com/tm-clark)
-* Connie Lai (https://github.com/connielion)
 
 # webpack-monitor
 
