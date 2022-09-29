@@ -12,7 +12,7 @@
   "homepage": "http://www.auxpack.com",
   "license": "MIT",
   "dependencies": {
-    "d3": "^5.14.2",
+    "d3": "^7.6.1",
     "express": "^4.17.1",
     "opener": "^1.5.1"
   }
